@@ -4,10 +4,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../components/layout'
+import Link from 'gatsby-link'
 
 const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
-
+  console.log(data.mdx.tableOfContents)
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
@@ -16,11 +17,20 @@ const BlogPost = ({ data }) => {
         alt={data.mdx.frontmatter.hero_image_alt}
       />
       <p>
-        Photo Credit:{" "}
+        Photo Credit:{' '}
         <a href={data.mdx.frontmatter.hero_image_credit_link}>
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
       </p>
+      <ul>
+        {data.mdx.tableOfContents.items
+          .map(headingOne => (
+            <li key={headingOne.title}>
+              <Link to={headingOne.url}>{headingOne.title}</Link>
+              {headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link to={headingTwo.url}>{headingTwo.title}</Link></li>)}
+            </li>
+          ))}
+      </ul>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
@@ -32,6 +42,7 @@ export const query = graphql`
   query($id: String) {
     mdx(id: {eq: $id}) {
       body
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -42,7 +53,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData
           }
-        } 
+        }
       }
     }
   }
