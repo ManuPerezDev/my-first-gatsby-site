@@ -27,7 +27,7 @@ const BlogPost = ({ data }) => {
           .map(headingOne => (
             <li key={headingOne.title}>
               <Link to={headingOne.url}>{headingOne.title}</Link>
-              {headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link to={headingTwo.url}>{headingTwo.title}</Link></li>)}
+              {headingOne.items !== undefined && headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link to={headingTwo.url}>{headingTwo.title}</Link></li>)}
             </li>
           ))}
       </ul>
