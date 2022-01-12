@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.css'
+import './global.css'
+import Switch from './switch-dark-mode/switch-dark-mode'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -33,6 +35,9 @@ const Layout = ({ pageTitle, children }) => {
             <Link to='/blog'>
               <p>Blog</p>
             </Link>
+          </li>
+          <li>
+            <Switch/>
           </li>
         </ul>
       </nav>

@@ -8,7 +8,7 @@ import Link from 'gatsby-link'
 
 const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
-  console.log(data.mdx.tableOfContents)
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>

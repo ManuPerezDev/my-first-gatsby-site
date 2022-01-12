@@ -14,17 +14,8 @@
   padding-right: 2rem;
 }
 
-h1 {
-  color: rebeccapurple;
-}
-
-p {
-  color: black;
-}
-
 header {
   font-size: 3rem;
-  color: gray;
   font-weight: 700;
   margin: 3rem 0;
 }
