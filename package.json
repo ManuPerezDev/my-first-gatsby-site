@@ -38,6 +38,7 @@
     "gatsby-transformer-sharp": "^4.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.3.1",
     "styled-components": "^5.3.3",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0",

@@ -12,6 +12,8 @@
   --font-color: #e1e1ff;
   --bg-color: #161625;
   --heading-color: #818cab;
+  --brightness: 0.8;
+  --contrast: 1.2;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -20,4 +22,8 @@ body {
   max-width: 90%;
   margin: 0 auto;
   font-size: calc(1rem + 0.25vh);
+}
+
+body img {
+  filter: brightness(var(--brightness)) contrast(var(--contrast));
 }
