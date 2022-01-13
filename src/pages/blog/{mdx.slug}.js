@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../components/layout'
 import Link from 'gatsby-link'
+import TableOfContents from './table-of-contents'
 
 const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
@@ -22,15 +23,7 @@ const BlogPost = ({ data }) => {
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
       </p>
-      <ul>
-        {data.mdx.tableOfContents.items
-          .map(headingOne => (
-            <li key={headingOne.title}>
-              <Link to={headingOne.url}>{headingOne.title}</Link>
-              {headingOne.items !== undefined && headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link to={headingTwo.url}>{headingTwo.title}</Link></li>)}
-            </li>
-          ))}
-      </ul>
+      <TableOfContents tableOfContents={data.mdx.tableOfContents}/>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
