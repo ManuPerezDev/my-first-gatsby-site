@@ -4,6 +4,7 @@
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
+  --bg-animation: toLightMode 2s;
 }
 
 [data-theme="dark"] {
@@ -14,6 +15,7 @@
   --heading-color: #818cab;
   --brightness: 0.8;
   --contrast: 1.2;
+  --bg-animation: toDarkMode 2s;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -22,8 +24,27 @@ body {
   max-width: 90%;
   margin: 0 auto;
   font-size: calc(1rem + 0.25vh);
+  animation: var(--bg-animation);
 }
 
 body img {
   filter: brightness(var(--brightness)) contrast(var(--contrast));
+}
+
+@keyframes toDarkMode {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #161625;
+  }
+}
+
+@keyframes toLightMode {
+  from {
+    background-color: #161625;
+  }
+  to {
+    background-color: #fff;
+  }
 }
