@@ -2,7 +2,6 @@
   --primary-color: #302AE6;
   --secondary-color: #536390;
   --font-color: #424242;
-  --bg-color: #fff;
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
 }
@@ -33,7 +32,7 @@ body img {
 
 @keyframes toDarkMode {
   from {
-    background-color: #fff;
+    background-color: #EDFFFF;
   }
   to {
     background-color: #161625;
@@ -45,6 +44,6 @@ body img {
     background-color: #161625;
   }
   to {
-    background-color: #fff;
+    background-color: #EDFFFF;
   }
 }
