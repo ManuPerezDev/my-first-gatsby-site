@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #302AE6;
+  --primary-color: #6B66F6;
   --secondary-color: #536390;
   --font-color: #424242;
+  --bg-color: #EDFFFF;
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
 }
@@ -16,6 +17,7 @@
   --contrast: 1.2;
   --bg-animation: toDarkMode 2s;
 }
+
 body {
   font-family: "Lato", sans-serif;
   background-color: var(--bg-color);
@@ -24,10 +26,6 @@ body {
   margin: 0 auto;
   font-size: calc(1rem + 0.25vh);
   animation: var(--bg-animation);
-}
-
-body img {
-  filter: brightness(var(--brightness)) contrast(var(--contrast));
 }
 
 @keyframes toDarkMode {
@@ -47,3 +45,18 @@ body img {
     background-color: #EDFFFF;
   }
 }
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: var(--primary-color) solid 1px;
+}
+
+body img {
+  filter: brightness(var(--brightness)) contrast(var(--contrast));
+}
+
+
