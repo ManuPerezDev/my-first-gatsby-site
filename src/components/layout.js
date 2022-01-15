@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import * as styles from './layout.module.css'
 import './global.css'
 import Switch from './switch-dark-mode/switch-dark-mode'
+import Seo from './seo/seo'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -17,6 +18,7 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div className={styles.container}>
+      <Seo/>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header>{data.site.siteMetadata.title}</header>
       <nav>

@@ -5,26 +5,35 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../components/layout'
 import TableOfContents from './table-of-contents/table-of-contents'
+import Seo from '../../components/seo/seo'
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
+  const pageTitle = data.mdx.frontmatter.title
+  const description = data.mdx.frontmatter.description
+  const siteUrl = data.site.siteMetadata.siteUrl
+  const imagePublicURL = data.mdx.frontmatter.hero_image.publicURL
+  const date = data.mdx.frontmatter.date
+  const heroImageAlt = data.mdx.frontmatter.hero_image_alt
+  const tableOfContents = data.mdx.tableOfContents
+  const body = data.mdx.body
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
+    <Layout pageTitle={pageTitle}>
+      <Seo
+        title={pageTitle}
+        description={description}
+        image={`${siteUrl}${imagePublicURL}`}
+        url={location.href}
+      />
+      <p>{date}</p>
       <GatsbyImage
         image={image}
-        alt={data.mdx.frontmatter.hero_image_alt}
+        alt={heroImageAlt}
       />
-      <p>
-        Photo Credit:{' '}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      <TableOfContents tableOfContents={data.mdx.tableOfContents}/>
+      <TableOfContents tableOfContents={tableOfContents}/>
       <MDXRenderer>
-        {data.mdx.body}
+        {body}
       </MDXRenderer>
     </Layout>
   )
@@ -32,16 +41,22 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
   query($id: String) {
+    site {
+        siteMetadata {
+          title
+          siteUrl
+        }
+      }
     mdx(id: {eq: $id}) {
       body
       tableOfContents
       frontmatter {
         title
+        description
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
-        hero_image_credit_link
-        hero_image_credit_text
         hero_image {
+          publicURL
           childImageSharp {
             gatsbyImageData
           }
