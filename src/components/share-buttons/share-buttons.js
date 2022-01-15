@@ -2,39 +2,48 @@ import React from 'react'
 
 import {
   FacebookShareButton,
-  FacebookIcon,
   LinkedinShareButton,
-  LinkedinIcon,
   TwitterShareButton,
-  TwitterIcon,
   WhatsappShareButton,
-  WhatsappIcon,
-  RedditShareButton,
-  RedditIcon
+  RedditShareButton
 } from 'react-share'
+
+import * as styles from './share-buttons.module.css'
+
+import { FaFacebookSquare, FaTwitterSquare, FaLinkedin, FaReddit, FaWhatsappSquare } from 'react-icons/fa'
 
 const ShareButtons = ({ title, url }) => {
   return (
-    <div>
-      <FacebookShareButton url={url} >
-        <FacebookIcon size={40} round={true}/>
-      </FacebookShareButton>
+    <div className={styles.container}>
+      <div className={styles.button}>
+        <FacebookShareButton url={url} >
+          <FaFacebookSquare fontSize='1.5em'/>
+        </FacebookShareButton>
+      </div>
 
-      <TwitterShareButton url={url} title={title}>
-        <TwitterIcon size={40} round={true} />
-      </TwitterShareButton>
+      <div className={styles.button}>
+        <TwitterShareButton url={url} title={title}>
+          <FaTwitterSquare fontSize='1.5em'/>
+        </TwitterShareButton>
+      </div>
 
-      <LinkedinShareButton url={url} >
-        <LinkedinIcon size={40} round={true}/>
-      </LinkedinShareButton>
+      <div className={styles.button}>
+        <LinkedinShareButton url={url} >
+          <FaLinkedin fontSize='1.5em'/>
+        </LinkedinShareButton>
+      </div>
 
-      <RedditShareButton url={url} title={title} >
-        <RedditIcon size={40} round={true} />
-      </RedditShareButton>
+      <div className={styles.button}>
+        <RedditShareButton url={url} title={title} >
+          <FaReddit fontSize='1.5em'/>
+        </RedditShareButton>
+      </div>
 
-      <WhatsappShareButton url={url} title={title}>
-        <WhatsappIcon size={40} round={true}/>
-      </WhatsappShareButton>
+      <div className={styles.button}>
+        <WhatsappShareButton url={url} title={title}>
+          <FaWhatsappSquare fontSize='1.5em'/>
+        </WhatsappShareButton>
+      </div>
     </div>
   )
 }
