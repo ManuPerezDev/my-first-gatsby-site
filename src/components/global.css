@@ -220,6 +220,24 @@ table tbody tr.active-row {
 hr {
   border: 0;
   height: 1px;
-  background: GREY;
+  background: grey;
+}
+
+blockquote {
+  border-left: 10px solid var(--secondary-color);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: var(--font-color);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }
 
