@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import * as styles from './table-of-contents.module.css'
 
 const TableOfContents = ({ tableOfContents }) => {
   return (
-    <ul>
+    <ol className={styles.toc}>
+      <hr/>
       {tableOfContents.items
         .map(headingOne => (
           <li key={headingOne.title}>
@@ -11,7 +13,8 @@ const TableOfContents = ({ tableOfContents }) => {
             {headingOne.items !== undefined && headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link to={headingTwo.url}>{headingTwo.title}</Link></li>)}
           </li>
         ))}
-    </ul>)
+      <hr/>
+    </ol>)
 }
 
 export default TableOfContents

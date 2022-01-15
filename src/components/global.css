@@ -18,6 +18,10 @@
   --bg-animation: toDarkMode 2s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: var(--bg-color);
@@ -213,4 +217,9 @@ table tbody tr.active-row {
   color: #009879;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: GREY;
+}
 
