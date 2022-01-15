@@ -4,7 +4,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../../components/layout'
-import Link from 'gatsby-link'
 import TableOfContents from './table-of-contents'
 
 const BlogPost = ({ data }) => {

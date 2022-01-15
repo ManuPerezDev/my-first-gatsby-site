@@ -2,8 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const TableOfContents = ({ tableOfContents }) => {
-  console.log('Items', tableOfContents.items)
-  console.log('Items flatted', tableOfContents.items.flat())
   return (
     <ul>
       {tableOfContents.items
