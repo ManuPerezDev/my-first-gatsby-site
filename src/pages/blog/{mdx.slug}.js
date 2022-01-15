@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import TableOfContents from './table-of-contents/table-of-contents'
 import Seo from '../../components/seo/seo'
+import ShareButtons from '../../components/share-buttons/share-buttons'
 
 const BlogPost = ({ data, location }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
@@ -17,6 +18,7 @@ const BlogPost = ({ data, location }) => {
   const heroImageAlt = data.mdx.frontmatter.hero_image_alt
   const tableOfContents = data.mdx.tableOfContents
   const body = data.mdx.body
+  const url = location.href
 
   return (
     <Layout pageTitle={pageTitle}>
@@ -31,6 +33,7 @@ const BlogPost = ({ data, location }) => {
         image={image}
         alt={heroImageAlt}
       />
+      <ShareButtons title={pageTitle} url={url}/>
       <TableOfContents tableOfContents={tableOfContents}/>
       <MDXRenderer>
         {body}
