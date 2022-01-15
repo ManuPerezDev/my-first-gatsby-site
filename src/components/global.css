@@ -182,10 +182,9 @@ pre[class*="language-"] {
 
 table {
   border-collapse: collapse;
-  margin: 0 auto;
+  width: 100%;
   font-size: 0.9em;
   font-family: sans-serif;
-  max-width: 500px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   color: white;
   background-color: #515151;
