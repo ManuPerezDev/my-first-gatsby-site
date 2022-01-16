@@ -4,18 +4,6 @@
   font-family: sans-serif;
 }
 
-.navLinks {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-}
-
-.navLinksItem {
-  display: flex;
-  align-items: center;
-  padding-right: 2rem;
-}
-
 header {
   font-size: 3rem;
   font-weight: 700;

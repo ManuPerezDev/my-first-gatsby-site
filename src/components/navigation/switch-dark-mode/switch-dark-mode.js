@@ -1,7 +1,7 @@
 import React from 'react'
 import './switch-dark-mode.css'
 import useLocalStorage from 'use-local-storage'
-import '../global.css'
+import '../../global.css'
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
 
 const Switch = () => {

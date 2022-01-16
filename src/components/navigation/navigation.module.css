@@ -1,0 +1,11 @@
+.navLinks {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navLinksItem {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
