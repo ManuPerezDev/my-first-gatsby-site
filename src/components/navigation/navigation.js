@@ -15,19 +15,13 @@ const Navigation = () => (
        <Switch/>
        <ul className={styles.navLinks}>
         <li className={styles.navLinksItem}>
-          <Link to='/'>
-            <p>Home</p>
-          </Link>
+          <Link to='/'>Home</Link>
         </li>
         <li className={styles.navLinksItem}>
-          <Link to='/about'>
-            <p>About</p>
-          </Link>
+          <Link to='/about'>About</Link>
         </li>
         <li className={styles.navLinksItem}>
-          <Link to='/blog'>
-            <p>Blog</p>
-          </Link>
+          <Link to='/blog'>Blog</Link>
         </li>
        </ul>
     </div>
