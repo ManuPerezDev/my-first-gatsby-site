@@ -19,7 +19,7 @@ const Switch = () => {
 
   return (
     <button onClick={switchTheme}>
-      {theme === 'light' ? <BsFillMoonFill /> : <BsFillSunFill />}
+      {theme === 'light' ? <BsFillMoonFill size={30}/> : <BsFillSunFill size={30}/>}
     </button>
   )
 }

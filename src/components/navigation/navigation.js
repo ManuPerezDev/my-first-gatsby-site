@@ -6,11 +6,13 @@ import { FaHamburger, FaWindowClose } from 'react-icons/fa'
 
 const Navigation = () => (
   <nav>
-    <div className={styles.navigationMobile} onClick={mobileMenu}>
-      <FaHamburger size={30}/>
+    <div className={styles.navigationMobile}>
+      <Switch/>
+      <FaHamburger size={30} onClick={mobileMenu}/>
     </div>
 
     <div className={styles.navigationDesktop}>
+       <Switch/>
        <ul className={styles.navLinks}>
         <li className={styles.navLinksItem}>
           <Link to='/'>
@@ -27,37 +29,28 @@ const Navigation = () => (
             <p>Blog</p>
           </Link>
         </li>
-        <li className={styles.navLinksItem}>
-          <Switch/>
-        </li>
        </ul>
-       <button onClick={mobileMenu}>
-
-       </button>
     </div>
 
-     <div id={'mobileNav'} className={styles.mobile}>
-        <ul className={styles.navLinks}>
-          <li onClick={mobileMenu} className={styles.navLinksItem}>
-            <FaWindowClose size={30}/>
+     <div id={'mobileNav'} className={styles.mobileMenu}>
+        <ul className={styles.navLinksMobile}>
+          <li onClick={mobileMenu} className={styles.navLinksItemMobile}>
+            <FaWindowClose size={30} color={'white'}/>
           </li>
-         <li className={styles.navLinksItem}>
+         <li className={styles.navLinksItemMobile}>
            <Link to='/'>
              <p>Home</p>
            </Link>
          </li>
-         <li className={styles.navLinksItem}>
+         <li className={styles.navLinksItemMobile}>
            <Link to='/about'>
              <p>About</p>
            </Link>
          </li>
-         <li className={styles.navLinksItem}>
+         <li className={styles.navLinksItemMobile}>
            <Link to='/blog'>
              <p>Blog</p>
            </Link>
-         </li>
-         <li className={styles.navLinksItem}>
-           <Switch/>
          </li>
         </ul>
      </div>
