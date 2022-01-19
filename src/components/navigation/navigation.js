@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './navigation.module.css'
 import { Link } from 'gatsby'
 import Switch from './switch-dark-mode/switch-dark-mode'
-import { FaHamburger, FaWindowClose } from 'react-icons/fa'
+import { FaHamburger } from 'react-icons/fa'
 
 const Navigation = () => (
   <nav>
