@@ -26,26 +26,23 @@ const Navigation = () => (
        </ul>
     </div>
 
-     <div id={'mobileNav'} className={styles.mobileMenu}>
+     <div id={'mobileNav'} className={styles.mobileMenu} onClick={mobileMenu}>
         <ul className={styles.navLinksMobile}>
-          <li onClick={mobileMenu} className={styles.navLinksItemMobile}>
-            <FaWindowClose size={30} color={'white'}/>
-          </li>
-         <li className={styles.navLinksItemMobile}>
-           <Link to='/'>
-             <p>Home</p>
+           <Link to='/' className={styles.navLinksItemMobile}>
+             <li >
+                 <p>Home</p>
+             </li>
            </Link>
-         </li>
-         <li className={styles.navLinksItemMobile}>
-           <Link to='/about'>
-             <p>About</p>
+           <Link to='/about' className={styles.navLinksItemMobile}>
+             <li>
+                 <p>About</p>
+             </li>
            </Link>
-         </li>
-         <li className={styles.navLinksItemMobile}>
-           <Link to='/blog'>
-             <p>Blog</p>
+           <Link to='/blog' className={styles.navLinksItemMobile}>
+             <li>
+                 <p>Blog</p>
+             </li>
            </Link>
-         </li>
         </ul>
      </div>
   </nav>
