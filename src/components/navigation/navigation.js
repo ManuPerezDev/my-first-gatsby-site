@@ -3,7 +3,8 @@ import * as styles from './navigation.module.css'
 import { Link } from 'gatsby'
 import Switch from './switch-dark-mode/switch-dark-mode'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { FaWindowClose } from 'react-icons/fa'
+import { mobileMenu } from './mobile-menu/mobile-menu-handler'
+import MobileMenu from './mobile-menu/mobile-menu'
 
 const Navigation = () => (
   <nav>
@@ -11,7 +12,6 @@ const Navigation = () => (
       <Switch/>
       <GiHamburgerMenu size={30} onClick={mobileMenu}/>
     </div>
-
     <div className={styles.navigationDesktop}>
        <Switch/>
        <ul className={styles.navLinks}>
@@ -26,44 +26,8 @@ const Navigation = () => (
         </li>
        </ul>
     </div>
-
-     <div id={'mobileNav'} className={styles.mobileMenu}>
-       <div className={styles.closeButtonMobileContainer}>
-         <FaWindowClose size={30} onClick={mobileMenu}/>
-       </div>
-       <ul className={styles.navLinksMobile}>
-           <Link to='/' className={styles.navLinksItemMobile}>
-             <li >
-                 <p>Home</p>
-             </li>
-           </Link>
-           <Link to='/about' className={styles.navLinksItemMobile}>
-             <li>
-                 <p>About</p>
-             </li>
-           </Link>
-           <Link to='/blog' className={styles.navLinksItemMobile}>
-             <li>
-                 <p>Blog</p>
-             </li>
-           </Link>
-        </ul>
-     </div>
+    <MobileMenu/>
   </nav>
 )
 
 export default Navigation
-
-const mobileMenu = () => {
-  const menu = document.getElementById('mobileNav')
-  const isToggled = menu.style.display === 'block'
-  const body = document.body
-
-  if (isToggled) {
-    menu.style.display = 'none'
-    body.style.overflow = 'visible'
-  } else {
-    body.style.overflow = 'hidden'
-    menu.style.display = 'block'
-  }
-}
