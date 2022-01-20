@@ -1,0 +1,16 @@
+.navigationMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+@media (min-width: 700px) {
+  .navigationMobile {
+    display: none;
+  }
+
+  #mobileNav {
+    display: none;
+  }
+}

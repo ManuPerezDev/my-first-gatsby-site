@@ -1,8 +1,5 @@
-.navigationMobile {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
+.navigationDesktop {
+  display: none;
 }
 
 .navLinks {
@@ -29,10 +26,6 @@
 .navLinksItem a:hover {
   color: var(--secondary-color);
   border-bottom: transparent;
-}
-
-.navigationDesktop {
-  display: none;
 }
 
 @media (min-width: 700px) {
