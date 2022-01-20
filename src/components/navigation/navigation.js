@@ -2,13 +2,14 @@ import React from 'react'
 import * as styles from './navigation.module.css'
 import { Link } from 'gatsby'
 import Switch from './switch-dark-mode/switch-dark-mode'
-import { FaHamburger } from 'react-icons/fa'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { FaWindowClose } from 'react-icons/fa'
 
 const Navigation = () => (
   <nav>
     <div className={styles.navigationMobile}>
       <Switch/>
-      <FaHamburger size={30} onClick={mobileMenu}/>
+      <GiHamburgerMenu size={30} onClick={mobileMenu}/>
     </div>
 
     <div className={styles.navigationDesktop}>
@@ -26,8 +27,11 @@ const Navigation = () => (
        </ul>
     </div>
 
-     <div id={'mobileNav'} className={styles.mobileMenu} onClick={mobileMenu}>
-        <ul className={styles.navLinksMobile}>
+     <div id={'mobileNav'} className={styles.mobileMenu}>
+       <div className={styles.closeButtonMobileContainer}>
+         <FaWindowClose size={30} onClick={mobileMenu}/>
+       </div>
+       <ul className={styles.navLinksMobile}>
            <Link to='/' className={styles.navLinksItemMobile}>
              <li >
                  <p>Home</p>
