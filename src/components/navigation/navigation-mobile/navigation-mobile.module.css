@@ -11,6 +11,6 @@
   }
 
   #mobileNav {
-    display: none;
+    visibility: hidden;
   }
 }
