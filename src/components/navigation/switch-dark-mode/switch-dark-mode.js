@@ -1,5 +1,5 @@
 import React from 'react'
-import './switch-dark-mode.css'
+import * as styles from './switch-dark-mode.module.css'
 import useLocalStorage from 'use-local-storage'
 import '../../global.css'
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
@@ -18,9 +18,9 @@ const Switch = () => {
   }
 
   return (
-    <button onClick={switchTheme}>
+    <div className={styles.switchButton} onClick={switchTheme}>
       {theme === 'light' ? <BsFillMoonFill size={30}/> : <BsFillSunFill size={30}/>}
-    </button>
+    </div>
   )
 }
 
