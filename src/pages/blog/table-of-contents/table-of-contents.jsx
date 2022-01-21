@@ -6,7 +6,6 @@ const TableOfContents = ({ tableOfContents }) => {
   return (
     <>
     {tableOfContents && <ol className={styles.toc}>
-      <hr/>
       {tableOfContents.items
         .map(headingOne => (
           <li key={headingOne.title}>
@@ -15,7 +14,6 @@ const TableOfContents = ({ tableOfContents }) => {
               to={headingTwo.url}>{headingTwo.title}</Link></li>)}
           </li>
         ))}
-      <hr/>
     </ol>}
     </>
   )

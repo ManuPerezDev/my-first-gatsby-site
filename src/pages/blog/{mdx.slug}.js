@@ -34,7 +34,9 @@ const BlogPost = ({ data, location }) => {
         alt={heroImageAlt}
       />
       <ShareButtons title={pageTitle} url={url}/>
+      <hr/>
       <TableOfContents tableOfContents={tableOfContents}/>
+      <hr/>
       <MDXRenderer>
         {body}
       </MDXRenderer>
