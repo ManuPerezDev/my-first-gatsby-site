@@ -10,8 +10,10 @@ const TableOfContents = ({ tableOfContents }) => {
         .map(headingOne => (
           <li key={headingOne.title}>
             <Link to={headingOne.url}>{headingOne.title}</Link>
-            {headingOne.items !== undefined && headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link
+            {headingOne.items !== undefined && <ol className={styles.tocInsideLi}>
+            {headingOne.items.map(headingTwo => <li key={headingTwo.title}><Link
               to={headingTwo.url}>{headingTwo.title}</Link></li>)}
+            </ol>}
           </li>
         ))}
     </ol>}
