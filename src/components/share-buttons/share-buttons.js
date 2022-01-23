@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -7,9 +6,7 @@ import {
   WhatsappShareButton,
   RedditShareButton
 } from 'react-share'
-
 import * as styles from './share-buttons.module.css'
-
 import { FaFacebookSquare, FaTwitterSquare, FaLinkedin, FaReddit, FaWhatsappSquare } from 'react-icons/fa'
 
 const ShareButtons = ({ title, url }) => {

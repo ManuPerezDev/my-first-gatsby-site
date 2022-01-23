@@ -5,5 +5,10 @@
 }
 
 .button {
+  color: var(--secondary-color);
   padding-right: 0.75rem;
+}
+
+.button:hover {
+  color: var(--primary-color);
 }
