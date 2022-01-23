@@ -1,0 +1,21 @@
+.bioSection {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.bioSection span {
+  font-weight: bold;
+}
+
+.bioSection p {
+  margin: 0;
+  text-align: justify;
+}
+
+.tagContainer {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}

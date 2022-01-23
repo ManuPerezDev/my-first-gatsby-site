@@ -1,0 +1,19 @@
+.nameAvatarContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 20%;
+}
+
+.nameAvatarContainer h2 {
+  margin-bottom: 0.3rem;
+}
+
+.nameAvatarContainer h3 {
+  margin-top: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
