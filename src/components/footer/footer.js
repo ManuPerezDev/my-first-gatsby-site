@@ -1,15 +1,10 @@
 import React from 'react'
-import * as styles from './footer.module.css'
-import { FaLinkedin, FaGithubSquare } from 'react-icons/fa'
+import './footer.module.css'
+import SocialMedia from '../social-media/social-media'
 
 const Footer = () => (
   <footer>
-    <a href={'https://www.linkedin.com/in/manuel-perez-regalado/'} >
-      <FaLinkedin fontSize='1.5em'/>
-    </a>
-    <a href={'https://github.com/Pandacore'} >
-      <FaGithubSquare fontSize='1.5em'/>
-    </a>
+    <SocialMedia/>
   </footer>
 )
 

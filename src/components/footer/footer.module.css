@@ -2,14 +2,4 @@ footer {
   margin: 2rem 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-}
-
-footer a {
-  color: var(--secondary-color)
-}
-
-footer a:hover {
-  border-bottom-color: transparent;
-  color: var(--primary-color)
 }

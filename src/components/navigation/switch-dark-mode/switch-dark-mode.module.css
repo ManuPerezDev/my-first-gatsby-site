@@ -1,3 +1,7 @@
 .switchButton {
   cursor: pointer;
 }
+
+.switchButton:hover {
+  color: var(--secondary-color);
+}
