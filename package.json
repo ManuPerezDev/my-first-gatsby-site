@@ -25,6 +25,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.0.0",
     "eslint-plugin-react": "^7.28.0",
+    "framer-motion": "^6.2.1",
     "gatsby": "^4.2.0",
     "gatsby-plugin-eslint": "^4.0.2",
     "gatsby-plugin-image": "^2.2.0",

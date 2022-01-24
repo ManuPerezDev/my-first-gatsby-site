@@ -21,7 +21,7 @@ const BlogPost = ({ data, location }) => {
   const url = location.href
 
   return (
-    <Layout pageTitle={pageTitle}>
+    <Layout>
       <Seo
         title={pageTitle}
         description={description}

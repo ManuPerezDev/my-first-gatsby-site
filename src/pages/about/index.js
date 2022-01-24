@@ -6,7 +6,7 @@ import BioSection from '../../components/bio-section/bio-section'
 
 const AboutPage = () => {
   return (
-    <Layout pageTitle='Sobre mí'>
+    <Layout>
       <div className={styles.nameAvatarContainer}>
         <div>
         <h2>Manuel Pérez Regalado</h2>
