@@ -3,9 +3,9 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary-color);
-  padding: 0.5rem;
+  padding: 0.2rem 0.5rem 0.1rem 0.5rem;
   border-radius: 0.2rem;
   font-size: 1rem;
   width: fit-content;
-  color: var(--font-color);
+  color: var(--tag-font-color);
 }

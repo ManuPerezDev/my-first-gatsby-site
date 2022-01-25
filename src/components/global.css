@@ -6,6 +6,7 @@
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
   --hover-mobile-link-color: rgba(0,0,0, 0.1);
+  --tag-font-color: white;
 }
 
 [data-theme="dark"] {
@@ -18,6 +19,7 @@
   --contrast: 1.2;
   --bg-animation: toDarkMode 2s;
   --hover-mobile-link-color: rgba(255,255,255, 0.1);
+  --tag-font-color: #161625;
 }
 
 html {

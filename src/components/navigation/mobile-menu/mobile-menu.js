@@ -14,9 +14,6 @@ const MobileMenu = () => (
       <Link to='/' className={styles.navLinksItemMobile}>
         <li><p>Home</p></li>
       </Link>
-      <Link to='/about' className={styles.navLinksItemMobile}>
-        <li><p>About</p></li>
-      </Link>
       <Link to='/blog' className={styles.navLinksItemMobile}>
         <li><p>Blog</p></li>
       </Link>

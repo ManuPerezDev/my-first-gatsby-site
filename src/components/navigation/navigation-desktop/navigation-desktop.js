@@ -12,9 +12,6 @@ const NavigationDesktop = () => (
         <Link to='/'>Home</Link>
       </li>
       <li className={styles.navLinksItem}>
-        <Link to='/about'>About</Link>
-      </li>
-      <li className={styles.navLinksItem}>
         <Link to='/blog'>Blog</Link>
       </li>
       <li className={styles.navLinksItem}>
