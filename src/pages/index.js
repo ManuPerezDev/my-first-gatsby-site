@@ -3,8 +3,12 @@ import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as styles from './main-page.module.css'
 import BioSection from '../components/bio-section/bio-section'
+import { graphql } from 'gatsby'
+import ArticlePreview from '../components/article-preview/article-preview'
 
-const AboutPage = () => {
+const AboutPage = ({ data }) => {
+  const posts = data.allMdx.nodes
+
   return (
     <Layout>
       <div className={styles.nameAvatarContainer}>
@@ -48,8 +52,30 @@ const AboutPage = () => {
         paragraph={'Actualmente colaborando como desarrollador full stack en empresa relacionada con el análisis de audiencias en redes sociales.'}
         tags={['NodeJS', 'TypeScript', 'Docker', 'AWS', 'TDD', 'DDD']}
       />
+      <ArticlePreview posts={posts}/>
     </Layout>
   )
 }
 
 export default AboutPage
+
+export const query = graphql`
+  query {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 4) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          hero_image_alt
+          hero_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        }
+        id
+        slug
+      }
+    }
+  }
+`
