@@ -18,16 +18,16 @@ const Layout = ({ children }) => {
       <Seo/>
       <Navigation/>
       <hr/>
-          <motion.main
-            initial='hidden'
-            animate='enter'
-            exit='exit'
-            variants={variants}
-            transition={{ type: 'linear' }}
-            style={{ position: 'relative' }}
-          >
-          {children}
-          </motion.main>
+      <motion.main
+        initial='hidden'
+        animate='enter'
+        exit='exit'
+        variants={variants}
+        transition={{ type: 'linear' }}
+        style={{ position: 'relative' }}
+      >
+      {children}
+      </motion.main>
       <hr/>
       <Footer/>
     </div>

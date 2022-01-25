@@ -9,16 +9,16 @@ const AboutPage = () => {
     <Layout>
       <div className={styles.nameAvatarContainer}>
         <div>
-        <h2>Manuel Pérez Regalado</h2>
-        <h3>Desarrollador de Software</h3>
+        <h1>Manuel Pérez Regalado</h1>
+        <h2>Desarrollador de Software</h2>
         </div>
         <StaticImage src={'../../images/avatar.png'} alt={'Avatar image'} className={styles.avatar}/>
       </div>
       <div className={styles.workContainer}>
-      <h4>Trabajo</h4>
+      <h3>Trabajo</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
-      <h4>Bio</h4>
+      <h3>Bio</h3>
       <BioSection year={'1992'} paragraph={'Nacido en La Palma (Canarias).'}/>
       <BioSection
         year={'2020'}
