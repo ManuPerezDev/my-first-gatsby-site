@@ -5,6 +5,8 @@
 }
 
 .socialMedia a {
+  width: 26px;
+  height: 26px;
   color: var(--secondary-color)
 }
 
