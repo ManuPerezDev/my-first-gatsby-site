@@ -2,21 +2,24 @@ import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as styles from './article-preview.module.css'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 
 const ArticlePreview = ({ posts }) => (
   <section className={styles.articlePreviewContainer}>
     {posts.map((post) => {
       return (
-        <div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+        >
           <Link to={`/blog/${post.slug}`}>
-            <div className={styles.title}>{post.frontmatter.title}</div>
             <GatsbyImage
             image={getImage(post.frontmatter.hero_image)}
             alt={post.frontmatter.hero_image_alt}
+            className={styles.image}
           />
-          <div className={styles.date}>{post.frontmatter.date}</div>
+          <div className={styles.title}>{post.frontmatter.title}</div>
           </Link>
-        </div>
+        </motion.div>
       )
     })
     }

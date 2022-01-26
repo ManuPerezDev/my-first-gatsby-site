@@ -6,6 +6,8 @@
 
 .avatar {
   width: 20%;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .nameAvatarContainer h1 {
@@ -25,7 +27,7 @@
   text-indent: 1em;
 }
 
-h3 {
+.sectionTitle {
   width: fit-content;
   margin-bottom: 0;
   border-bottom: var(--secondary-color) solid 4px;

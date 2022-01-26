@@ -1,8 +1,8 @@
 import * as React from 'react'
+import * as styles from './post-body.module.css'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
 import Layout from '../../components/layout'
 import TableOfContents from './table-of-contents/table-of-contents'
 import Seo from '../../components/seo/seo'
@@ -28,7 +28,10 @@ const BlogPost = ({ data, location }) => {
         image={`${siteUrl}${imagePublicURL}`}
         url={location.href}
       />
-      <p>{date}</p>
+      <div className={styles.pageAndTitleContainer}>
+        <h1>{pageTitle}</h1>
+        <p>{date}</p>
+      </div>
       <GatsbyImage
         image={image}
         alt={heroImageAlt}

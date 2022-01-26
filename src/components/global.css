@@ -2,7 +2,7 @@
   --primary-color: #6B66F6;
   --secondary-color: #536390;
   --font-color: #424242;
-  --bg-color: #EDFFFF;
+  --bg-color: #F0E7DB;
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
   --hover-mobile-link-color: rgba(0,0,0, 0.1);
@@ -13,13 +13,13 @@
   --primary-color: #9A97F3;
   --secondary-color: #818cab;
   --font-color: #e1e1ff;
-  --bg-color: #161625;
+  --bg-color: #202023;
   --heading-color: #818cab;
   --brightness: 0.8;
   --contrast: 1.2;
   --bg-animation: toDarkMode 2s;
   --hover-mobile-link-color: rgba(255,255,255, 0.1);
-  --tag-font-color: #161625;
+  --tag-font-color: #202023;
 }
 
 html {
@@ -39,19 +39,19 @@ body {
 
 @keyframes toDarkMode {
   from {
-    background-color: #EDFFFF;
+    background-color: #F0E7DB;
   }
   to {
-    background-color: #161625;
+    background-color: #202023;
   }
 }
 
 @keyframes toLightMode {
   from {
-    background-color: #161625;
+    background-color: #202023;
   }
   to {
-    background-color: #EDFFFF;
+    background-color: #F0E7DB;
   }
 }
 

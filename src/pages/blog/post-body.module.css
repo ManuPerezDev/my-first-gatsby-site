@@ -1,0 +1,14 @@
+.pageAndTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  margin: 1rem 0;
+}
+
+.pageAndTitleContainer p {
+  margin: 0;
+}
+
+.pageAndTitleContainer h1 {
+  margin: 0;
+}

@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
         animate='enter'
         exit='exit'
         variants={variants}
-        transition={{ type: 'linear' }}
+        transition={{ duration: 1 }}
         style={{ position: 'relative' }}
       >
       {children}
