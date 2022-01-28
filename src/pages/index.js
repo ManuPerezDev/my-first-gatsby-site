@@ -16,7 +16,7 @@ const AboutPage = ({ data }) => {
         <h1>Manuel Pérez Regalado</h1>
         <h2>Desarrollador de Software</h2>
         </div>
-        <StaticImage src={'../../images/avatar.png'} alt={'Avatar image'} className={styles.avatar}/>
+        <StaticImage src={'../images/avatar.png'} alt={'Avatar image'} className={styles.avatar}/>
       </div>
       <div className={styles.workContainer}>
       <h3 className={styles.sectionTitle}>Trabajo</h3>
