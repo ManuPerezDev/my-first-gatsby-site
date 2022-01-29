@@ -32,3 +32,16 @@
   margin-bottom: 0;
   border-bottom: var(--secondary-color) solid 4px;
 }
+
+.languagesContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.languageButton {
+  cursor: pointer;
+}
+
+.languageButton:hover {
+  color: var(--secondary-color)
+}
