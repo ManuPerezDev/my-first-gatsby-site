@@ -27,7 +27,7 @@ const AboutPage = ({ data }) => {
         <StaticImage src={'../images/avatar.png'} alt={'Avatar image'} className={styles.avatar}/>
       </div>
       <div className={styles.workContainer}>
-      <h3 className={styles.sectionTitle}>Trabajo</h3>
+      <h3 className={styles.sectionTitle}>{messages.work}</h3>
         <p>{messages.description}</p>
       </div>
       <h3 className={styles.sectionTitle}>Bio</h3>
