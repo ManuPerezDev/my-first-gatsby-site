@@ -4,12 +4,16 @@ export const mobileMenu = () => {
   const body = document.body
 
   if (isToggled) {
-    menu.style.visibility = 'hidden'
     body.style.overflow = 'visible'
+    menu.style.visibility = 'hidden'
     menu.style.opacity = '0'
   } else {
     body.style.overflow = 'hidden'
     menu.style.visibility = 'visible'
     menu.style.opacity = '1'
   }
+}
+
+export const setScrollVisible = () => {
+  document.body.style.overflow = 'visible'
 }
