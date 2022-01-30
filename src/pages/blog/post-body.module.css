@@ -11,6 +11,7 @@
 
 .pageAndTitleContainer h1 {
   margin: 0;
+  line-height: 2rem;
 }
 
 h2 {
