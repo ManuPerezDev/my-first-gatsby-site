@@ -22,6 +22,10 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
+      <div className={styles.languagesContainer}>
+        <div onClick={() => setMessages(es)} className={styles.languageButton}>ES</div>
+        <div onClick={() => setMessages(en)} className={styles.languageButton}>EN</div>
+      </div>
       <AnimatePresence exitBeforeEnter initial={true}>
         <motion.div
           key={messages.description}
@@ -32,10 +36,6 @@ const AboutPage = ({ data }) => {
           transition={{ duration: 1 }}
           style={{ position: 'relative' }}
         >
-          <div className={styles.languagesContainer}>
-            <div onClick={() => setMessages(es)} className={styles.languageButton}>ES</div>
-            <div onClick={() => setMessages(en)} className={styles.languageButton}>EN</div>
-          </div>
           <div className={styles.nameAvatarContainer}>
             <div>
             <h1>Manuel Pérez Regalado</h1>
