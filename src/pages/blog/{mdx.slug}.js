@@ -27,6 +27,7 @@ const BlogPost = ({ data, location }) => {
         description={description}
         image={`${siteUrl}${imagePublicURL}`}
         url={location.href}
+        date={date}
       />
       <div className={styles.pageAndTitleContainer}>
         <h1>{pageTitle}</h1>

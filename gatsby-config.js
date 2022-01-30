@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.manuelperez.dev',
-    title: 'My Gatsby Site'
+    title: 'Manuel Perez Dev',
+    author: 'Manuel Pérez Regalado',
+    description: 'Blog sobre reflexiones sobre el desarrollo de software y las buenas prácticas.'
   },
   plugins: [
     'gatsby-plugin-styled-components',
