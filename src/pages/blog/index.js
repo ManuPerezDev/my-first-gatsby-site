@@ -19,6 +19,7 @@ export const query = graphql`
           date(formatString: "MMMM D, YYYY")
           title
           hero_image_alt
+          description
           hero_image {
           childImageSharp {
             gatsbyImageData

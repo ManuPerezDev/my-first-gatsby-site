@@ -68,6 +68,26 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image, url, date
         {
           property: 'og:image',
           content: image
+        },
+        {
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          property: 'twitter:url',
+          content: url
+        },
+        {
+          property: 'twitter:title',
+          content: title
+        },
+        {
+          property: 'twitter:description',
+          content: description
+        },
+        {
+          property: 'twitter:image',
+          content: image
         }
       ].concat(meta)}
     />
