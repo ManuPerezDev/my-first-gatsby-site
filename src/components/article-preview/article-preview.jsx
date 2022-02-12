@@ -19,7 +19,6 @@ const ArticlePreview = ({ posts }) => (
               className={styles.image}
             />
           </motion.div>
-          <p>{post.frontmatter.description}</p>
         </Link>
       )
     })
