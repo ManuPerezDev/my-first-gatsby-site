@@ -1,12 +1,12 @@
 .container {
   display: flex;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
   justify-content: flex-end;
 }
 
 .button {
   color: var(--secondary-color);
-  padding-right: 0.75rem;
+  padding-left: 0.75rem;
 }
 
 .button:hover {

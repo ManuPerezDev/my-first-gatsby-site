@@ -31,12 +31,12 @@ const BlogPost = ({ data, location }) => {
       />
       <div className={styles.pageAndTitleContainer}>
         <h1>{pageTitle}</h1>
-        <p>{date}</p>
       </div>
       <GatsbyImage
         image={image}
         alt={heroImageAlt}
       />
+      <div className={styles.date}>{date}</div>
       <ShareButtons title={pageTitle} url={url}/>
       <hr/>
       <TableOfContents tableOfContents={tableOfContents}/>
