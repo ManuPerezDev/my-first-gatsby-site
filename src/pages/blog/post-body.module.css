@@ -10,7 +10,7 @@
   line-height: 2rem;
 }
 
-h2 {
+.postBody h2 {
   font-size: 2rem;
   font-weight: 300;
   margin: 2rem 0 4rem 0;
@@ -18,7 +18,7 @@ h2 {
   line-height: 2.5rem;
 }
 
-h2:after {
+.postBody h2:after {
   content: "";
   margin: 2rem 0 0;
   width: 100px;

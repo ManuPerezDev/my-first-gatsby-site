@@ -41,9 +41,11 @@ const BlogPost = ({ data, location }) => {
       <hr/>
       <TableOfContents tableOfContents={tableOfContents}/>
       <hr/>
-      <MDXRenderer>
-        {body}
-      </MDXRenderer>
+        <div className={styles.postBody}>
+          <MDXRenderer>
+              {body}
+          </MDXRenderer>
+        </div>
     </Layout>
   )
 }
