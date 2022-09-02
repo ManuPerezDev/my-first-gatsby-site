@@ -14,8 +14,8 @@ const MobileMenu = () => (
       <Link to='/' className={styles.navLinksItemMobile} onClick={setScrollVisible}>
         <li><p>Home</p></li>
       </Link>
-      <Link to='/blog' className={styles.navLinksItemMobile} onClick={setScrollVisible}>
-        <li><p>Blog</p></li>
+      <Link to='/about' className={styles.navLinksItemMobile} onClick={setScrollVisible}>
+        <li><p>About</p></li>
       </Link>
     </ul>
     <SocialMedia/>

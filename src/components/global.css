@@ -2,7 +2,7 @@
   --primary-color: #6B66F6;
   --secondary-color: #536390;
   --font-color: #424242;
-  --bg-color: #F0E7DB;
+  --bg-color: #FFFFFF;
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
   --hover-mobile-link-color: rgba(0,0,0, 0.1);
@@ -43,7 +43,7 @@ h1 {
 
 @keyframes toDarkMode {
   from {
-    background-color: #F0E7DB;
+    background-color: #FFFFFF;
   }
   to {
     background-color: #202023;
@@ -55,7 +55,7 @@ h1 {
     background-color: #202023;
   }
   to {
-    background-color: #F0E7DB;
+    background-color: #FFFFFF;
   }
 }
 
