@@ -1,7 +1,9 @@
 :root {
-  --primary-color: #6B66F6;
+  --primary-color: black;
   --secondary-color: #536390;
   --font-color: #424242;
+  --description-color: #808080;
+  --hover-color: #f5f5f5;
   --bg-color: #FFFFFF;
   --heading-color: #292922;
   --bg-animation: toLightMode 2s;
@@ -13,6 +15,8 @@
   --primary-color: #9A97F3;
   --secondary-color: #818cab;
   --font-color: #e1e1ff;
+  --description-color: white;
+  --hover-color: rgba(255,255,255, 0.1);
   --bg-color: #202023;
   --heading-color: #818cab;
   --brightness: 0.8;

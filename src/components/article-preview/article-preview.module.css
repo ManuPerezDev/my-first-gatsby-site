@@ -1,13 +1,13 @@
 .articlePreviewContainer {
-  margin: 2rem 0 6rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 .postInfoContainer:hover{
-  background-color: #f5f5f5;
+  background-color: var(--hover-color);
 }
 
 .title {
-  color: black;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -38,7 +38,7 @@
 
 .description {
   font-size: small;
-  color: #808080;
+  color: var(--description-color);
 }
 
 @media (max-width: 700px) {
@@ -62,5 +62,3 @@
     width: 200px;
   }
 }
-
-
