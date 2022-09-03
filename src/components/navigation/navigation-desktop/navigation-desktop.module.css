@@ -16,7 +16,6 @@
 .navLinksItem {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
 }
 
 .navLinksItem a {
@@ -26,6 +25,11 @@
 .navLinksItem a:hover {
   color: var(--secondary-color);
   border-bottom: transparent;
+  background-color: var(--hover-color);
+}
+
+.navLinksItem a {
+  padding: 1rem;
 }
 
 @media (min-width: 700px) {
