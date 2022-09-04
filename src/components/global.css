@@ -68,10 +68,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  border-bottom: var(--primary-color) solid 1px;
-}
-
 body img {
   filter: brightness(var(--brightness)) contrast(var(--contrast));
 }

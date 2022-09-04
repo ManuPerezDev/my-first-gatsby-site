@@ -7,6 +7,9 @@ const ArticlePreview = ({ posts }) => {
   return (
     <section className={styles.articlePreviewContainer}>
       {posts.map((post) => {
+        const date = new Date(post.frontmatter.date)
+        const formattedDate = `${date.toLocaleString('en-EN', { month: 'short' }).toUpperCase()}, ${date.getUTCDate()}, ${date.getFullYear()}`
+        // new Date().toLocaleString('en-EN', { month: 'short' })
         return (
           <Link to={`/blog/${post.slug}`}>
             <div className={styles.postInfoContainer}>
@@ -20,7 +23,10 @@ const ArticlePreview = ({ posts }) => {
                   <div className={styles.title}>{post.frontmatter.title}</div>
                   <div className={styles.description}>
                     {cutDescription(post.frontmatter.description)}
+                    <br/>
+                    {formattedDate}
                   </div>
+                  <div></div>
                 </div>
               </div>
             </div>
@@ -33,7 +39,7 @@ const ArticlePreview = ({ posts }) => {
 }
 
 function cutDescription(description) {
-  const maxLength = 120
+  const maxLength = 170
   const trimmedString = description.substr(0, maxLength)
 
   return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))).concat('...')
