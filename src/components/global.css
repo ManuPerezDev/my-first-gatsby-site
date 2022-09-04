@@ -228,7 +228,7 @@ table tbody tr.active-row {
 hr {
   border: 0;
   height: 1px;
-  background: grey;
+  background: #e2e2e2;
 }
 
 blockquote {
