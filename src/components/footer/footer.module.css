@@ -3,3 +3,9 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+.copyright {
+  font-weight: normal;
+  font-size: small;
+  color: var(--description-color);
+}

@@ -1,10 +1,11 @@
 import React from 'react'
-import './footer.module.css'
-import SocialMedia from '../social-media/social-media'
+import * as styles from './footer.module.css'
 
 const Footer = () => (
   <footer>
-    <SocialMedia/>
+    <div className={styles.copyright}>
+      © {new Date().getFullYear()} Manuel Pérez Regalado
+    </div>
   </footer>
 )
 
