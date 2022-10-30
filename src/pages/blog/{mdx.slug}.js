@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
-import TableOfContents from './table-of-contents/table-of-contents'
+import TableOfContents from '../../components/table-of-contents/table-of-contents'
 import Seo from '../../components/seo/seo'
 import ShareButtons from '../../components/share-buttons/share-buttons'
 
