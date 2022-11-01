@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .avatar {
@@ -19,6 +20,10 @@
   margin-top: 0;
   font-size: 0.9rem;
   font-weight: normal;
+}
+
+.workContainer {
+  padding: 0 1rem;
 }
 
 .workContainer p {

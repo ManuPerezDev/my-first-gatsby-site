@@ -6,8 +6,10 @@ import * as biography from './bio.json'
 export const Bio = () => {
   return (
     <>
-      <h3 className={styles.sectionTitle}>Bio</h3>
-      {biography.map(element => <BioSection year={element.year} paragraph={element.description} tags={element.tools}/>)}
+      <div className={styles.sectionTitleContainer}>
+        <h3 className={styles.sectionTitle}>Bio</h3>
+      </div>
+      {biography.map(element => <BioSection year={element.year} paragraph={element.description} tags={element.tools} collaborations={element.collaborations}/>)}
     </>
   )
 }

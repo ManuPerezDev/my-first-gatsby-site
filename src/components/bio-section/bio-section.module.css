@@ -1,8 +1,8 @@
 .bioSection {
   display: flex;
   gap: 1rem;
-  margin: 0.5rem 0;
   line-height: initial;
+  padding: 1rem;
 }
 
 .bioSection span {
@@ -18,5 +18,21 @@
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
+}
+
+.collaborations {
+  display: flex;
+  flex-direction: column;
+}
+
+.collaborationsWrapper {
+  margin-left: 3.6rem;
+  display: none;
+  transition: ease-in 2s;
+}
+
+.bioSectionWrapper:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
 }
