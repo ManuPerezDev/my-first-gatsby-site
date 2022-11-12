@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Tag from '../tag/tag'
 import * as styles from './bio-section.module.css'
+import { AiFillCaretRight, AiFillCaretDown } from 'react-icons/ai'
 
 const BioSection = ({ year, paragraph, tags, collaborations }) => {
-  const [displayCollaborations, setdisplayCollaborations] = useState('none')
+  const [displayCollaborations, setDisplayCollaborations] = useState(false)
 
   const handleDisplayCollaborations = () => {
-    setdisplayCollaborations(displayCollaborations === 'none' ? 'inline-block' : 'none')
+    setDisplayCollaborations(!displayCollaborations)
   }
 
   return (
@@ -22,8 +23,9 @@ const BioSection = ({ year, paragraph, tags, collaborations }) => {
           </div>
           }
         </div>
+        {collaborations && (displayCollaborations ? <AiFillCaretDown style={{ width: '2em' }}/> : <AiFillCaretRight style={{ width: '2em' }}/>)}
       </div>
-      {collaborations && <div className={styles.collaborationsWrapper} style={{ display: displayCollaborations }}>
+      {collaborations && <div className={styles.collaborationsWrapper} style={{ display: displayCollaborations ? 'inline-block' : 'none' }}>
         {<div className={styles.collaborations}>{collaborations.map(collaboration => <Collaboration
           description={collaboration.description} tags={collaboration.tools}/>)}</div>}
       </div>}
