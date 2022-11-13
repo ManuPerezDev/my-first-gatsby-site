@@ -28,8 +28,9 @@
 
 .collaborationsWrapper {
   margin-left: 3.6rem;
-  display: none;
-  transition: ease-in 2s;
+  overflow: hidden;
+  height: 0px;
+  transition: height 0.4s;
 }
 
 .bioSectionWrapper:hover {

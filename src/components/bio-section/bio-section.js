@@ -17,7 +17,7 @@ const BioSection = ({ year, paragraph, tags, collaborations }) => {
         <Information description={paragraph} tags={tags}/>
         {collaborations && (displayCollaborations ? <AiFillCaretDown style={{ width: '2em' }}/> : <AiFillCaretRight style={{ width: '2em' }}/>)}
       </div>
-      {collaborations && <div className={styles.collaborationsWrapper} style={{ display: displayCollaborations ? 'inline-block' : 'none' }}>
+      {collaborations && <div className={styles.collaborationsWrapper} style={{ height: displayCollaborations ? `${collaborations.length * 150}px` : '0px' }}>
         {<div className={styles.collaborations}>{collaborations.map(collaboration => <Information
           description={collaboration.description} tags={collaboration.tools}/>)}</div>}
       </div>}
