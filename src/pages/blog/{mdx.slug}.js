@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
-import TableOfContents from '../../components/table-of-contents/table-of-contents'
 import Seo from '../../components/seo/seo'
 import ShareButtons from '../../components/share-buttons/share-buttons'
 
@@ -16,9 +15,13 @@ const BlogPost = ({ data, location }) => {
   const imagePublicURL = data.mdx.frontmatter.hero_image.publicURL
   const date = data.mdx.frontmatter.date
   const heroImageAlt = data.mdx.frontmatter.hero_image_alt
-  const tableOfContents = data.mdx.tableOfContents
+  const heroImageOwnerUrl = data.mdx.frontmatter.hero_image_owner_url
+  const heroImageOwner = data.mdx.frontmatter.hero_image_owner
   const body = data.mdx.body
   const url = location.href
+
+  console.log(data.mdx.frontmatter.hero_image_owner_url)
+  console.log(data.mdx.frontmatter.hero_image_owner)
 
   return (
     <Layout>
@@ -36,16 +39,15 @@ const BlogPost = ({ data, location }) => {
         image={image}
         alt={heroImageAlt}
       />
+      <div className={styles.date}><a target={'_blank'} href={heroImageOwnerUrl}>{heroImageOwner}</a></div>
       <div className={styles.date}>{date}</div>
       <ShareButtons title={pageTitle} url={url}/>
       <hr/>
-      <TableOfContents tableOfContents={tableOfContents}/>
-      <hr/>
-        <div className={styles.postBody}>
-          <MDXRenderer>
-              {body}
-          </MDXRenderer>
-        </div>
+      <div className={styles.postBody}>
+        <MDXRenderer>
+            {body}
+        </MDXRenderer>
+      </div>
     </Layout>
   )
 }
@@ -66,6 +68,8 @@ export const query = graphql`
         description
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
+        hero_image_owner_url
+        hero_image_owner
         hero_image {
           publicURL
           childImageSharp {
