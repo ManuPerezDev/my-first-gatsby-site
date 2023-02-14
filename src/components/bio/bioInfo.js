@@ -1,4 +1,4 @@
-export const BioInfo = () => {
+export const bioInfo = () => {
   return [
     {
       year: 2021,
