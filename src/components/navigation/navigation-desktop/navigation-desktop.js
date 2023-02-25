@@ -9,10 +9,10 @@ const NavigationDesktop = () => (
     <Switch/>
     <ul className={styles.navLinks}>
       <li className={styles.navLinksItem}>
-        <Link to='/'>Home</Link>
+        <Link to='/'>🏠 Home</Link>
       </li>
       <li className={styles.navLinksItem}>
-        <Link to='/about'>About</Link>
+        <Link to='/about'>🐼 About</Link>
       </li>
       <li className={styles.navLinksItem}>
         <SocialMedia/>

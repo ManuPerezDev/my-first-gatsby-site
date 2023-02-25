@@ -9,6 +9,7 @@
   --bg-animation: toLightMode 2s;
   --hover-mobile-link-color: rgba(0,0,0, 0.1);
   --tag-font-color: white;
+  --hr-color: #e2e2e2;
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
   --bg-animation: toDarkMode 2s;
   --hover-mobile-link-color: rgba(255,255,255, 0.1);
   --tag-font-color: #202023;
+  --hr-color: #3B4046;
 }
 
 html {
@@ -228,7 +230,7 @@ table tbody tr.active-row {
 hr {
   border: 0;
   height: 1px;
-  background: #e2e2e2;
+  background: var(--hr-color);
 }
 
 blockquote {

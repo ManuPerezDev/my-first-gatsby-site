@@ -1,28 +1,27 @@
-.pageAndTitleContainer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 2rem 0 1rem 0;
+.infoContainer h1 {
+  line-height: 2.5rem;
 }
 
-.pageAndTitleContainer h1 {
-  margin: 0;
-  line-height: 2rem;
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--hr-color);
 }
 
 .postBody h2 {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 2rem 0 2rem 0;
+  font-weight: 500;
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
   color: var(--primary-color);
   line-height: 2.5rem;
 }
 
 .postBody h2:after {
   content: "";
-  width: 100px;
-  height: 2px;
-  background: var(--secondary-color);
+  width: 100%;
+  height: 1px;
+  background: var(--hr-color);
   display: flex;
   flex-direction: row;
   justify-content: center;

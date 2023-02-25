@@ -20,9 +20,6 @@ const BlogPost = ({ data, location }) => {
   const body = data.mdx.body
   const url = location.href
 
-  console.log(data.mdx.frontmatter.hero_image_owner_url)
-  console.log(data.mdx.frontmatter.hero_image_owner)
-
   return (
     <Layout>
       <Seo
@@ -32,17 +29,19 @@ const BlogPost = ({ data, location }) => {
         url={location.href}
         date={date}
       />
-      <div className={styles.pageAndTitleContainer}>
-        <h1>{pageTitle}</h1>
-      </div>
       <GatsbyImage
         image={image}
         alt={heroImageAlt}
       />
-      <div className={styles.date}><a target={'_blank'} href={heroImageOwnerUrl}>{heroImageOwner}</a></div>
-      <div className={styles.date}>{date}</div>
-      <ShareButtons title={pageTitle} url={url}/>
-      <hr/>
+      <div className={styles.infoContainer}>
+        <h1>{pageTitle}</h1>
+        <div>
+          <div className={styles.date}><a target={'_blank'} href={heroImageOwnerUrl}>{heroImageOwner}</a></div>
+          <div className={styles.date}>{date}</div>
+          <ShareButtons title={pageTitle} url={url}/>
+        </div>
+      </div>
+
       <div className={styles.postBody}>
         <MDXRenderer>
             {body}
