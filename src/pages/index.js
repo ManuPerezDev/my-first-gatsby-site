@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import ArticlePreview from '../components/article-preview/article-preview'
 
-const AboutPage = ({ data }) => {
+const IndexPage = ({ data }) => {
   const posts = data.allMdx.nodes
 
   return (
@@ -13,7 +13,7 @@ const AboutPage = ({ data }) => {
   )
 }
 
-export default AboutPage
+export default IndexPage
 
 export const query = graphql`{
   allMdx(sort: {frontmatter: {date: DESC}}, limit: 4) {
