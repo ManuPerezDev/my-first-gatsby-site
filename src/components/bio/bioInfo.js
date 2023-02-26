@@ -18,14 +18,14 @@ export const bioInfo = () => {
         {
           year: 2021,
           description: '8 meses como colaborador en empresa comercializadora de luz como desarrollador backend.',
-          tools: ['NodeJS', 'TypeScript', 'MySQL', 'TDD', 'Jest', 'Docker', 'Hexagonal Architecture']
+          tools: ['NodeJS', 'TypeScript', 'MySQL', 'TDD', 'Jest', 'Docker']
         }
       ]
     },
     {
       year: 2020,
       description: 'Curso Bootcamp Full Stack Developer EOI.',
-      tools: ['NodeJS', 'JavaScript', 'CSS3', 'HTML5', 'VueJS', 'React', 'Jest', 'Testing Library', 'Go', 'SQL', 'GIT', 'Docker']
+      tools: ['NodeJS', 'JavaScript', 'CSS3', 'HTML5', 'VueJS', 'React', 'Jest', 'Testing Library', 'Go', 'MySQL', 'GIT', 'Docker']
     },
     {
       year: 2020,
@@ -35,7 +35,7 @@ export const bioInfo = () => {
     {
       year: 2020,
       description: 'Finalización de ciclo superior de Desarrollo de Aplicaciones Multiplataforma.',
-      tools: ['Java', 'SQL', 'CSS3', 'HTML5', 'OOP', 'SOLID']
+      tools: ['Java', 'MySQL', 'CSS3', 'HTML5']
     },
     {
       year: 1992,
