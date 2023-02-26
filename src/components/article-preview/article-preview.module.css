@@ -58,7 +58,7 @@
     display: none;
   }
 
-  .title {
-    width: 450px;
+  .titleDescriptionContainer {
+    width: 100%;
   }
 }

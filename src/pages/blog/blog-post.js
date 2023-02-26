@@ -15,8 +15,9 @@ const BlogPost = ({ data, children, location }) => {
   const date = data.mdx.frontmatter.date
   const heroImageAlt = data.mdx.frontmatter.hero_image_alt
   const heroImageOwnerUrl = data.mdx.frontmatter.hero_image_owner_url
-  const heroImageOwner = data.mdx.frontmatter.hero_image_owner
   const url = location.href
+
+  const heroImgLink = heroImageOwnerUrl || url
 
   return (
     <Layout>
@@ -27,14 +28,15 @@ const BlogPost = ({ data, children, location }) => {
         url={location.href}
         date={date}
       />
-      <GatsbyImage
-        image={image}
-        alt={heroImageAlt}
-      />
+      <a href={heroImgLink}>
+        <GatsbyImage
+          image={image}
+          alt={heroImageAlt}
+        />
+      </a>
       <div className={styles.infoContainer}>
         <h1>{pageTitle}</h1>
         <div>
-          <div className={styles.date}><a target={'_blank'} href={heroImageOwnerUrl}>{heroImageOwner}</a></div>
           <div className={styles.date}>{date}</div>
           <ShareButtons title={pageTitle} url={url}/>
         </div>
@@ -64,7 +66,6 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image_owner_url
-        hero_image_owner
         hero_image {
           publicURL
           childImageSharp {

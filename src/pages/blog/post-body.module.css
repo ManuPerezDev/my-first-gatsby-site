@@ -1,12 +1,13 @@
-.infoContainer h1 {
-  line-height: 2.5rem;
-}
-
 .infoContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--hr-color);
+}
+
+.infoContainer h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 .postBody h2 {
@@ -34,10 +35,21 @@
 .date {
   display: flex;
   justify-content: flex-end;
-  margin: 1rem 0 1rem 0;
+  margin: 0.67rem 0 1rem 0;
 }
 
 .postBody a {
   text-decoration: underline;
   font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .infoContainer {
+    align-items: flex-start;
+  }
+
+  .infoContainer h1 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
 }
