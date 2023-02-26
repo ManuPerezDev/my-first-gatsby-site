@@ -10,6 +10,14 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        resetCSS: false,
+        isUsingColorMode: true,
+        isBaseProvider: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md']

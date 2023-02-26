@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Tag from '../tag/tag'
+import MyTag from '../tag/myTag'
 import * as styles from './bio-section.module.css'
 import { AiFillCaretRight, AiFillCaretDown } from 'react-icons/ai'
 
@@ -32,7 +32,7 @@ const Information = ({ description, tags }) => {
         {description}
       </p>
       {tags.length > 0 && <div className={styles.tagContainer}>
-      {tags.map(tag => <Tag name={tag}/>)}
+      {tags.map(tag => <MyTag text={tag}/>)}
       </div>
       }
     </div>
