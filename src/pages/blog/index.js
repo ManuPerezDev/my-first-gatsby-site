@@ -11,26 +11,24 @@ const BlogPage = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          hero_image_alt
-          description
-          hero_image {
+export const query = graphql`{
+  allMdx(sort: {frontmatter: {date: DESC}}) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+        hero_image_alt
+        description
+        slug
+        hero_image {
           childImageSharp {
             gatsbyImageData
           }
         }
-        }
-        id
-        slug
       }
+      id
     }
   }
-`
+}`
 
 export default BlogPage

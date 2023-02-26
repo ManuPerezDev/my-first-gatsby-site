@@ -9,9 +9,8 @@ const ArticlePreview = ({ posts }) => {
       {posts.map((post) => {
         const date = new Date(post.frontmatter.date)
         const formattedDate = `${date.toLocaleString('en-EN', { month: 'short' }).toUpperCase()}, ${date.getUTCDate()}, ${date.getFullYear()}`
-        // new Date().toLocaleString('en-EN', { month: 'short' })
         return (
-          <Link to={`/blog/${post.slug}`}>
+          <Link to={`/blog/${post.frontmatter.slug}`}>
             <div className={styles.postInfoContainer}>
               <div className={styles.postInfo}>
                 <GatsbyImage

@@ -3,38 +3,23 @@ module.exports = {
     siteUrl: 'https://www.manuelperez.dev',
     title: 'Manuel Perez Dev',
     author: 'Manuel Pérez Regalado',
-    description: 'Blog sobre reflexiones sobre el desarrollo de software y las buenas prácticas.'
+    description: 'Blog sobre desarrollo de software y buenas prácticas.'
   },
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md']
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
         path: `${__dirname}/blog`
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        gatsbyRemarkPlugins: [
-          'gatsby-remark-autolink-headers',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 864
-            }
-          },
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              copy: true
-            }
-          }
-        ],
-        plugins: ['gatsby-remark-autolink-headers']
       }
     },
     'gatsby-transformer-sharp',

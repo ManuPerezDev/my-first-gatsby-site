@@ -15,24 +15,22 @@ const AboutPage = ({ data }) => {
 
 export default AboutPage
 
-export const query = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 4) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          hero_image_alt
-          description
-          hero_image {
+export const query = graphql`{
+  allMdx(sort: {frontmatter: {date: DESC}}, limit: 4) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+        hero_image_alt
+        description
+        slug
+        hero_image {
           childImageSharp {
             gatsbyImageData
           }
         }
-        }
-        id
-        slug
       }
+      id
     }
   }
-`
+}`

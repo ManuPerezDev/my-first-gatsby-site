@@ -1,13 +1,12 @@
 import * as React from 'react'
 import * as styles from './post-body.module.css'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo/seo'
 import ShareButtons from '../../components/share-buttons/share-buttons'
 
-const BlogPost = ({ data, location }) => {
+const BlogPost = ({ data, children, location }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   const pageTitle = data.mdx.frontmatter.title
   const description = data.mdx.frontmatter.description
@@ -17,7 +16,6 @@ const BlogPost = ({ data, location }) => {
   const heroImageAlt = data.mdx.frontmatter.hero_image_alt
   const heroImageOwnerUrl = data.mdx.frontmatter.hero_image_owner_url
   const heroImageOwner = data.mdx.frontmatter.hero_image_owner
-  const body = data.mdx.body
   const url = location.href
 
   return (
@@ -43,9 +41,7 @@ const BlogPost = ({ data, location }) => {
       </div>
 
       <div className={styles.postBody}>
-        <MDXRenderer>
-            {body}
-        </MDXRenderer>
+        {children}
       </div>
     </Layout>
   )
