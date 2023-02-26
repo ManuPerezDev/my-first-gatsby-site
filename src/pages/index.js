@@ -26,7 +26,7 @@ export const query = graphql`{
         slug
         hero_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(width: 376 height: 160)
           }
         }
       }
