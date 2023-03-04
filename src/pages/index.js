@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import ArticlePreview from '../components/article-preview/article-preview'
 
 const IndexPage = ({ data }) => {
-  const posts = data.allMdx.nodes
+  const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`{
-  allMdx(sort: {frontmatter: {date: DESC}}, limit: 4) {
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 4) {
     nodes {
       frontmatter {
         date(formatString: "MMMM D, YYYY")

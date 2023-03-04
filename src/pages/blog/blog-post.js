@@ -7,15 +7,16 @@ import Seo from '../../components/seo/seo'
 import ShareButtons from '../../components/share-buttons/share-buttons'
 
 const BlogPost = ({ data, children, location }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
-  const pageTitle = data.mdx.frontmatter.title
-  const description = data.mdx.frontmatter.description
+  const image = getImage(data.markdownRemark.frontmatter.hero_image)
+  const pageTitle = data.markdownRemark.frontmatter.title
+  const description = data.markdownRemark.frontmatter.description
   const siteUrl = data.site.siteMetadata.siteUrl
-  const imagePublicURL = data.mdx.frontmatter.hero_image.publicURL
-  const date = data.mdx.frontmatter.date
-  const heroImageAlt = data.mdx.frontmatter.hero_image_alt
-  const heroImageOwnerUrl = data.mdx.frontmatter.hero_image_owner_url
+  const imagePublicURL = data.markdownRemark.frontmatter.hero_image.publicURL
+  const date = data.markdownRemark.frontmatter.date
+  const heroImageAlt = data.markdownRemark.frontmatter.hero_image_alt
+  const heroImageOwnerUrl = data.markdownRemark.frontmatter.hero_image_owner_url
   const url = location.href
+  const post = data.markdownRemark.html
 
   const heroImgLink = heroImageOwnerUrl || url
 
@@ -32,6 +33,7 @@ const BlogPost = ({ data, children, location }) => {
         <GatsbyImage
           image={image}
           alt={heroImageAlt}
+          style={{ marginTop: '1rem' }}
         />
       </a>
       <div className={styles.infoContainer}>
@@ -41,10 +43,7 @@ const BlogPost = ({ data, children, location }) => {
           <ShareButtons title={pageTitle} url={url}/>
         </div>
       </div>
-
-      <div className={styles.postBody}>
-        {children}
-      </div>
+      <div className={styles.postBody} dangerouslySetInnerHTML={{ __html: post }}/>
     </Layout>
   )
 }
@@ -57,8 +56,8 @@ export const query = graphql`
           siteUrl
         }
       }
-    mdx(id: {eq: $id}) {
-      body
+    markdownRemark(id: {eq: $id}) {
+      html
       tableOfContents
       frontmatter {
         title
