@@ -11,12 +11,11 @@ import {
   SiGit,
   SiDocker,
   SiMysql,
-  SiJava,
   SiSpringboot,
   SiHibernate,
   SiGatsby
 } from 'react-icons/si'
-import { FaAws, FaNodeJs } from 'react-icons/fa'
+import { FaAws, FaNodeJs, FaJava } from 'react-icons/fa'
 import { GiTestTubes } from 'react-icons/gi'
 import { MdDesignServices } from 'react-icons/md'
 
@@ -75,7 +74,7 @@ export const tagsDictionary = {
   },
   java: {
     bgColor: '#f29111',
-    icon: SiJava
+    icon: FaJava
   },
   'spring boot': {
     bgColor: '#68aa3c',
