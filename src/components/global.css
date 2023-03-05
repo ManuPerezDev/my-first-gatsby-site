@@ -36,8 +36,6 @@ body {
   font-family: sans-serif;
   background-color: var(--bg-color);
   color: var(--font-color);
-  max-width: 90%;
-  margin: 0 auto;
   font-size: calc(1rem + 0.25vh);
   animation: var(--bg-animation);
   line-height: 1.5rem;
@@ -252,4 +250,3 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
-

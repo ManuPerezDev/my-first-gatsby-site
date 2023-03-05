@@ -1,15 +1,36 @@
-import BioSection from '../bio-section/bio-section'
 import * as React from 'react'
-import * as styles from './bio.module.css'
 import { bioInfo } from './bioInfo'
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon, Box, Text
+} from '@chakra-ui/react'
+import MyTag from '../tag/myTag'
 export const Bio = () => {
   return (
     <>
-      <div className={styles.sectionTitleContainer}>
-        <h3 className={styles.sectionTitle}>Bio</h3>
-      </div>
-      {bioInfo().map(element => <BioSection year={element.year} paragraph={element.description} tags={element.tools} collaborations={element.collaborations}/>)}
+      <Accordion defaultIndex={[0]} allowMultiple>
+        {bioInfo().map(element => {
+          return (
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box as='span' flex='1' textAlign='left'>
+                    {element.year} - {element.title}
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Text>{element.info}</Text>
+                {element.tools.map(tag => <MyTag text={tag}/>)}
+              </AccordionPanel>
+            </AccordionItem>
+          )
+        })}
+      </Accordion>
     </>
   )
 }

@@ -2,45 +2,27 @@ export const bioInfo = () => {
   return [
     {
       year: 2021,
-      description: 'Primera experiencia laboral como desarrollador de software en Lean Mind como desarrollador junior.',
-      tools: [],
-      collaborations: [
-        {
-          year: 2022,
-          description: 'Actualmente colaborando como desarrollador full stack en empresa relacionada con el análisis de audiencias en redes sociales.',
-          tools: ['NodeJS', 'TypeScript', 'Docker', 'AWS', 'TDD', 'DDD']
-        },
-        {
-          year: 2021,
-          description: '2 meses como colaborador desarrollando jamstack blog como desarrollador frontend.',
-          tools: ['GatsbyJS', 'React', 'CSS3']
-        },
-        {
-          year: 2021,
-          description: '8 meses como colaborador en empresa comercializadora de luz como desarrollador backend.',
-          tools: ['NodeJS', 'TypeScript', 'MySQL', 'TDD', 'Jest', 'Docker']
-        }
-      ]
+      title: 'Lean Mind',
+      info: 'Primera experiencia laboral como desarrollador de software en Lean Mind como desarrollador junior. Lean Mind es una consultora de desarrollo de software que ayuda a sus clientes en la aplicación de metodologías ágiles y en la mejora de sus procesos de desarrollo de software. Junto a Lean Mind he tenido la oportunidad junto con varias empresas. Esto me ha ayudado a tratar con multitud de personas y procesos diferentes.',
+      tools: ['NodeJS', 'TypeScript', 'Docker', 'AWS', 'TDD', 'DDD', 'GatsbyJS', 'React', 'CSS3', 'MySQL', 'Jest']
     },
     {
       year: 2020,
-      description: 'Curso Bootcamp Full Stack Developer EOI.',
+      title: 'Escuela de Organización Industrial',
+      info: 'Curso Bootcamp Full Stack Developer EOI. Este bootcamp está dirigido por Manz, dueño de manz.dev y terminaldelinux.com entre otras webs divulgativas. El curso me ayudó a interiorizar los conceptos básicos de desarrollo web, así como aprender el proceso entero de desplegar una web desde docker hasta digital ocean.',
       tools: ['NodeJS', 'JavaScript', 'CSS3', 'HTML5', 'VueJS', 'React', 'Jest', 'Testing Library', 'Go', 'MySQL', 'GIT', 'Docker']
     },
     {
       year: 2020,
-      description: 'Prácticas de empresa en Lean Mind.',
+      title: 'Prácticas de empresa en Lean Mind.',
+      info: 'Atraído por lo que poco que conocía sobre las buenas prácticas de desarrollo de software, tuve el placer y el honor de ser aprendiz en Lean Mind. Aquí descubrí XP, TDD, DDD, Clean Code, Clean Architecture, pair programming, etc. y me enamoré de todo ello.',
       tools: ['Java', 'Spring Boot', 'Hibernate', 'TDD']
     },
     {
       year: 2020,
-      description: 'Finalización de ciclo superior de Desarrollo de Aplicaciones Multiplataforma.',
+      title: 'Ciclo de Desarrollo de Aplicaciones Multiplataforma',
+      info: 'Estudié este ciclo en el instituto Cesar Manrique en Santa Cruz de Tenerife.',
       tools: ['Java', 'MySQL', 'CSS3', 'HTML5']
-    },
-    {
-      year: 1992,
-      description: 'Nacido en las Islas Canarias.',
-      tools: []
     }
   ]
 }

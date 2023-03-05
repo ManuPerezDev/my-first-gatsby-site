@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
-        resetCSS: false,
+        resetCSS: true,
         isUsingColorMode: true,
         isBaseProvider: false
       }
@@ -34,7 +34,8 @@ module.exports = {
             options: {
               maxWidth: 800
             }
-          }
+          },
+          'gatsby-remark-prismjs'
         ]
       }
     }

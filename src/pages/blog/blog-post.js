@@ -6,7 +6,7 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo/seo'
 import ShareButtons from '../../components/share-buttons/share-buttons'
 
-const BlogPost = ({ data, children, location }) => {
+const BlogPost = ({ data, location }) => {
   const image = getImage(data.markdownRemark.frontmatter.hero_image)
   const pageTitle = data.markdownRemark.frontmatter.title
   const description = data.markdownRemark.frontmatter.description

@@ -4,12 +4,10 @@
 }
 
 .socialMedia a {
-  width: 26px;
-  height: 26px;
-  color: var(--secondary-color)
+  color: var(--secondary-color);
 }
 
 .socialMedia a:hover {
   border-bottom-color: transparent;
-  color: var(--primary-color)
+  color: var(--primary-color);
 }

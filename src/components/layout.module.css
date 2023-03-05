@@ -13,3 +13,9 @@ header {
 main {
   margin: 2rem 0;
 }
+
+@media (max-width: 860px) {
+  .container {
+    padding: 0 2rem;
+  }
+}

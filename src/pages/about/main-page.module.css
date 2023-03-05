@@ -3,11 +3,22 @@
   justify-content: space-between;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  padding: 0 1rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.infoContainer p {
+  margin-top: 0.5rem;
+  text-align: justify;
 }
 
 .avatar {
-  width: 20%;
+  width: 30%;
   border-radius: 100%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -21,10 +32,6 @@
   margin-top: 0;
   font-size: 0.9rem;
   font-weight: normal;
-}
-
-.workContainer {
-  padding: 0 1rem;
 }
 
 .workContainer p {
@@ -42,5 +49,9 @@
 @media (max-width: 700px) {
   .avatar {
     display: none;
+  }
+
+  .infoContainer {
+    width: 100%;
   }
 }

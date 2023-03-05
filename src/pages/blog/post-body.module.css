@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--hr-color);
+  padding: 1rem 0;
 }
 
 .infoContainer h1 {
@@ -35,12 +36,20 @@
 .date {
   display: flex;
   justify-content: flex-end;
-  margin: 0.67rem 0 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .postBody a {
   text-decoration: underline;
   font-weight: bold;
+}
+
+.postBody p {
+  margin: 1rem 0;
+}
+
+.postBody h3 {
+  font-size: 1.3rem;
 }
 
 @media (max-width: 700px) {

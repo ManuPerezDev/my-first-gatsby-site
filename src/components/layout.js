@@ -12,7 +12,6 @@ const Layout = ({ children }) => {
       <Navigation/>
       <hr/>
       {children}
-      <hr/>
       <Footer/>
     </div>
   )
