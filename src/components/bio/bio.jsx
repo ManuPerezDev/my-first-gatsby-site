@@ -11,7 +11,7 @@ import MyTag from '../tag/myTag'
 export const Bio = () => {
   return (
     <>
-      <Accordion defaultIndex={[0]} allowMultiple>
+      <Accordion allowMultiple>
         {bioInfo().map(element => {
           return (
             <AccordionItem>

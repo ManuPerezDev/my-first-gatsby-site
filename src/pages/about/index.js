@@ -14,7 +14,9 @@ const AboutPage = () => {
           <h2>{'Desarrollador de Software'}</h2>
           <p>{description}</p>
         </div>
-        <StaticImage src={'../../../static/images/avatar.png'} alt={'Avatar image'} className={styles.avatar}/>
+        <div className={styles.avatar}>
+          <StaticImage src={'../../../static/images/avatar.png'} alt={'Avatar image'}/>
+        </div>
       </div>
       <Bio/>
     </Layout>
