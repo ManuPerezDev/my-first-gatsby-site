@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
     <div className={styles.container}>
       <Seo/>
       <Navigation/>
-      <hr/>
       {children}
       <Footer/>
     </div>
