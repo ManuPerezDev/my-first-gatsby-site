@@ -46,7 +46,7 @@
   border-bottom: var(--secondary-color) solid 4px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 775px) {
   .avatar {
     display: none;
   }
