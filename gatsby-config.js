@@ -6,6 +6,7 @@ module.exports = {
     description: 'Blog sobre desarrollo de software y buenas prácticas.'
   },
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
