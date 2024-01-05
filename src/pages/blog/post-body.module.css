@@ -19,7 +19,7 @@
   line-height: 2.5rem;
 }
 
-.postBody h2:after {
+.postBody h2::after {
   content: "";
   width: 100%;
   height: 1px;
@@ -29,7 +29,8 @@
   justify-content: center;
 }
 
-:after, :before {
+::after,
+::before {
   box-sizing: inherit;
 }
 
@@ -46,6 +47,7 @@
 
 .postBody p {
   margin: 1rem 0;
+  line-height: 2rem;
 }
 
 .postBody h3 {
