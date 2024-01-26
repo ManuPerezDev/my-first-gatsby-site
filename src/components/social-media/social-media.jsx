@@ -7,7 +7,7 @@ const SocialMedia = () => (
     <a href={'https://www.linkedin.com/in/manuel-perez-regalado/'} >
       <FaLinkedin fontSize='1.5em'/>
     </a>
-    <a href={'https://github.com/Pandacore'} >
+    <a href={'https://github.com/ManuPerezDev'} >
       <FaGithubSquare fontSize='1.5em'/>
     </a>
   </div>

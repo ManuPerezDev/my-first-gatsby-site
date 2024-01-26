@@ -45,4 +45,4 @@ Entender todas las implicaciones de CQRS es complicado y necesita tiempo de estu
 
 Aquí dejo un enlace a una implementación muy simple de CQRS.
 
-[Implementación CQRS en TS](https://github.com/Pandacore/cqrs)
+[Implementación CQRS en TS](https://github.com/ManuPerezDev/cqrs)
