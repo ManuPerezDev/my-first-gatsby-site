@@ -20,6 +20,7 @@
 
 .navLinksItem a {
   color: var(--font-color);
+  padding: 1.3rem;
 }
 
 .navLinksItem a:hover {
@@ -28,17 +29,9 @@
   background-color: var(--hover-color);
 }
 
-.navLinksItem a {
-  padding: 1rem;
-}
-
 @media (min-width: 700px) {
   .navigationMobile {
     display: none;
-  }
-
-  .navLinksItem a {
-    padding: 0.7rem;
   }
 
   .navigationDesktop {
