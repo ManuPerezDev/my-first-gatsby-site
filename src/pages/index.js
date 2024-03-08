@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`{
-  allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 5) {
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 6) {
     nodes {
       frontmatter {
         date(formatString: "MMMM D, YYYY")

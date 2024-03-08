@@ -13,7 +13,7 @@
 
 .postBody h2 {
   font-weight: 500;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.4em;
   font-size: 1.5em;
   color: var(--primary-color);
   line-height: 2.5rem;
@@ -51,7 +51,8 @@
 }
 
 .postBody h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 @media (max-width: 700px) {
