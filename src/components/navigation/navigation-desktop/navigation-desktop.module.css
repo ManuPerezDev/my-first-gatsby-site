@@ -37,12 +37,15 @@
     display: none;
   }
 
+  .navLinksItem a {
+    padding: 0.7rem;
+  }
+
   .navigationDesktop {
-    width: 100%;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    height: 2.7rem;
+    align-items: center;
   }
 
   #mobileNav {

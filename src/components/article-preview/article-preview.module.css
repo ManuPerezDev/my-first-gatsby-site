@@ -1,7 +1,3 @@
-.articlePreviewContainer {
-  margin: 2rem 0 2rem 0;
-}
-
 .postInfoContainer:hover{
   background-color: var(--hover-color);
 }

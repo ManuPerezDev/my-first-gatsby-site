@@ -1,5 +1,5 @@
 .container {
-  margin: auto;
+  margin: 0 auto;
   max-width: 800px;
   font-family: sans-serif;
 }
@@ -8,10 +8,6 @@ header {
   font-size: 3rem;
   font-weight: 700;
   margin: 3rem 0;
-}
-
-main {
-  margin: 2rem 0;
 }
 
 @media (max-width: 860px) {

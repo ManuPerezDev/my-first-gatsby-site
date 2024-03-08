@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './navigation-desktop.module.css'
 import { Link } from 'gatsby'
 import Switch from '../switch-dark-mode/switch-dark-mode'
-import SocialMedia from '../../social-media/social-media'
+import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
 const NavigationDesktop = () => (
   <div className={styles.navigationDesktop}>
@@ -15,7 +15,14 @@ const NavigationDesktop = () => (
         <Link to='/about'>🐼 About</Link>
       </li>
       <li className={styles.navLinksItem}>
-        <SocialMedia/>
+        <Link href={'https://www.linkedin.com/in/manuel-perez-regalado/'}>
+          <FaLinkedin fontSize='1.5em'/>
+        </Link>
+      </li>
+      <li className={styles.navLinksItem}>
+        <Link href={'https://github.com/ManuPerezDev'}>
+          <FaGithubSquare fontSize='1.5em'/>
+        </Link>
       </li>
     </ul>
   </div>
