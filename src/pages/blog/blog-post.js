@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo/seo'
-import ShareButtons from '../../components/share-buttons/share-buttons'
 
 const BlogPost = ({ data, location }) => {
   const image = getImage(data.markdownRemark.frontmatter.hero_image)
@@ -38,10 +37,7 @@ const BlogPost = ({ data, location }) => {
       </a>
       <div className={styles.infoContainer}>
         <h1>{pageTitle}</h1>
-        <div>
-          <div className={styles.date}>{date}</div>
-          <ShareButtons title={pageTitle} url={url}/>
-        </div>
+        <div>{date}</div>
       </div>
       <div className={styles.postBody} dangerouslySetInnerHTML={{ __html: post }}/>
     </Layout>

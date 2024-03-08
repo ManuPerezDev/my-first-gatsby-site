@@ -1,7 +1,7 @@
 .infoContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-bottom: 1px solid var(--hr-color);
   padding: 1rem 0;
 }
@@ -12,9 +12,9 @@
 }
 
 .postBody h2 {
-  font-weight: 500;
   padding-bottom: 0.4em;
   font-size: 1.5em;
+  font-weight: bold;
   color: var(--primary-color);
   line-height: 2.5rem;
 }
@@ -32,12 +32,6 @@
 ::after,
 ::before {
   box-sizing: inherit;
-}
-
-.date {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
 }
 
 .postBody a {
