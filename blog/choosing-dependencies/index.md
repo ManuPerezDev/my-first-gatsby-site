@@ -7,9 +7,11 @@ description: "Esta es una pequeña guía para tratar de simplificar el proceso d
 slug: "choose-dependencies"
 ---
 
+## Introducción
+
 Esta es una pequeña guía para tratar de simplificar el proceso de elección de estas dependencias que invite a la reflexión y el debate dentro de los equipos de desarrollo con el objetivo de que los pilares de nuestra aplicación sean lo más sólidos posibles.
 
-Esto no garantiza que en futuro tengamos que cambiar nuestras dependencias, por lo que siempre es recomendable hacer uso de técnicas como la inyección de dependencias y wrappers de librerías para abstraer nuestro código de negocio lo más posible de estas dependencia y ayudando a simplificar los cambios lo máximo posible.
+Esto no garantiza que en futuro no tengamos que cambiar nuestras dependencias, por lo que siempre es recomendable hacer uso de técnicas como la inyección de dependencias y wrappers de librerías para abstraer nuestro código de negocio lo más posible de estas dependencia y ayudando a simplificar los cambios lo máximo posible.
 
 ## Riesgos
 
@@ -51,13 +53,25 @@ Si la respuesta es sí hay que valorar si merece la pena en términos de tiempo,
 
 A continuación vamos a ver una serie de criterios que considero importantes a la hora de elegir una dependencia. Puede haber muchos más y tenemos que adaptarnos a nuestro caso particular. Estas son solo unas sugerencias para poder empezar.
 
+### Impacto de la dependencia en el negocio
+
+Nunca está de más analizar el impacto tiene la adopción de una dependencia en nuestro negocio, así como reflexionar sobre qué pasaría en caso de error fatal.
+
+Esto nos guiará a la hora de decidir si queremos hacer un desarrollo propio o depender de un tercero.
+
+Por lo general, no se suele depender de terceros cuando nuestro negocio depende de ello. Se suelen adoptar soluciones de terceros en detalles referidos a la infraestructura, ya sea propia tecnología como bases de datos o comunicación HTTP. También operaciones que no son core de negocio, como la autenticación de usuarios, frameworks de front end, frameworks de inyección de dependencias entre otros muchos ejemplos.
+
+Por ejemplo, en el caso de una librería de autenticación, si se detectan vulnerabilidades recurrentes o incluso su sistema se ve comprometido, siempre podremos migrar a otro sistema de autenticación. Sería un bache en el camino sin duda, pero podríamos recuperarnos.
+
+Para minimizar este riesgo, podemos analizar otros criterios.
+
 ### Popularidad
 
 El nivel de popularidad de una dependencia siempre es un buen indicativo ya que, un alto nivel de adopción por la comunidad indica que su fiabilidad ha sido probada por una gran cantidad de developers.
 
 Para medir la popularidad de una dependencia podemos fijarnos en el **número de descargas** que tiene, ya sean semanales, mensuales o en total. También es deseable ver la **tendencia de uso** de la librería. Si esta es descendente casi que podemos concluir que hay otras opciones mejores en el mercado.
 
-Por otro lado, la **cantidad de estrellas y forks en Github** nos puede dar información valiosa sobre su popularidad.
+Por otro lado, la **cantidad de estrellas y forks en Github** nos puede dar información valiosa sobre su popularidad. Sin embargo, tenemos que cuidarnos de que estas estrellas no sean fruto de plataformas de venta de estrellas de github. Si bien es verdad que es una práctica minoritaria, esta métrica tenemos que analizarla en contexto con otras métricas para demostrar su veracidad.
 
 ### Mantenimiento
 
@@ -65,7 +79,7 @@ El mantenimiento de la solución que vayamos a adoptar es vital. No queremos est
 
 Para asegurarnos de que la dependencia está adecuadamente mantenida, nos fijaremos en la **última fecha de actualización**, así como la **frecuencia de actualizaciones**. Es deseable también que se incluya un **change log** que especifique los cambios en cada versión, cosa que nos orientará en los cambios que debemos hacer en caso de que rompa nuestra build.
 
-Por otro lado, podemos mirar el número de **Issues** abiertos y **Pull Requests** en Github. Esto nos puede indicar, en caso de que sean muy elevados, que tengan problemas de mantenimiento.
+Por otro lado, podemos analizar los **Issues** y las **Pull Requests** de Github. Podemos mirar superficialmente el número de Issues y Pull Requests lo que nos puede dar una ligera idea del estado de salud de la librería. Sin embargo, para que sea una métrica de verdad a tener en cuenta podemos analizar la calidad de estos Issues y PR. Ver issues cerrados y comprobar si son resueltos por los mantenedores o la archivan sin solucionarlo. Ver si las PR son mergeadas o rechazadas sin ninguna razón. Sobre todo, valorar si el mantenedor de la dependencia tiene una buena comunicación con respecto a los posibles problemas de la dependencia o mejoras funcionales.
 
 Otra información interesante es saber **quién o quienes mantienen la dependencia**. ¿Una sola persona? ¿Un grupo de desarrolladores? ¿La comunidad? ¿Una empresa?
 
@@ -91,8 +105,11 @@ En definitiva, para elegir una dependencia hay que tener en cuenta:
   - Fecha de la última actualización
   - Frecuencia de actualizaciones
   - Calidad del change log
+  - Issues y Pull Requests
   - Quién o quienes mantienen la dependencia
 - Documentación
 - Comunidad
 
 Como ya hemos indicado anteriormente, estas son varios de los criterios que nos pueden guiar nuestra elección, pero no quiere decir que sean los únicos y que tengan el mismo valor en todas las situaciones. Así que siempre tendremos que adaptarnos a nuestro caso en particular, qué problema tenemos y qué criterios tienen más valor a la hora de elegir nuestra dependencia.
+
+Gracias a [Eric Driussi](https://www.linkedin.com/in/eric-driussi/) por hacer este post mejor.
