@@ -5,7 +5,8 @@ import { Link } from 'gatsby'
 
 const ArticlePreview = ({ posts }) => {
   return (
-    <section className={styles.articlePreviewContainer}>
+    <section id='articles' className={styles.articlePreviewContainer}>
+      <h2>Artículos</h2>
       {posts.map((post) => {
         const date = new Date(post.frontmatter.date)
         const formattedDate = `${date.toLocaleString('en-EN', { month: 'short' }).toUpperCase()}, ${date.getUTCDate()}, ${date.getFullYear()}`

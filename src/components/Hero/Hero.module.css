@@ -1,0 +1,63 @@
+.heroContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  height: 92vh;
+  overflow: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.subtitle {
+  font-size: 3em;
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .image {
+    display: none;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 300px) {
+
+}

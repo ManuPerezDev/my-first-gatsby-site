@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
       <Seo/>
       <Navigation/>
       {children}
+      <hr/>
       <Footer/>
     </div>
   )

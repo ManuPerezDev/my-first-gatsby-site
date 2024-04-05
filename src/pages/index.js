@@ -2,12 +2,15 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import ArticlePreview from '../components/article-preview/article-preview'
+import { Hero } from '../components/Hero/Hero'
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
+      <Hero></Hero>
+      <hr/>
       <ArticlePreview posts={posts}/>
     </Layout>
   )

@@ -16,6 +16,13 @@
   text-align: justify;
 }
 
+.articlePreviewContainer h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
 .articlePreviewContainer a:hover {
   border-bottom: transparent;
 }
