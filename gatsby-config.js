@@ -11,14 +11,6 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
-      resolve: '@chakra-ui/gatsby-plugin',
-      options: {
-        resetCSS: true,
-        isUsingColorMode: true,
-        isBaseProvider: false
-      }
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',

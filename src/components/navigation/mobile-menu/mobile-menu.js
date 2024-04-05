@@ -14,9 +14,6 @@ const MobileMenu = () => (
         <Link to='/' className={styles.navLinksItemMobile} onClick={setScrollVisible}>
           <li><p>Home</p></li>
         </Link>
-        <Link to='/about' className={styles.navLinksItemMobile} onClick={setScrollVisible}>
-          <li><p>About</p></li>
-        </Link>
         <li className={styles.navLinksMobile} onClick={setScrollVisible}>
           <Link href={'https://www.linkedin.com/in/manuel-perez-regalado/'}>
             <FaLinkedin fontSize='3em'/>

@@ -1,9 +1,0 @@
-.sectionTitle {
-  width: fit-content;
-  margin-bottom: 0;
-  border-bottom: var(--secondary-color) solid 4px;
-}
-
-.sectionTitleContainer {
-  padding: 0 1rem;
-}
