@@ -1,5 +1,16 @@
-.navigationDesktop {
-  display: none;
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navigationContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .navLinks {
@@ -27,21 +38,4 @@
   color: var(--secondary-color);
   border-bottom: transparent;
   background-color: var(--hover-color);
-}
-
-@media (min-width: 700px) {
-  .navigationMobile {
-    display: none;
-  }
-
-  .navigationDesktop {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #mobileNav {
-    display: none;
-  }
 }
