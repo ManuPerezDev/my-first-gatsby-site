@@ -1,0 +1,18 @@
+.timeline {
+  margin: 1rem 2rem;
+}
+
+.title {
+  color: var(--primary-color);
+}
+
+.body {
+  color: var(--font-color);
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  padding: 1rem;
+}

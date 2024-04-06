@@ -2,7 +2,8 @@ import React from 'react'
 import * as styles from './Hero.module.css'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Button } from 'flowbite-react'
-import { FaLinkedin, FaGithubSquare } from 'react-icons/fa'
+import { FaLinkedin, FaGithubSquare, FaBusinessTime } from 'react-icons/fa'
+import { Arrow } from '../Icons/Arrow'
 
 export const Hero = () => {
   return (
@@ -24,6 +25,12 @@ export const Hero = () => {
                 Github
               </Button>
             </a>
+            <a href={'#experience'}>
+              <Button gradientDuoTone='tealToLime'>
+                <FaBusinessTime className='mr-2 h-5 w-5' fontSize='1.5em'/>
+                +{new Date().getFullYear() - 2021} años de experiencia
+              </Button>
+            </a>
           </div>
         </div>
         <div className={styles.image}>
@@ -32,24 +39,11 @@ export const Hero = () => {
       </div>
       <div className='absolute hidden md:flex bottom-4 w-full justify-center'>
         <a
-          href='#articles'
+          href='#experience'
           className='md:flex gap-2 animate-bounce text-primary-500 dark:text-primary-400 font-bold'
         >
-          Artículos{' '}
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth='1.5'
-            stroke='currentColor'
-            className='w-5 h-5'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75'
-            />
-          </svg>
+          Experiencia{' '}
+          <Arrow/>
         </a>
       </div>
     </section>

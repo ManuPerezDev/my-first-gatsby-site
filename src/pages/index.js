@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import ArticlePreview from '../components/article-preview/article-preview'
 import { Hero } from '../components/Hero/Hero'
+import { Experience } from '../components/Experience/Experience'
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -10,6 +11,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Hero></Hero>
+      <hr/>
+      <Experience/>
       <hr/>
       <ArticlePreview posts={posts}/>
     </Layout>
