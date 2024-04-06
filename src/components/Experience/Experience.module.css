@@ -2,6 +2,14 @@
   margin: 1rem 2rem;
 }
 
+.timeline li {
+  list-style-type: none;
+}
+
+.button {
+  width: fit-content;
+}
+
 .title {
   color: var(--primary-color);
 }
@@ -15,4 +23,10 @@ h2 {
   line-height: 2.25rem;
   font-weight: 700;
   padding: 1rem;
+}
+
+.organization {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--font-color);
 }
