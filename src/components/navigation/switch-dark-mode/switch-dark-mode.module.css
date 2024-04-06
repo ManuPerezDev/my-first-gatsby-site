@@ -1,5 +1,6 @@
 .switchButton {
   cursor: pointer;
+  margin-left: 1rem;
 }
 
 .switchButton:hover {

@@ -28,14 +28,15 @@
 }
 
 .title {
-  font-size: 3em;
-  font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 3.5rem;
 }
 
 .subtitle {
-  font-size: 3em;
-  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  padding: 0;
 }
 
 .buttons {

@@ -3,15 +3,14 @@ import * as styles from './Hero.module.css'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Button } from 'flowbite-react'
 import { FaLinkedin, FaGithubSquare, FaBusinessTime } from 'react-icons/fa'
-import { Arrow } from '../Icons/Arrow'
 
 export const Hero = () => {
   return (
     <section className={styles.heroContainer}>
       <div className={styles.hero}>
         <div className={styles.info}>
-          <h2 className={styles.title}>Software Developer</h2>
-          <h3 className={styles.subtitle}>Manuel Pérez Dev</h3>
+          <h2 className={styles.subtitle}>Software Developer</h2>
+          <h1 className={styles.title}>Manuel Pérez Dev</h1>
           <div className={styles.buttons}>
             <a target={'_blank'} href={'https://www.linkedin.com/in/manuel-perez-regalado/'}>
               <Button outline gradientDuoTone='purpleToBlue'>
