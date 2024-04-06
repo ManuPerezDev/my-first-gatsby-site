@@ -15,20 +15,20 @@ export const Hero = () => {
           <div className={styles.buttons}>
             <a target={'_blank'} href={'https://www.linkedin.com/in/manuel-perez-regalado/'}>
               <Button outline gradientDuoTone='purpleToBlue'>
-                <FaLinkedin className='mr-2 h-5 w-5' fontSize='1.5em'/>
-                Linkedin
+                <FaLinkedin fontSize='1.5em'/>
+                <span className={styles.text}>Linkedin</span>
               </Button>
             </a>
             <a target={'_blank'} href={'https://github.com/ManuPerezDev/'}>
               <Button outline gradientDuoTone='greenToBlue'>
-                <FaGithubSquare className='mr-2 h-5 w-5' fontSize='1.5em'/>
-                Github
+                <FaGithubSquare fontSize='1.5em'/>
+                <span className={styles.text}>Github</span>
               </Button>
             </a>
             <a href={'#experience'}>
               <Button gradientDuoTone='tealToLime'>
-                <FaBusinessTime className='mr-2 h-5 w-5' fontSize='1.5em'/>
-                +{new Date().getFullYear() - 2021} años de experiencia
+                <FaBusinessTime fontSize='1.5em'/>
+                <span className={styles.text}>+{new Date().getFullYear() - 2021} años de experiencia</span>
               </Button>
             </a>
           </div>
@@ -36,15 +36,6 @@ export const Hero = () => {
         <div className={styles.image}>
           <StaticImage src={'../../../static/images/avatar.png'} alt={'Avatar image'}/>
         </div>
-      </div>
-      <div className='absolute hidden md:flex bottom-4 w-full justify-center'>
-        <a
-          href='#experience'
-          className='md:flex gap-2 animate-bounce text-primary-500 dark:text-primary-400 font-bold'
-        >
-          Experiencia{' '}
-          <Arrow/>
-        </a>
       </div>
     </section>
   )

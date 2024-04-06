@@ -44,6 +44,12 @@
   gap: 2rem;
 }
 
+.buttons svg {
+  height: 1em;
+  width: 1em;
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 900px) {
   .image {
     display: none;
@@ -56,8 +62,14 @@
   .subtitle {
     font-size: 2em;
   }
-}
 
-@media (max-width: 300px) {
+  .text {
+    display: none;
+  }
 
+  .buttons svg {
+    margin-right: 0;
+    height: 2rem;
+    width: 2rem;
+  }
 }
