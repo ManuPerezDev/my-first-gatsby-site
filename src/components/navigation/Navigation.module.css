@@ -6,7 +6,14 @@
   z-index: 1000;
 }
 
-.navigationContainer {
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -38,6 +45,6 @@
   color: var(--secondary-color);
   border-bottom: transparent;
   background-color: var(--hover-color);
+  backdrop-filter: blur(50px);
+
 }
-
-
