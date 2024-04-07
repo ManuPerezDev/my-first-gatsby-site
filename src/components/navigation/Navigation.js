@@ -7,7 +7,7 @@ import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 const Navigation = () => (
   <nav className={styles.navigation}>
     <div className={styles.container}>
-      <div className={styles.navLinksItem}>
+      <div className={`${styles.navLinksItem} ${styles.logo}`}>
         <Link to='/'>🙊 ManuPerezDev</Link>
       </div>
       <div className={styles.buttons}>
