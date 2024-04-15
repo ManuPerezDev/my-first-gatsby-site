@@ -8,7 +8,9 @@ const Navigation = () => (
   <nav className={styles.navigation}>
     <div className={styles.container}>
       <div className={`${styles.navLinksItem} ${styles.logo}`}>
-        <Link to='/'>🙊 ManuPerezDev</Link>
+        <Link to='/'>
+          🙊 <span className={styles.manuelperez}>manuelperez</span><span className={styles.dev}>.DEV</span>
+        </Link>
       </div>
       <div className={styles.buttons}>
         <div className={styles.navLinksItem}>
@@ -16,12 +18,12 @@ const Navigation = () => (
         </div>
         <div className={styles.navLinksItem}>
           <Link href={'https://www.linkedin.com/in/manuel-perez-regalado/'}>
-            <FaLinkedin fontSize='1.5em'/>
+            <FaLinkedin fontSize='2rem'/>
           </Link>
         </div>
         <div className={styles.navLinksItem}>
           <Link href={'https://github.com/ManuPerezDev'}>
-            <FaGithubSquare fontSize='1.5em'/>
+            <FaGithubSquare fontSize='2rem'/>
           </Link>
         </div>
         <Switch/>
