@@ -6,7 +6,7 @@ import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
 
 const Switch = () => {
   const isBrowser = () => typeof window !== 'undefined'
-  const [theme, setTheme] = useLocalStorage('theme', 'dark')
+  const [theme, setTheme] = useLocalStorage('theme', 'light')
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
