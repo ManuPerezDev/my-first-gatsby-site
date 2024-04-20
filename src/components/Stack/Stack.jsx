@@ -1,10 +1,10 @@
 import React from 'react'
 import * as styles from './Stack.module.css'
 import { Card } from './Card/Card'
-import { Backend } from './Backend'
-import { Frontend } from './Frontend'
-import { Tools } from './Tools'
-import { Methodologies } from './Methodologies'
+import { Backend } from './StackInfo/Backend'
+import { Frontend } from './StackInfo/Frontend'
+import { Tools } from './StackInfo/Tools'
+import { Methodologies } from './StackInfo/Methodologies'
 
 export const Stack = () => {
   return (
