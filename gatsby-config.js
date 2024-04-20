@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-netlify',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-plugin-postcss',
