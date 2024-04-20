@@ -9,7 +9,6 @@
   --description-color: #808080;
   --hover-color: #f5f5f5;
   --heading-color: #292922;
-  --bg-animation: tolightmode 2s;
   --hover-mobile-link-color: rgba(0, 0, 0, 0.1);
   --tag-font-color: white;
   --hr-color: #e2e2e2;
@@ -28,7 +27,6 @@
   --heading-color: #818cab;
   --brightness: 0.8;
   --contrast: 1.2;
-  --bg-animation: todarkmode 2s;
   --hover-mobile-link-color: rgba(255, 255, 255, 0.1);
   --tag-font-color: #202023;
   --hr-color: #3b4046;
@@ -48,32 +46,11 @@ body {
   font-family: sans-serif;
   color: var(--font-color);
   font-size: calc(1rem + 0.25vh);
-  animation: var(--bg-animation);
   line-height: 1.5rem;
 }
 
 h1 {
   line-height: 2rem;
-}
-
-@keyframes toDarkMode {
-  from {
-    background-color: #fff;
-  }
-
-  to {
-    background-color: #202023;
-  }
-}
-
-@keyframes toLightMode {
-  from {
-    background-color: #202023;
-  }
-
-  to {
-    background-color: #fff;
-  }
 }
 
 a {
