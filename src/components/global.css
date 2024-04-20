@@ -16,6 +16,7 @@
   --bg-secondary-color: #7877c67f;
   --background: radial-gradient(ellipse 100% 100% at 50% -20%, var(--bg-secondary-color), var(--bg-color)) fixed;
   --bg-color-card: rgba(255, 255, 255, 0.2);
+  --scroll-bar-color: #818cab;
 }
 
 [data-theme="dark"] {
@@ -34,11 +35,13 @@
   --bg-secondary-color: black;
   --background: radial-gradient(ellipse 100% 100%  at 50% 10%, var(--bg-secondary-color) 40%, var(--bg-color)) 100% fixed;
   --bg-color-card: rgba(60, 31, 141, 0.2);
+  --scroll-bar-color: #536390;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+  scrollbar-color: var(--scroll-bar-color) transparent;
 }
 
 body {

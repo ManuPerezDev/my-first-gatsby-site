@@ -21,7 +21,7 @@ export const Experience = () => {
                     {experience.body}
                   </Timeline.Body>
                   {experience.learnMoreLink &&
-                  <Button className={styles.button} as={'a'} href={experience.learnMoreLink} color='gray'>
+                  <Button gradientDuoTone='purpleToBlue' className={styles.button} as={'a'} href={experience.learnMoreLink}>
                     {experience.buttonDescription}
                     <HiArrowNarrowRight className='ml-2 h-3 w-3' />
                   </Button>
