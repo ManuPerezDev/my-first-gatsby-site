@@ -5,9 +5,9 @@ export const Card = ({ title, items }) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
-        <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h4 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
           {title}
-        </h5>
+        </h4>
         <div className={styles.icons}>
         {
           items && items.map((item, index) => (
