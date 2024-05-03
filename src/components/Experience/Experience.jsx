@@ -18,7 +18,12 @@ export const Experience = () => {
                   <Timeline.Title className={styles.title}>{experience.title}</Timeline.Title>
                   <Timeline.Time>{experience.time}</Timeline.Time>
                   <Timeline.Body className={styles.body}>
-                    {experience.body}
+                    {styles.body.length > 1
+                      ? experience.body.map((paragraph, index) => {
+                        return (<p key={index}>{paragraph}</p>)
+                      })
+                      : <p></p>
+                    }
                   </Timeline.Body>
                   {experience.learnMoreLink &&
                   <Button gradientDuoTone='purpleToBlue' className={styles.button} as={'a'} href={experience.learnMoreLink}>
