@@ -19,4 +19,4 @@ Podemos decir que XP con una serie de valores, principios y prácticas que ponen
 
 En este post trataré de resumir los escuetamente valores, principios y prácticas de XP.
 
-[Continúa leyendo...](https://leanmind.es/es/blog/extreme-programming-valores-principios-practicas/)
+[Sigue leyendo...](https://leanmind.es/es/blog/extreme-programming-valores-principios-practicas/)
