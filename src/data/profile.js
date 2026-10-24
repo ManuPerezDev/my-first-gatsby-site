@@ -3,6 +3,8 @@
 export const profile = {
   name: 'Manuel Pérez Regalado',
   role: 'Product Developer',
+  // CV title: adds the keywords recruiters and ATS filters search for
+  cvHeadline: 'Product Developer · Full Stack Software Engineer',
   location: { es: 'Tenerife, España', en: 'Tenerife, Spain' },
   links: {
     website: 'https://manuelperez.dev',

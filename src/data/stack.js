@@ -1,3 +1,4 @@
+// cv: false keeps an item on the site but out of the CV.
 // Group titles are { es, en } pairs; item names are the same in both languages unless given as a pair.
 // Icons: "si:" are Simple Icons brand slugs, "tabler:" are Tabler Icons names. See docs/STYLEGUIDE.md.
 export const stack = [
@@ -53,8 +54,8 @@ export const stack = [
       { name: 'Biome', icon: 'si:biome' },
       { name: 'Turborepo', icon: 'si:turborepo' },
       { name: 'PostHog', icon: 'si:posthog' },
-      { name: 'WebStorm', icon: 'si:webstorm' },
-      { name: 'Warp', icon: 'si:warp' }
+      { name: 'WebStorm', icon: 'si:webstorm', cv: false },
+      { name: 'Warp', icon: 'si:warp', cv: false }
     ]
   },
   {

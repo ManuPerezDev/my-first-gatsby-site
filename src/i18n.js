@@ -28,7 +28,8 @@ const ui = {
       experience: 'Experiencia profesional',
       education: 'Formación',
       skills: 'Habilidades técnicas',
-      languages: 'Idiomas'
+      languages: 'Idiomas',
+      articles: 'Artículos publicados'
     },
     photo: 'Foto',
     dateLocale: 'es-ES',
@@ -55,7 +56,8 @@ const ui = {
       experience: 'Professional experience',
       education: 'Education',
       skills: 'Technical skills',
-      languages: 'Languages'
+      languages: 'Languages',
+      articles: 'Published articles'
     },
     photo: 'Photo',
     dateLocale: 'en-GB',

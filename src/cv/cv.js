@@ -7,6 +7,7 @@ import { experience } from '../data/experience.js'
 import { profile } from '../data/profile.js'
 import { stack } from '../data/stack.js'
 import { useTranslations } from '../i18n.js'
+import { cvPosts } from './posts.js'
 
 const helvetica = {
   normal: 'Helvetica',
@@ -55,27 +56,29 @@ export const renderCv = async ({ lang, contact = {} }) => {
 
   const docDefinition = {
     pageSize: 'A4',
-    pageMargins: [50, 48, 50, 48],
+    pageMargins: [50, 40, 50, 40],
     info: {
       title: `${profile.name} - CV`,
       author: profile.name,
-      subject: `${profile.role} CV`,
-      keywords: stack.flatMap(group => group.items.map(item => text(item.name, lang))).join(', ')
+      subject: `${profile.cvHeadline} CV`,
+      keywords: stack
+        .flatMap(group => group.items.filter(item => item.cv !== false).map(item => text(item.name, lang)))
+        .join(', ')
     },
-    defaultStyle: { font: 'Helvetica', fontSize: 10, lineHeight: 1.3, color: '#1c2333' },
+    defaultStyle: { font: 'Helvetica', fontSize: 9.5, lineHeight: 1.25, color: '#1c2333' },
     styles: {
       name: { fontSize: 22, bold: true },
       role: { fontSize: 12, color: '#2747c9', margin: [0, 2, 0, 6] },
-      contact: { fontSize: 9, color: '#3f4a6b', margin: [0, 0, 0, 16] },
+      contact: { fontSize: 9, color: '#3f4a6b', margin: [0, 0, 0, 12] },
       section: { fontSize: 11, bold: true, characterSpacing: 1, margin: [0, 6, 0, 0] },
       entryTitle: { bold: true, fontSize: 10.5 },
       entryDate: { italics: true, fontSize: 9, color: '#3f4a6b', margin: [0, 1, 0, 3] },
       entryBody: { margin: [0, 0, 0, 0] },
-      paragraph: { margin: [0, 0, 0, 6] }
+      paragraph: { margin: [0, 0, 0, 4] }
     },
     content: [
       { text: profile.name, style: 'name' },
-      { text: profile.role, style: 'role' },
+      { text: profile.cvHeadline, style: 'role' },
       { text: contactLine.flatMap((part, i) => (i === 0 ? [part] : ['  ·  ', part])), style: 'contact' },
 
       ...sectionTitle(t.cv.summary),
@@ -91,10 +94,21 @@ export const renderCv = async ({ lang, contact = {} }) => {
       ...stack.map(group => ({
         text: [
           { text: `${text(group.title, lang)}: `, bold: true },
-          group.items.map(item => text(item.name, lang)).join(', ')
+          group.items
+            .filter(item => item.cv !== false)
+            .map(item => text(item.name, lang))
+            .join(', ')
         ],
         style: 'paragraph'
       })),
+
+      ...sectionTitle(t.cv.articles),
+      {
+        ul: cvPosts(lang).map(post => ({
+          text: [{ text: post.title, link: post.url, color: '#2747c9' }, ` (${post.year})`]
+        })),
+        margin: [0, 0, 0, 8]
+      },
 
       ...sectionTitle(t.cv.languages),
       { ul: profile.spokenLanguages.map(language => language[lang]) }
