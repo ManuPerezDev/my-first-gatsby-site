@@ -7,7 +7,7 @@ Personal site and blog built with [Astro](https://astro.build) and Tailwind CSS.
 Requires Node.js >= 22.23.4.
 
 ```shell
-npm install
+npm ci
 npm run dev      # http://localhost:4321
 npm run build    # outputs to dist/
 npm run preview
