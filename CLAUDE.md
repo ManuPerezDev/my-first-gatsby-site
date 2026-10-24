@@ -38,6 +38,10 @@ Personal site and blog (manuelperez.dev). Astro 7, fully static, no UI framework
 - **Design system.** Read `docs/STYLEGUIDE.md` before touching UI. Colors and fonts come only from the tokens in
   `src/styles/global.css` (exposed to Tailwind with `@theme inline` as `bg-canvas`, `text-ink`, `text-accent`...).
   Fonts are self-hosted through the Astro fonts API (`fonts` in `astro.config.mjs`, `<Font>` in `BaseLayout`).
+- **CV.** `src/cv/cv.js` builds an ATS-friendly PDF (one column, Helvetica text, no images) with pdfmake from
+  `src/data/` (`profile.js`, `experience.js`, `stack.js`). Public versions without contact details are static endpoints
+  (`src/pages/manuel-perez-cv.pdf.js`, `src/pages/en/...`). `npm run cv:private` writes the full versions with email
+  and phone from the git-ignored `cv.private.json` into `cv-private/`; contact details must never be committed or deployed.
 - **Icons.** `src/components/Icon.astro` inlines SVGs at build time from Iconify JSON: `si:` for brands (Simple Icons),
   `tabler:` for everything else. Monochrome only; an unknown name fails the build.
 

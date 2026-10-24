@@ -24,7 +24,8 @@ blog/<folder>/      posts: index.md (Spanish), index.en.md (English, optional) a
 docs/STYLEGUIDE.md  design tokens, typography, components and rules
 public/             favicon, share image (og-image.png), robots.txt
 src/components/     UI pieces (sidebar, lists, theme and language switchers, icons, SEO)
-src/data/           experience, stack and post lists, with Spanish and English text
+src/cv/             CV PDF generator
+src/data/           profile, experience, stack and post lists, with Spanish and English text
 src/i18n.js         interface strings and per-language settings
 src/layouts/        BaseLayout (head, theme script), HomePage and PostPage
 src/pages/          routes for / and /en/, including /blog/<slug> and /en/blog/<slug>
@@ -33,11 +34,24 @@ src/styles/         global CSS and design tokens
 
 ## Editing content
 
-- **Experience and stack:** `src/data/experience.js` and `src/data/stack.js`. Every text is a `{ es, en }` pair.
+- **Profile, experience and stack:** `src/data/profile.js`, `src/data/experience.js` and `src/data/stack.js`. Every text is a `{ es, en }` pair. They feed both the site and the CV.
 - **About:** `src/components/About.astro`, one block per language.
 - **Interface text** (section names, buttons, labels): `src/i18n.js`.
 
 Every text change needs both languages.
+
+## CV
+
+The site publishes a CV in PDF, built from the same data at `/manuel-perez-cv.pdf` and `/en/manuel-perez-cv.pdf`. It is designed for applicant tracking systems: one column, real text, standard headings. The public version has no email or phone.
+
+For applications, generate the full version locally:
+
+```shell
+cp cv.private.example.json cv.private.json   # fill in email and phone
+npm run cv:private                            # writes cv-private/manuel-perez-cv-{es,en}.pdf
+```
+
+Both `cv.private.json` and `cv-private/` are ignored by git.
 
 ## Blog posts
 

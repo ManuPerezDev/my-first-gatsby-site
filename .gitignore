@@ -2,3 +2,5 @@ node_modules/
 .idea
 dist/
 .astro/
+cv.private.json
+cv-private/

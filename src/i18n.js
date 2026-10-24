@@ -4,6 +4,7 @@ export const languages = { es: 'Español', en: 'English' }
 export const defaultLang = 'es'
 
 export const homePath = lang => (lang === defaultLang ? '/' : `/${lang}/`)
+export const cvPath = lang => `${lang === defaultLang ? '' : `/${lang}`}/manuel-perez-cv.pdf`
 export const postPath = (lang, slug) => `${lang === defaultLang ? '' : `/${lang}`}/blog/${slug}/`
 
 const ui = {
@@ -21,6 +22,14 @@ const ui = {
     themeDark: 'Tema oscuro',
     inSpanish: null,
     backToArticles: 'Volver a los artículos',
+    downloadCv: 'Descargar CV',
+    cv: {
+      summary: 'Perfil',
+      experience: 'Experiencia profesional',
+      education: 'Formación',
+      skills: 'Habilidades técnicas',
+      languages: 'Idiomas'
+    },
     photo: 'Foto',
     dateLocale: 'es-ES',
     ogLocale: 'es_ES',
@@ -40,6 +49,14 @@ const ui = {
     themeDark: 'Dark theme',
     inSpanish: 'In Spanish',
     backToArticles: 'Back to articles',
+    downloadCv: 'Download CV',
+    cv: {
+      summary: 'Summary',
+      experience: 'Professional experience',
+      education: 'Education',
+      skills: 'Technical skills',
+      languages: 'Languages'
+    },
     photo: 'Photo',
     dateLocale: 'en-GB',
     ogLocale: 'en_GB',

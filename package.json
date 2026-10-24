@@ -16,7 +16,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "biome check . && stylelint \"**/*.css\"",
-    "format": "biome check --write . && stylelint \"**/*.css\" --fix"
+    "format": "biome check --write . && stylelint \"**/*.css\" --fix",
+    "cv:private": "node scripts/cv-private.mjs"
   },
   "engines": {
     "node": ">=22.23.4"
@@ -26,7 +27,8 @@
     "@iconify-json/tabler": "^1.2.42",
     "@iconify/utils": "^3.1.7",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.2"
+    "astro": "^7.4.2",
+    "pdfmake": "^0.3.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.2",

@@ -1,9 +1,10 @@
-// Each text is a { es, en } pair; see src/i18n.js.
+// Each text is a { es, en } pair; see src/i18n.js. kind separates jobs from education in the CV.
 export const experience = [
   {
     title: { es: 'Product Developer', en: 'Product Developer' },
     time: { es: 'Febrero 2023 — Hoy', en: 'February 2023 — Present' },
     organization: 'Audiense',
+    kind: 'work',
     body: {
       es: [
         'Desarrollo producto en aplicación de análisis de datos. Participo en el desarrollo de front end, back end, ETL y plataforma.'
@@ -16,6 +17,7 @@ export const experience = [
     title: { es: 'Desarrollador de Software', en: 'Software Developer' },
     time: { es: 'Marzo 2021 — Enero 2023', en: 'March 2021 — January 2023' },
     organization: 'Lean Mind',
+    kind: 'work',
     body: {
       es: [
         'En 2021 tuve el honor de ser contratado en el equipo de Carlos Blé, una empresa de desarrollo de software y consultoría afincada en Tenerife. En Lean Mind tuve la oportunidad de trabajar y aprender en equipos de alto rendimiento enfocados en metodologías Agile.',
@@ -32,6 +34,7 @@ export const experience = [
     title: { es: 'Estudiante Bootcamp Fullstack', en: 'Full Stack Bootcamp Student' },
     time: { es: 'Septiembre 2020', en: 'September 2020' },
     organization: 'Escuela de Organización Industrial',
+    kind: 'education',
     body: {
       es: ['Inscripción en la 5ª edición del Curso de Programación Fullstack de la EOI dirigido por ManzDev.'],
       en: ["Enrolled in the 5th edition of EOI's Full Stack Programming Course, led by ManzDev."]
@@ -43,6 +46,7 @@ export const experience = [
     title: { es: 'Estudiante Ciclo Superior', en: 'Higher Vocational Training Student' },
     time: { es: 'Septiembre 2018', en: 'September 2018' },
     organization: 'CIFP César Manrique',
+    kind: 'education',
     body: {
       es: ['Estudio de DAM en el CIFP César Manrique, Santa Cruz de Tenerife.'],
       en: ['Studied Multiplatform Application Development (DAM) at CIFP César Manrique, Santa Cruz de Tenerife.']
