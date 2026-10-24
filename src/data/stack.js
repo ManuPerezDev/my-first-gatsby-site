@@ -1,26 +1,45 @@
 // Icons: "si:" are Simple Icons brand slugs, "tabler:" are Tabler Icons names. See docs/STYLEGUIDE.md.
 export const stack = [
   {
-    title: 'Backend',
+    title: 'Backend y datos',
     items: [
       { name: 'Node.js', icon: 'si:nodedotjs' },
       { name: 'TypeScript', icon: 'si:typescript' },
-      { name: 'Express.js', icon: 'si:express' },
-      { name: 'Jest', icon: 'si:jest' },
-      { name: 'MySQL', icon: 'si:mysql' },
+      { name: 'Express', icon: 'si:express' },
       { name: 'MongoDB', icon: 'si:mongodb' },
-      { name: 'AWS', icon: 'si:amazonwebservices' }
+      { name: 'MySQL', icon: 'si:mysql' },
+      { name: 'AWS S3 y SQS', icon: 'si:amazonwebservices' },
+      { name: 'Google Cloud Storage', icon: 'si:googlecloudstorage' },
+      { name: 'Zod', icon: 'si:zod' },
+      { name: 'OpenTelemetry', icon: 'si:opentelemetry' }
     ]
   },
   {
     title: 'Frontend',
     items: [
-      { name: 'HTML', icon: 'si:html5' },
-      { name: 'CSS', icon: 'si:css' },
-      { name: 'JavaScript', icon: 'si:javascript' },
       { name: 'React', icon: 'si:react' },
+      { name: 'TanStack', icon: 'si:tanstack' },
+      { name: 'Vite', icon: 'si:vite' },
+      { name: 'Storybook', icon: 'si:storybook' },
+      { name: 'Astro', icon: 'si:astro' },
+      { name: 'Tailwind CSS', icon: 'si:tailwindcss' }
+    ]
+  },
+  {
+    title: 'Inteligencia artificial',
+    items: [
+      { name: 'OpenAI API', icon: 'si:openai' },
+      { name: 'Claude', icon: 'si:claude' },
+      { name: 'Claude Code', icon: 'si:claudecode' },
+      { name: 'MCP', icon: 'si:modelcontextprotocol' }
+    ]
+  },
+  {
+    title: 'Testing',
+    items: [
       { name: 'Vitest', icon: 'si:vitest' },
-      { name: 'Gatsby', icon: 'si:gatsby' },
+      { name: 'Testing Library', icon: 'si:testinglibrary' },
+      { name: 'Playwright', icon: 'si:playwright' },
       { name: 'MSW', icon: 'si:mockserviceworker' }
     ]
   },
@@ -28,13 +47,13 @@ export const stack = [
     title: 'Herramientas',
     items: [
       { name: 'Git', icon: 'si:git' },
-      { name: 'GitHub', icon: 'si:github' },
-      { name: 'Copilot', icon: 'si:githubcopilot' },
-      { name: 'IntelliJ IDEA', icon: 'si:intellijidea' },
-      { name: 'Warp', icon: 'si:warp' },
-      { name: 'NPM', icon: 'si:npm' },
-      { name: 'Postman', icon: 'si:postman' },
-      { name: 'Docker', icon: 'si:docker' }
+      { name: 'GitHub Actions', icon: 'si:githubactions' },
+      { name: 'Docker', icon: 'si:docker' },
+      { name: 'Biome', icon: 'si:biome' },
+      { name: 'Turborepo', icon: 'si:turborepo' },
+      { name: 'PostHog', icon: 'si:posthog' },
+      { name: 'WebStorm', icon: 'si:webstorm' },
+      { name: 'Warp', icon: 'si:warp' }
     ]
   },
   {

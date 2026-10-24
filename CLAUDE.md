@@ -7,3 +7,5 @@ Personal site and blog. Astro 7 (static, no UI framework), Tailwind CSS 4, icons
 - Content is in Spanish (`lang="es"`); code, comments and commits in English.
 - Commands: `npm run dev`, `npm run build`, `npm run lint` (Biome + stylelint), `npm run format`.
 - Workflow: commit straight to `main`, no PRs. Pushing `main` deploys production on Netlify.
+- Copy (site texts, experience, posts): run it through the `humanizer` skill before committing, using the author's
+  posts in `blog/` as the voice sample. Never add facts, dates or claims the author did not give.
