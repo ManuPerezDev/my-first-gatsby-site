@@ -12,10 +12,10 @@ const t = useTranslations(lang)
   {
     posts.map(({ post, lang: postLang }) => (
       <ListItem class='gap-4'>
-        <div class='z-10 sm:order-2 sm:col-span-6'>
+        <div class='z-10 sm:col-span-6'>
           <h3 class='leading-snug font-semibold text-ink' lang={postLang === lang ? undefined : postLang}>
             <a href={postPath(postLang, post.data.slug)} hreflang={postLang} class='group/link hover:text-accent focus-visible:text-accent'>
-              <span class='absolute -inset-x-4 -inset-y-2.5 hidden rounded-sm md:-inset-x-6 md:-inset-y-4 lg:block' />
+              <span class='absolute -inset-x-4 -inset-y-2.5 block rounded-sm md:-inset-x-6 md:-inset-y-4' />
               {post.data.title}
             </a>
           </h3>
@@ -33,7 +33,7 @@ const t = useTranslations(lang)
           width={200}
           height={112}
           densities={[1, 2]}
-          class='z-10 aspect-video w-full max-w-50 rounded-sm border-2 border-line object-cover transition group-hover:border-accent sm:order-1 sm:col-span-2 sm:translate-y-1'
+          class='pointer-events-none z-10 order-first aspect-video w-full max-w-50 rounded-sm border-2 border-line object-cover transition group-hover:border-accent sm:col-span-2 sm:translate-y-1'
         />
       </ListItem>
     ))
