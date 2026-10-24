@@ -1,13 +1,13 @@
 ---
 import { experience } from '../data/experience'
 import Icon from './Icon.astro'
+import ListItem from './ListItem.astro'
 ---
 
 <ol class='group/list flex flex-col gap-12'>
   {
     experience.map(item => (
-      <li class='group relative grid gap-2 pb-1 transition-opacity sm:grid-cols-8 sm:gap-8 md:gap-4 lg:group-hover/list:opacity-50 lg:hover:opacity-100!'>
-        <div class='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-hover lg:group-hover:shadow-[inset_0_1px_0_0_var(--line)]' />
+      <ListItem class='gap-2'>
         <p class='z-10 mt-1 mb-2 font-mono text-sm tracking-wide text-ink-faint uppercase sm:col-span-2'>{item.time}</p>
         <div class='z-10 sm:col-span-6'>
           <h3 class='leading-snug font-semibold text-ink'>
@@ -34,7 +34,7 @@ import Icon from './Icon.astro'
             <p class='mt-2 text-sm leading-relaxed'>{paragraph}</p>
           ))}
         </div>
-      </li>
+      </ListItem>
     ))
   }
 </ol>

@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { formatShortDate } from '../utils/dates'
+import ListItem from './ListItem.astro'
 
 const { posts } = Astro.props
 ---
@@ -8,8 +9,7 @@ const { posts } = Astro.props
 <ol class='group/list flex flex-col gap-12'>
   {
     posts.map(post => (
-      <li class='group relative grid gap-4 pb-1 transition-opacity sm:grid-cols-8 sm:gap-8 md:gap-4 lg:group-hover/list:opacity-50 lg:hover:opacity-100!'>
-        <div class='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-hover lg:group-hover:shadow-[inset_0_1px_0_0_var(--line)]' />
+      <ListItem class='gap-4'>
         <div class='z-10 sm:order-2 sm:col-span-6'>
           <h3 class='leading-snug font-semibold text-ink'>
             <a href={`/blog/${post.data.slug}`} class='group/link hover:text-accent focus-visible:text-accent'>
@@ -30,7 +30,7 @@ const { posts } = Astro.props
           densities={[1, 2]}
           class='z-10 aspect-video w-full max-w-50 rounded-sm border-2 border-line object-cover transition group-hover:border-accent sm:order-1 sm:col-span-2 sm:translate-y-1'
         />
-      </li>
+      </ListItem>
     ))
   }
 </ol>

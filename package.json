@@ -1,12 +1,14 @@
 {
-  "name": "my-gatsby-site",
+  "name": "manuelperez-dev",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "My Astro Site",
+  "description": "Personal site and blog of Manuel Pérez",
   "author": "Manuel Pérez Regalado",
   "keywords": [
-    "astro"
+    "astro",
+    "portfolio",
+    "blog"
   ],
   "scripts": {
     "dev": "astro dev",
@@ -24,8 +26,7 @@
     "@iconify-json/tabler": "^1.2.42",
     "@iconify/utils": "^3.1.7",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.2",
-    "prismjs": "^1.30.0"
+    "astro": "^7.4.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.2",

@@ -3,7 +3,7 @@ import Icon from '../components/Icon.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout seo={{ title: 'Página no encontrada' }}>
+<BaseLayout seo={{ title: 'Página no encontrada', noindex: true }}>
   <main class='mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-6 px-6'>
     <p class='font-mono text-sm tracking-widest text-accent uppercase'>Error 404</p>
     <h1 class='glow font-display text-3xl leading-tight text-ink'>Pantalla no encontrada</h1>

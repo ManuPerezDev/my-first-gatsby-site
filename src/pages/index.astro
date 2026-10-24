@@ -17,7 +17,7 @@ const sections = [
 const posts = (await getCollection('blog')).sort((a, b) => b.data.date - a.data.date)
 ---
 
-<BaseLayout seo={{ url: Astro.url.href }}>
+<BaseLayout>
   <a
     href='#contenido'
     class='absolute top-0 left-0 z-50 -translate-y-full bg-accent px-4 py-3 font-mono text-sm text-canvas uppercase focus-visible:translate-y-0'

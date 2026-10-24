@@ -8,8 +8,9 @@
     "import-notation": "string",
     "at-rule-no-unknown": [
       true,
-      { "ignoreAtRules": ["theme", "source", "plugin", "utility", "variant", "custom-variant", "apply", "config"] }
-    ],
-    "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }]
+      {
+        "ignoreAtRules": ["theme", "custom-variant", "source", "utility", "variant", "apply"]
+      }
+    ]
   }
 }

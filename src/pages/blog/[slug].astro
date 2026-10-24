@@ -21,11 +21,18 @@ const {
   hero_image_alt: heroImageAlt,
   hero_image_owner_url: heroImageOwnerUrl
 } = post.data
-const url = Astro.url.href
 const ogImage = await getImage({ src: heroImage, format: 'jpg', width: 1200 })
 ---
 
-<BaseLayout seo={{ title, description, image: new URL(ogImage.src, Astro.site).href, url, date: formatLongDate(date) }}>
+<BaseLayout
+  seo={{
+    title,
+    description,
+    image: new URL(ogImage.src, Astro.site).href,
+    type: 'article',
+    publishedTime: date.toISOString()
+  }}
+>
   <div class='mx-auto min-h-screen max-w-3xl px-6 py-10 md:px-12 md:py-16'>
     <header class='flex items-center justify-between'>
       <a href='/#articulos' class='group inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase'>
