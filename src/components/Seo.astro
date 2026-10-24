@@ -1,7 +1,7 @@
 ---
-import { siteMetadata } from '../../site'
+import { siteMetadata } from '../site'
 
-const { description = '', lang = 'en', title, image, url, date } = Astro.props
+const { description = '', title, image, url, date } = Astro.props
 
 const metaDescription = description || siteMetadata.description
 const defaultTitle = siteMetadata.title

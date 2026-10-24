@@ -1,6 +1,6 @@
 # manuelperez.dev
 
-Personal site and blog built with [Astro](https://astro.build), React (static components) and Tailwind CSS.
+Personal site and blog built with [Astro](https://astro.build) and Tailwind CSS. Design system: [`docs/STYLEGUIDE.md`](docs/STYLEGUIDE.md).
 
 ## Development
 

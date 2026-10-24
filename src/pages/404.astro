@@ -1,22 +1,12 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8'/>
-    <title>Not found</title>
-  </head>
-  <body>
-    <main style='color: #232129; padding: 96px; font-family: -apple-system, Roboto, sans-serif, serif'>
-      <h1 style='margin-top: 0; margin-bottom: 64px; max-width: 320px'>Page not found</h1>
-      <p style='margin-bottom: 48px'>
-        Sorry{' '}
-        <span role='img' aria-label='Pensive emoji'>😔</span>{' '}
-        we couldn’t find what you were looking for.
-        <br/>
-        <br/>
-        <a href='/'>Go home</a>.
-      </p>
-    </main>
-  </body>
-</html>
+<BaseLayout seo={{ title: 'Página no encontrada' }}>
+  <main class='mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-6 px-6'>
+    <p class='font-mono text-sm tracking-widest text-accent uppercase'>Error 404</p>
+    <h1 class='glow font-display text-3xl leading-tight text-ink'>Pantalla no encontrada</h1>
+    <p>La página que buscas no existe o ha cambiado de dirección.</p>
+    <a href='/' class='font-mono text-sm tracking-widest text-accent uppercase hover:text-ink'>← Volver al inicio</a>
+  </main>
+</BaseLayout>

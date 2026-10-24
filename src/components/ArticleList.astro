@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets'
+import { formatShortDate } from '../utils/dates'
+
+const { posts } = Astro.props
+---
+
+<ol class='group/list flex flex-col gap-12'>
+  {
+    posts.map(post => (
+      <li class='group relative grid gap-4 pb-1 transition-opacity sm:grid-cols-8 sm:gap-8 md:gap-4 lg:group-hover/list:opacity-50 lg:hover:opacity-100!'>
+        <div class='absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-hover lg:group-hover:shadow-[inset_0_1px_0_0_var(--line)]' />
+        <div class='z-10 sm:order-2 sm:col-span-6'>
+          <h3 class='leading-snug font-semibold text-ink'>
+            <a href={`/blog/${post.data.slug}`} class='group/link hover:text-accent focus-visible:text-accent'>
+              <span class='absolute -inset-x-4 -inset-y-2.5 hidden rounded-sm md:-inset-x-6 md:-inset-y-4 lg:block' />
+              {post.data.title}
+            </a>
+          </h3>
+          <p class='mt-1 font-mono text-sm tracking-wide text-ink-faint uppercase'>
+            <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatShortDate(post.data.date)}</time>
+          </p>
+          <p class='mt-2 line-clamp-3 text-sm leading-relaxed'>{post.data.description}</p>
+        </div>
+        <Image
+          src={post.data.hero_image}
+          alt={post.data.hero_image_alt}
+          width={200}
+          height={112}
+          densities={[1, 2]}
+          class='z-10 aspect-video w-full max-w-50 rounded-sm border-2 border-line object-cover transition group-hover:border-accent sm:order-1 sm:col-span-2 sm:translate-y-1'
+        />
+      </li>
+    ))
+  }
+</ol>

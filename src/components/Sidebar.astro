@@ -1,0 +1,73 @@
+---
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import ThemeToggle from './ThemeToggle.astro'
+
+const { sections } = Astro.props
+---
+
+<header class='lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[46%] lg:flex-col lg:justify-between lg:py-24'>
+  <div>
+    <h1 class='glow font-display text-3xl leading-tight text-ink sm:text-4xl'>
+      <a href='/'>Manuel Pérez</a>
+    </h1>
+    <p class='mt-3 font-mono text-base tracking-widest text-accent uppercase'>Software Developer</p>
+    <p class='mt-4 max-w-xs text-ink-muted'>Desarrollo software con TDD y XP, y escribo sobre buenas prácticas.</p>
+
+    <nav aria-label='Secciones' class='hidden lg:block'>
+      <ul class='mt-16 flex w-max flex-col gap-1'>
+        {
+          sections.map(section => (
+            <li>
+              <a href={`#${section.id}`} data-nav-link class='group flex items-center py-2'>
+                <span class='mr-4 h-px w-8 bg-ink-faint transition-all group-hover:w-16 group-hover:bg-ink group-aria-[current=true]:w-16 group-aria-[current=true]:bg-accent motion-reduce:transition-none' />
+                <span class='font-mono text-sm tracking-widest text-ink-faint uppercase group-hover:text-ink group-aria-[current=true]:text-ink'>
+                  {section.title}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <div class='mt-8 flex items-center gap-5'>
+    <a
+      href='https://github.com/ManuPerezDev'
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label='GitHub'
+      class='text-ink-faint transition-colors hover:text-accent'
+    >
+      <FaGithub size={22} />
+    </a>
+    <a
+      href='https://www.linkedin.com/in/manuel-perez-regalado/'
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label='LinkedIn'
+      class='text-ink-faint transition-colors hover:text-accent'
+    >
+      <FaLinkedin size={22} />
+    </a>
+    <ThemeToggle />
+  </div>
+</header>
+
+<script>
+  // Marks the nav link of the section currently in view
+  const links = new Map([...document.querySelectorAll('[data-nav-link]')].map(link => [link.hash.slice(1), link]))
+  const observer = new IntersectionObserver(
+    entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue
+        for (const [id, link] of links) link.setAttribute('aria-current', String(id === entry.target.id))
+      }
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  )
+  for (const id of links.keys()) {
+    const section = document.getElementById(id)
+    if (section) observer.observe(section)
+  }
+</script>

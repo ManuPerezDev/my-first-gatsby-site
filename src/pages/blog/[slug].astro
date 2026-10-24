@@ -1,8 +1,9 @@
 ---
 import { getImage, Image } from 'astro:assets'
 import { getCollection, render } from 'astro:content'
-import Layout from '../../layouts/Layout.astro'
-import styles from '../../layouts/post-body.module.css'
+import ThemeToggle from '../../components/ThemeToggle.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { formatLongDate } from '../../utils/dates'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -14,39 +15,59 @@ const { Content } = await render(post)
 const {
   title,
   description,
+  date,
   hero_image: heroImage,
   hero_image_alt: heroImageAlt,
   hero_image_owner_url: heroImageOwnerUrl
 } = post.data
 const url = Astro.url.href
-const date = post.data.date.toLocaleDateString('en-US', {
-  month: 'long',
-  day: '2-digit',
-  year: 'numeric',
-  timeZone: 'UTC'
-})
 const ogImage = await getImage({ src: heroImage, format: 'jpg', width: 1200 })
-
-const heroImgLink = heroImageOwnerUrl || url
 ---
 
-<Layout seo={{ title, description, image: new URL(ogImage.src, Astro.site).href, url, date }}>
-  <a href={heroImgLink}>
-    <Image
-      src={heroImage}
-      alt={heroImageAlt}
-      width={1200}
-      widths={[400, 800, 1200]}
-      loading='eager'
-      sizes='(max-width: 800px) 100vw, 800px'
-      style='margin-top: 1rem'
-    />
-  </a>
-  <div class={styles.infoContainer}>
-    <h1>{title}</h1>
-    <div>{date}</div>
+<BaseLayout seo={{ title, description, image: new URL(ogImage.src, Astro.site).href, url, date: formatLongDate(date) }}>
+  <div class='mx-auto min-h-screen max-w-3xl px-6 py-10 md:px-12 md:py-16'>
+    <header class='flex items-center justify-between'>
+      <a href='/#articulos' class='group inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase'>
+        <span aria-hidden='true' class='transition-transform group-hover:-translate-x-1 motion-reduce:transition-none'>←</span>
+        Manuel Pérez
+      </a>
+      <ThemeToggle />
+    </header>
+
+    <main class='mt-10'>
+      <article>
+        <p class='font-mono text-sm tracking-wide text-ink-faint uppercase'>
+          <time datetime={date.toISOString().slice(0, 10)}>{formatLongDate(date)}</time>
+        </p>
+        <h1 class='mt-3 font-display text-2xl leading-snug text-balance text-ink sm:text-3xl'>{title}</h1>
+
+        <figure class='mt-8'>
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            width={1200}
+            widths={[400, 800, 1200]}
+            sizes='(max-width: 768px) 100vw, 720px'
+            loading='eager'
+            class='aspect-video w-full rounded-lg border border-line object-cover'
+          />
+          {
+            heroImageOwnerUrl && (
+              <figcaption class='mt-2 font-mono text-xs text-ink-faint'>
+                Foto: <a href={heroImageOwnerUrl} class='underline hover:text-accent'>Unsplash</a>
+              </figcaption>
+            )
+          }
+        </figure>
+
+        <div class='post-body mt-10'>
+          <Content />
+        </div>
+      </article>
+    </main>
+
+    <footer class='mt-16 border-t border-line pt-6 font-mono text-sm text-ink-faint'>
+      <a href='/#articulos' class='hover:text-accent'>← Volver a los artículos</a>
+    </footer>
   </div>
-  <div class={styles.postBody}>
-    <Content/>
-  </div>
-</Layout>
+</BaseLayout>

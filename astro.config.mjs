@@ -1,15 +1,36 @@
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
-import flowbiteReact from 'flowbite-react/plugin/astro'
+import { defineConfig, fontProviders } from 'astro/config'
 
 export default defineConfig({
   site: 'https://manuelperez.dev',
-  integrations: [react(), flowbiteReact()],
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
   },
   markdown: {
     syntaxHighlight: 'prism'
-  }
+  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Michroma',
+      cssVariable: '--font-michroma',
+      fallbacks: ['sans-serif']
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Exo 2',
+      cssVariable: '--font-exo',
+      weights: ['400 700'],
+      styles: ['normal', 'italic'],
+      fallbacks: ['sans-serif']
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Share Tech Mono',
+      cssVariable: '--font-share-tech-mono',
+      fallbacks: ['monospace']
+    }
+  ]
 })

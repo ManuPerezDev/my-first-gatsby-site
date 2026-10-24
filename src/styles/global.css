@@ -1,0 +1,300 @@
+@import 'tailwindcss';
+
+/* dark: follows the data-theme attribute set by BaseLayout, not the OS setting */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+ * Design tokens. Style guide: docs/STYLEGUIDE.md
+ * Raw values live here only; components use the Tailwind classes these generate
+ * (bg-canvas, text-ink, text-accent, border-line, font-display...).
+ */
+:root {
+  --canvas: #eef1f8;
+  --ink: #0c1433;
+  --ink-muted: #3f4a6b;
+  --ink-faint: #626b8a;
+  --accent: #2747c9;
+  --accent-soft: #dce4fb;
+  --accent-ink: #2340b4;
+  --hover: rgb(39, 71, 201, 0.06);
+  --line: #d3d9ea;
+  --glow: rgb(39, 71, 201, 0.18);
+  --code-bg: #0b1024;
+  --particles: transparent;
+  --halo: rgb(39, 71, 201, 0.1);
+  --plate: #fff;
+
+  color-scheme: light;
+}
+
+/* No-JS fallback; with JS the inline script in BaseLayout always sets data-theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --canvas: #05070f;
+    --ink: #e3e9ff;
+    --ink-muted: #9aa6c8;
+    --ink-faint: #707aa0;
+    --accent: #6f9bff;
+    --accent-soft: rgb(111, 155, 255, 0.14);
+    --accent-ink: #a9c3ff;
+    --hover: rgb(111, 155, 255, 0.07);
+    --line: rgb(111, 155, 255, 0.16);
+    --glow: rgb(90, 140, 255, 0.55);
+    --code-bg: #0b1024;
+    --particles: rgb(140, 180, 255, 0.2);
+    --halo: rgb(60, 110, 255, 0.2);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --canvas: #05070f;
+  --ink: #e3e9ff;
+  --ink-muted: #9aa6c8;
+  --ink-faint: #707aa0;
+  --accent: #6f9bff;
+  --accent-soft: rgb(111, 155, 255, 0.14);
+  --accent-ink: #a9c3ff;
+  --hover: rgb(111, 155, 255, 0.07);
+  --line: rgb(111, 155, 255, 0.16);
+  --glow: rgb(90, 140, 255, 0.55);
+  --code-bg: #0b1024;
+  --particles: rgb(140, 180, 255, 0.2);
+  --halo: rgb(60, 110, 255, 0.2);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-hover: var(--hover);
+  --color-line: var(--line);
+  --color-plate: var(--plate);
+  --font-display: var(--font-michroma), 'Exo 2', sans-serif;
+  --font-sans: var(--font-exo), system-ui, sans-serif;
+  --font-mono: var(--font-share-tech-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--ink-faint) transparent;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink-muted);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+
+  /* Console boot screen: light halo top-left and a fixed field of particles */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 15% 15%, var(--halo), transparent 45%),
+      radial-gradient(var(--particles) 1px, transparent 1.5px) 0 0 / 24px 24px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--canvas);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Blue glow for the name; pulses only when motion is allowed */
+  .glow {
+    text-shadow: 0 0 18px var(--glow);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .glow {
+      animation: glow-pulse 4s ease-in-out infinite;
+    }
+  }
+
+  @keyframes glow-pulse {
+    50% {
+      text-shadow: 0 0 28px var(--glow);
+    }
+  }
+
+  /* Markdown body of blog posts */
+  .post-body {
+    color: var(--ink-muted);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  .post-body > * + * {
+    margin-top: 1.25em;
+  }
+
+  .post-body h2 {
+    margin-top: 2.5em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .post-body h3 {
+    margin-top: 2em;
+    color: var(--ink);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .post-body strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .post-body a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+
+  .post-body a:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  .post-body ul,
+  .post-body ol {
+    padding-left: 1.5rem;
+  }
+
+  .post-body ul {
+    list-style-type: '– ';
+  }
+
+  .post-body ol {
+    list-style-type: decimal;
+  }
+
+  .post-body li + li {
+    margin-top: 0.4em;
+  }
+
+  .post-body li::marker {
+    color: var(--accent);
+  }
+
+  .post-body blockquote {
+    padding: 0.25em 0 0.25em 1.25em;
+    border-left: 2px solid var(--accent);
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .post-body img {
+    border-radius: 0.5rem;
+  }
+
+  .post-body hr {
+    border-color: var(--line);
+  }
+
+  .post-body :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  .post-body pre {
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: var(--code-bg);
+    color: #d6defa;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .post-body th,
+  .post-body td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+
+  .post-body th {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Prism tokens, tuned for the code-bg navy */
+  .post-body .token.comment,
+  .post-body .token.prolog,
+  .post-body .token.doctype,
+  .post-body .token.cdata {
+    color: #7f8ab3;
+  }
+
+  .post-body .token.keyword,
+  .post-body .token.selector,
+  .post-body .token.atrule,
+  .post-body .token.builtin {
+    color: #8fb0ff;
+  }
+
+  .post-body .token.string,
+  .post-body .token.char,
+  .post-body .token.attr-value,
+  .post-body .token.regex {
+    color: #8ee6c4;
+  }
+
+  .post-body .token.number,
+  .post-body .token.boolean,
+  .post-body .token.constant {
+    color: #f7c97e;
+  }
+
+  .post-body .token.function,
+  .post-body .token.class-name {
+    color: #c9b6ff;
+  }
+
+  .post-body .token.tag,
+  .post-body .token.attr-name,
+  .post-body .token.deleted {
+    color: #ff9db0;
+  }
+}

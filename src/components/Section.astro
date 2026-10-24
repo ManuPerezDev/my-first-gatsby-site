@@ -1,0 +1,12 @@
+---
+// Content section of the home page. On mobile the title sticks to the top while scrolling;
+// on desktop it is visually hidden because the sidebar navigation names the section.
+const { id, title } = Astro.props
+---
+
+<section id={id} aria-labelledby={`${id}-title`} class='mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24'>
+  <div class='sticky top-0 z-20 -mx-6 mb-4 bg-canvas/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only'>
+    <h2 id={`${id}-title`} class='font-mono text-sm tracking-widest text-ink uppercase'>{title}</h2>
+  </div>
+  <slot />
+</section>
