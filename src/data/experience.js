@@ -3,7 +3,9 @@ export const experience = [
     title: 'Product Developer',
     time: 'Febrero 2023 — Hoy',
     organization: 'Audiense',
-    body: ['Desarrollo de producto: front end, back end, ETL e inteligencia artificial.'],
+    body: [
+      'Desarrollo producto en aplicación de análisis de datos. Participo en el desarrollo de front end, back end, ETL y plataforma.'
+    ],
     learnMoreLink: 'https://www.audiense.com'
   },
   {
@@ -11,9 +13,8 @@ export const experience = [
     time: 'Marzo 2021 — Enero 2023',
     organization: 'Lean Mind',
     body: [
-      'En 2021 tuve el honor de ser contratado en el equipo de Carlos Blé, una empresa de desarrollo de software y consultoría. En Lean Mind he tenido la oportunidad de trabajar y aprender en equipos de alto rendimiento enfocados en metodologías Agile.',
-      'Participé en la optimización de pipeline de cálculo de consumo energético para una empresa comercializadora de energía.',
-      'Trabajé como desarrollador de producto para clientes de distintos sectores.'
+      'En 2021 tuve el honor de ser contratado en el equipo de Carlos Blé, una empresa de desarrollo de software y consultoría afincada en Tenerife. En Lean Mind tuve la oportunidad de trabajar y aprender en equipos de alto rendimiento enfocados en metodologías Agile.',
+      'Allí aprendí mucho de buenas prácticas de desarrollo, mantenimiento de código y testing con TDD.'
     ],
     learnMoreLink: 'https://www.leanmind.es/es/'
   },
@@ -28,7 +29,8 @@ export const experience = [
   {
     title: 'Estudiante Ciclo Superior',
     time: 'Septiembre 2018',
-    organization: 'CIFP Cesar Manrique',
-    body: ['Estudio de DAM en el CIFP Cesar Manrique, Santa Cruz de Tenerife.']
+    organization: 'CIFP César Manrique',
+    body: ['Estudio de DAM en el CIFP César Manrique, Santa Cruz de Tenerife.'],
+    learnMoreLink: 'https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/'
   }
 ]

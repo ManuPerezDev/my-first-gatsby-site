@@ -1,6 +1,6 @@
 ---
 
-title: "🧗‍♀️ Extreme Programming: Valores, Principios y Prácticas"
+title: "Extreme Programming: Valores, Principios y Prácticas"
 date: "2022-12-17"
 hero_image: "./razvan-dumitrasconiu-GUBuFwOHFl8-unsplash.jpg"
 hero_image_alt: "Lake and mountains."

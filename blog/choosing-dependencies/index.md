@@ -1,6 +1,6 @@
 ---
 
-title: "🌊 Una guía para la elección de dependencias"
+title: "Una guía para la elección de dependencias"
 date: "2024-02-08"
 hero_image: "./connections.jpg"
 hero_image_alt: "Lights."

@@ -1,6 +1,6 @@
 ---
 
-title: "🙌 Mob Programming"
+title: "Mob Programming"
 date: "2020-12-27"
 hero_image: "./main.jpg"
 hero_image_alt: "People programming together."

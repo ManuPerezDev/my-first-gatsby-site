@@ -1,6 +1,6 @@
 ---
 
-title: "👾 3 años de Principios y Prácticas"
+title: "3 años de Principios y Prácticas"
 date: "2024-01-05"
 hero_image: "./main.jpg"
 hero_image_alt: "Personal computer."

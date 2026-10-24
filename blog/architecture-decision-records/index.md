@@ -1,6 +1,6 @@
 ---
 
-title: "🏗 Architecture Decision Records"
+title: "Architecture Decision Records"
 date: "2022-02-02"
 hero_image: "./main.jpg"
 hero_image_alt: "Big building."
