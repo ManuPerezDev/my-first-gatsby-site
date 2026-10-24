@@ -1,4 +1,5 @@
 ---
+
 title: "🌊 Una guía para la elección de dependencias"
 date: "2024-02-08"
 hero_image: "./connections.jpg"
@@ -96,7 +97,6 @@ En muchos repositorios de estos paquetes podemos encontrar la sección de [Discu
 ## Conclusión
 
 En definitiva, para elegir una dependencia hay que tener en cuenta:
-
 - Popularidad
   - Nº de descargas
   - Tendencia de uso

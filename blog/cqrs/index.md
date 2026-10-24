@@ -1,4 +1,5 @@
 ---
+
 title: "🛫 CQRS"
 date: "2022-02-12"
 hero_image: "./main.jpg"

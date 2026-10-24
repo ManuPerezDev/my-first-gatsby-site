@@ -1,4 +1,5 @@
 ---
+
 title: "👾 3 años de Principios y Prácticas"
 date: "2024-01-05"
 hero_image: "./main.jpg"
@@ -17,7 +18,7 @@ Por ejemplo, una ventana rota en un edificio es una señal de abandono que atrae
 
 Este fenómeno se reproduce en mayor o menor medida en muchos ámbitos de la vida. También en el software. La sensación de que nada funciona como debería y la decadencia que desmoraliza hasta al más optimista.
 
-En su libro The Pragmatic Programmer de *****David Thomas y Andrew Hunt***** también apuntan que lo peor de este estado es la [desesperanza que genera que contagia](https://psycnet.apa.org/record/1995-01924-001) al equipo de desarrollo. Es inevitable caer en una espiral autodestructiva cuando a nadie le importa lo que hace. Donde se acepta que las cosas son como son y no hay tiempo ni intención de hacer lo correcto.
+En su libro The Pragmatic Programmer de **_**David Thomas y Andrew Hunt**_** también apuntan que lo peor de este estado es la [desesperanza que genera que contagia](https://psycnet.apa.org/record/1995-01924-001) al equipo de desarrollo. Es inevitable caer en una espiral autodestructiva cuando a nadie le importa lo que hace. Donde se acepta que las cosas son como son y no hay tiempo ni intención de hacer lo correcto.
 
 Pero así como la desesperanza es contagiosa también lo es la esperanza. Hacer lo correcto, tomar las riendas de los cambios que son necesarios y construir algo de lo que nos sentamos orgullosos. Construir algo tan bueno que consigamos el efecto contrario. Un código y un ambiente con tanto cuidado y mimo que a todo el mundo le de miedo dejar alguna ventana rota.
 
@@ -59,7 +60,7 @@ El punto es tratar de no perder nunca la oportunidad de identificar y aplicar me
 
 ## Pair programming
 
-Redundancia, feedback, evitar silos de conocimiento son algunas ventajas del [pair programming](https://en.wikipedia.org/wiki/Pair_programming#:~:text=Pair%20programming%20is%20a%20software,two%20programmers%20switch%20roles%20frequently.). Estas ventajas unidas a la reducción de probabilidad de un desastre hace del pair programming un imprescindible para mí.  Requiere de una fuerte inversión, sin duda, pero cada vez está ganando más terreno en entornos corporativos por sus grandes ventajas.
+Redundancia, feedback, evitar silos de conocimiento son algunas ventajas del [pair programming](https://en.wikipedia.org/wiki/Pair_programming#:~:text=Pair%20programming%20is%20a%20software,two%20programmers%20switch%20roles%20frequently.). Estas ventajas unidas a la reducción de probabilidad de un desastre hace del pair programming un imprescindible para mí. Requiere de una fuerte inversión, sin duda, pero cada vez está ganando más terreno en entornos corporativos por sus grandes ventajas.
 
 De hecho, no siempre en todos los equipos se puede hacer constantemente pair y el índice de errores y bugs generados siempre aumenta con tareas individuales. A menudo hemos tenido que volver a tareas que se han trabajado individualmente cosa que demuestra la gran utilidad de esta práctica.
 

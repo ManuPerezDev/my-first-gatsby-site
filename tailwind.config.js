@@ -2,14 +2,9 @@ import flowbite from 'flowbite-react/tailwind'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/**/*.{astro,js,jsx,ts,tsx}',
-    flowbite.content()
-  ],
+  content: ['./src/**/*.{astro,js,jsx,ts,tsx}', flowbite.content()],
   theme: {
     extend: {}
   },
-  plugins: [
-    flowbite.plugin()
-  ]
+  plugins: [flowbite.plugin()]
 }

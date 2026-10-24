@@ -1,4 +1,5 @@
 ---
+
 title: "🏗 Architecture Decision Records"
 date: "2022-02-02"
 hero_image: "./main.jpg"

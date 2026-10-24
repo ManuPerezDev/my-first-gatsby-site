@@ -17,7 +17,8 @@ export const experienceInfo = () => {
       time: 'Septiembre 2020',
       organization: 'Escuela de Organización Industrial',
       body: ['Inscripción en la 5ª edición del Curso de Programación Fullstack de la EOI dirigido por ManzDev.'],
-      learnMoreLink: 'https://www.eoi.es/es/cursos/90441/curso-de-programacion-fullstack-presencia-virtual-online-tenerife-5a-edicion',
+      learnMoreLink:
+        'https://www.eoi.es/es/cursos/90441/curso-de-programacion-fullstack-presencia-virtual-online-tenerife-5a-edicion',
       buttonDescription: 'Visita EOI'
     },
     {

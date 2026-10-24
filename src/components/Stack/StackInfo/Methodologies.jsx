@@ -1,39 +1,38 @@
-import React from 'react'
 import { Agile } from '../Icons/Agile'
-import { Scrum } from '../Icons/Scrum'
-import { Kanban } from '../Icons/Kanban'
-import { ExtremeProgramming } from '../Icons/ExtremeProgramming/ExtremeProgramming'
 import { CICD } from '../Icons/CICD/CICD'
-import { TDD } from '../Icons/TDD/TDD'
+import { ExtremeProgramming } from '../Icons/ExtremeProgramming/ExtremeProgramming'
+import { Kanban } from '../Icons/Kanban'
 import { PairProgramming } from '../Icons/PairProgramming/PairProgramming'
+import { Scrum } from '../Icons/Scrum'
+import { TDD } from '../Icons/TDD/TDD'
 
 export const Methodologies = [
   {
     name: 'Agile',
-    icon: <Agile/>
+    icon: <Agile />
   },
   {
     name: 'Scrum',
-    icon: <Scrum/>
+    icon: <Scrum />
   },
   {
     name: 'Kanban',
-    icon: <Kanban/>
+    icon: <Kanban />
   },
   {
     name: 'XP',
-    icon: <ExtremeProgramming/>
+    icon: <ExtremeProgramming />
   },
   {
     name: 'CI/CD',
-    icon: <CICD/>
+    icon: <CICD />
   },
   {
     name: 'TDD',
-    icon: <TDD/>
+    icon: <TDD />
   },
   {
     name: 'Pair Programming',
-    icon: <PairProgramming/>
+    icon: <PairProgramming />
   }
 ]

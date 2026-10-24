@@ -1,44 +1,43 @@
-import React from 'react'
+import { Docker } from '../Icons/Docker'
 import { Git } from '../Icons/Git'
+import { GitHubCopilot } from '../Icons/GitHubCopilot'
 import { Github } from '../Icons/Github'
 import { IntelliJIDEA } from '../Icons/IntelliJIDEA'
-import { Warp } from '../Icons/Warp'
-import { GitHubCopilot } from '../Icons/GitHubCopilot'
 import { NPM } from '../Icons/NPM'
 import { Postman } from '../Icons/Postman'
-import { Docker } from '../Icons/Docker'
+import { Warp } from '../Icons/Warp'
 
 export const Tools = [
   {
     name: 'Git',
-    icon: <Git/>
+    icon: <Git />
   },
   {
     name: 'GitHub',
-    icon: <Github/>
+    icon: <Github />
   },
   {
     name: 'Copilot',
-    icon: <GitHubCopilot/>
+    icon: <GitHubCopilot />
   },
   {
     name: 'IntelliJ IDEA',
-    icon: <IntelliJIDEA/>
+    icon: <IntelliJIDEA />
   },
   {
     name: 'Warp',
-    icon: <Warp/>
+    icon: <Warp />
   },
   {
     name: 'NPM',
-    icon: <NPM/>
+    icon: <NPM />
   },
   {
     name: 'Postman',
-    icon: <Postman/>
+    icon: <Postman />
   },
   {
     name: 'Docker',
-    icon: <Docker/>
+    icon: <Docker />
   }
 ]

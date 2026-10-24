@@ -1,39 +1,38 @@
-import React from 'react'
-import { HTML5 } from '../Icons/HTML5'
 import { CSS } from '../Icons/CSS'
-import { JavaScript } from '../Icons/JavaScript'
-import { Reactjs } from '../Icons/Reactjs'
 import { Gatsby } from '../Icons/Gatsby'
-import { Vitest } from '../Icons/Vitest'
+import { HTML5 } from '../Icons/HTML5'
+import { JavaScript } from '../Icons/JavaScript'
 import { MSW } from '../Icons/MSW'
+import { Reactjs } from '../Icons/Reactjs'
+import { Vitest } from '../Icons/Vitest'
 
 export const Frontend = [
   {
     name: 'HTML',
-    icon: <HTML5/>
+    icon: <HTML5 />
   },
   {
     name: 'CSS',
-    icon: <CSS/>
+    icon: <CSS />
   },
   {
     name: 'JavaScript',
-    icon: <JavaScript/>
+    icon: <JavaScript />
   },
   {
     name: 'React',
-    icon: <Reactjs/>
+    icon: <Reactjs />
   },
   {
     name: 'Vitest',
-    icon: <Vitest/>
+    icon: <Vitest />
   },
   {
     name: 'Gatsby',
-    icon: <Gatsby/>
+    icon: <Gatsby />
   },
   {
     name: 'MSW',
-    icon: <MSW/>
+    icon: <MSW />
   }
 ]
