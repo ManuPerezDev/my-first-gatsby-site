@@ -81,6 +81,8 @@ Scale in use: name `text-3xl sm:text-4xl`, post title `text-2xl sm:text-3xl`, it
 - **Chip:** `rounded-full bg-accent-soft text-accent-ink text-sm font-medium px-3 py-1.5`.
 - **Link inside text:** `text-ink` + `hover:text-accent`; in Markdown, `accent` underlined.
 - **External link:** `target="_blank" rel="noopener noreferrer"` and an `↗` that moves on hover.
+- **Inline element after a line break:** Astro drops the line break before a tag, so `word\n<a>` renders as
+  `word<a>`. End the previous line with `{' '}` or keep the text and the tag on the same line.
 
 ## Icons
 
