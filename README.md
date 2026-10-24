@@ -1,6 +1,8 @@
 # manuelperez.dev
 
-Personal site and blog built with [Astro](https://astro.build) and Tailwind CSS. Design system: [`docs/STYLEGUIDE.md`](docs/STYLEGUIDE.md).
+Personal site and blog of Manuel Pérez, live at [manuelperez.dev](https://manuelperez.dev). Spanish at `/`, English at `/en/`.
+
+Built with [Astro](https://astro.build) 7 (fully static, no UI framework) and [Tailwind CSS](https://tailwindcss.com) 4. Icons come from [Simple Icons](https://simpleicons.org) and [Tabler Icons](https://tabler.io/icons); fonts (Michroma, Exo 2, Share Tech Mono) are self-hosted. The visual style and its rules are in [`docs/STYLEGUIDE.md`](docs/STYLEGUIDE.md).
 
 ## Development
 
@@ -8,19 +10,51 @@ Requires Node.js >= 22.23.4.
 
 ```shell
 npm ci
-npm run dev      # http://localhost:4321
-npm run build    # outputs to dist/
-npm run preview
+npm run dev       # http://localhost:4321
+npm run build     # outputs to dist/
+npm run preview   # serves the build
+npm run lint      # Biome + stylelint
+npm run format    # applies Biome and stylelint fixes
 ```
 
-## Languages
+## Project structure
 
-Spanish lives at `/` and English at `/en/`. Interface strings are in `src/i18n.js`; content in `src/data/` has a Spanish and an English version. Each post can have an English translation (`index.en.md`, served at `/en/blog/<slug>`).
+```text
+blog/<folder>/      posts: index.md (Spanish), index.en.md (English, optional) and their images
+docs/STYLEGUIDE.md  design tokens, typography, components and rules
+public/             favicon, share image (og-image.png), robots.txt
+src/components/     UI pieces (sidebar, lists, theme and language switchers, icons, SEO)
+src/data/           experience, stack and post lists, with Spanish and English text
+src/i18n.js         interface strings and per-language settings
+src/layouts/        BaseLayout (head, theme script), HomePage and PostPage
+src/pages/          routes for / and /en/, including /blog/<slug> and /en/blog/<slug>
+src/styles/         global CSS and design tokens
+```
+
+## Editing content
+
+- **Experience and stack:** `src/data/experience.js` and `src/data/stack.js`. Every text is a `{ es, en }` pair.
+- **About:** `src/components/About.astro`, one block per language.
+- **Interface text** (section names, buttons, labels): `src/i18n.js`.
+
+Every text change needs both languages.
 
 ## Blog posts
 
-Each post lives in `blog/<folder>/index.md` with its images next to it. The URL is `/blog/<slug>`, taken from the `slug` frontmatter field. Frontmatter is validated in `src/content.config.js`.
+Each post is a folder in `blog/` with `index.md` in Spanish and its images next to it. Its frontmatter:
+
+```yaml
+title: "CQRS"
+date: "2022-02-12"
+description: "Short summary for the post list and link previews."
+slug: "cqrs"
+hero_image: "./main.jpg"
+hero_image_alt: "Big building."
+hero_image_owner_url: "https://unsplash.com/@author" # optional, credits the photo
+```
+
+The URL is `/blog/<slug>`, taken from `slug`, not from the folder name. To add an English version, create `index.en.md` in the same folder with the same `slug`; it is published at `/en/blog/<slug>`. Posts without a translation show up on `/en/` in Spanish with an "In Spanish" badge. Frontmatter is validated in `src/content.config.js`.
 
 ## Deploy
 
-Netlify builds with `npm run build` and publishes `dist/` (see `netlify.toml`).
+Pushing to `main` deploys production on Netlify, which runs `npm run build` and publishes `dist/` (see `netlify.toml`).
