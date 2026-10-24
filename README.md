@@ -44,14 +44,35 @@ Every text change needs both languages.
 
 The site publishes a CV in PDF, built from the same data at `/manuel-perez-cv.pdf` and `/en/manuel-perez-cv.pdf`. It is designed for applicant tracking systems: one column, real text, standard headings. The public version has no email or phone.
 
-For applications, generate the full version locally:
+### Private CV with contact details
 
-```shell
-cp cv.private.example.json cv.private.json   # fill in email and phone
-npm run cv:private                            # writes cv-private/manuel-perez-cv-{es,en}.pdf
-```
+For job applications, generate the full version, which adds email and phone to the contact line. It is built only on your machine and is never committed or deployed.
+1. Create your contact file from the example (only the first time):
 
-Both `cv.private.json` and `cv-private/` are ignored by git.
+   ```shell
+   cp cv.private.example.json cv.private.json
+   ```
+
+2. Fill it in. Leave a field empty to keep it out of the CV:
+
+   ```json
+   {
+     "email": "you@example.com",
+     "phone": "+34 600 000 000"
+   }
+   ```
+
+3. Generate the PDFs:
+
+   ```shell
+   npm run cv:private
+   ```
+
+   This writes `cv-private/manuel-perez-cv-es.pdf` and `cv-private/manuel-perez-cv-en.pdf`.
+
+The content comes from the same data as the site, so run the command again after changing your experience, stack or profile. If `cv.private.json` is missing, the script stops and tells you to create it.
+
+Both `cv.private.json` and `cv-private/` are listed in `.gitignore`. Never move them elsewhere in the repo or paste your email or phone into `src/data/`: anything there ends up in the public site and CV.
 
 ## Blog posts
 
