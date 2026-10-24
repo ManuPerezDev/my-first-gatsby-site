@@ -9,28 +9,69 @@ const { seo = {} } = Astro.props
 <html lang='es'>
   <head>
     <Seo {...seo} />
+    <meta name='theme-color' content='#05070f' />
     <Font cssVariable='--font-michroma' preload />
     <Font cssVariable='--font-exo' preload />
     <Font cssVariable='--font-share-tech-mono' />
     <script is:inline>
+      // Theme: the stored preference ('light' | 'dark'), or the OS setting when there is none ('system').
+      // Runs before paint and exposes window.siteTheme for the ThemeToggle component.
       ;(() => {
-        const storedTheme = () => {
+        const root = document.documentElement
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+        const browserColors = { light: '#eef1f8', dark: '#05070f' }
+
+        const readPreference = () => {
           try {
             const theme = JSON.parse(window.localStorage.getItem('theme'))
-            return theme === 'light' || theme === 'dark' ? theme : null
+            return theme === 'light' || theme === 'dark' ? theme : 'system'
           } catch (e) {
-            return null
+            return 'system'
           }
         }
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
+
         const apply = () => {
-          const theme = storedTheme() ?? (systemDark.matches ? 'dark' : 'light')
-          document.documentElement.setAttribute('data-theme', theme)
+          const preference = readPreference()
+          const theme = preference === 'system' ? (systemDark.matches ? 'dark' : 'light') : preference
+          root.setAttribute('data-theme-preference', preference)
+          if (root.getAttribute('data-theme') !== theme) {
+            // Switch every color at once instead of letting transition-colors elements lag behind
+            root.classList.add('theme-switching')
+            root.setAttribute('data-theme', theme)
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', browserColors[theme])
+            requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')))
+          }
+          document.dispatchEvent(new CustomEvent('themechange', { detail: { preference, theme } }))
         }
+
+        window.siteTheme = {
+          get preference() {
+            return readPreference()
+          },
+          // origin: viewport point where the reveal animation starts (the clicked button)
+          set(preference, origin) {
+            try {
+              if (preference === 'system') window.localStorage.removeItem('theme')
+              else window.localStorage.setItem('theme', JSON.stringify(preference))
+            } catch (e) {}
+            if (!document.startViewTransition || reducedMotion.matches || !origin) return apply()
+            const radius = Math.hypot(
+              Math.max(origin.x, window.innerWidth - origin.x),
+              Math.max(origin.y, window.innerHeight - origin.y)
+            )
+            root.style.setProperty('--reveal-x', `${origin.x}px`)
+            root.style.setProperty('--reveal-y', `${origin.y}px`)
+            root.style.setProperty('--reveal-r', `${radius}px`)
+            document.startViewTransition(apply)
+          }
+        }
+
         apply()
-        // Follow OS changes live (e.g. automatic dark mode at sunset) until the visitor picks a theme
-        systemDark.addEventListener('change', () => {
-          if (!storedTheme()) apply()
+        systemDark.addEventListener('change', apply)
+        // Another tab changed the theme
+        window.addEventListener('storage', event => {
+          if (event.key === 'theme' || event.key === null) apply()
         })
       })()
     </script>

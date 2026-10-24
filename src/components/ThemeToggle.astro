@@ -1,25 +1,49 @@
 ---
+// Three-way theme selector. The active option is styled from data-theme-preference on <html>
+// (set before paint, see global.css), and aria-pressed is kept in sync for screen readers.
 import Icon from './Icon.astro'
+
+const options = [
+  { value: 'system', label: 'Usar el tema del sistema', icon: 'tabler:device-desktop' },
+  { value: 'light', label: 'Tema claro', icon: 'tabler:sun' },
+  { value: 'dark', label: 'Tema oscuro', icon: 'tabler:moon' }
+]
 ---
 
-<button
-  type='button'
-  data-theme-toggle
-  aria-label='Cambiar entre modo claro y oscuro'
-  class='cursor-pointer rounded-full p-1.5 text-ink-faint transition-colors hover:text-accent'
->
-  <span class='block dark:hidden'><Icon name='tabler:moon' size='22' /></span>
-  <span class='hidden dark:block'><Icon name='tabler:sun' size='22' /></span>
-</button>
+<div role='group' aria-label='Tema' class='inline-flex items-center gap-0.5 rounded-full border border-line p-0.5'>
+  {
+    options.map(option => (
+      <button
+        type='button'
+        data-theme-option={option.value}
+        aria-pressed='false'
+        aria-label={option.label}
+        title={option.label}
+        class='cursor-pointer rounded-full p-1.5 text-ink-faint transition-colors hover:text-accent'
+      >
+        <Icon name={option.icon} size='18' />
+      </button>
+    ))
+  }
+</div>
 
 <script>
-  for (const button of document.querySelectorAll('[data-theme-toggle]')) {
+  const buttons = [...document.querySelectorAll('[data-theme-option]')]
+
+  const sync = () => {
+    const preference = window.siteTheme.preference
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(button.dataset.themeOption === preference))
+    }
+  }
+
+  for (const button of buttons) {
     button.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-      document.documentElement.setAttribute('data-theme', theme)
-      try {
-        window.localStorage.setItem('theme', JSON.stringify(theme))
-      } catch (e) {}
+      const rect = button.getBoundingClientRect()
+      window.siteTheme.set(button.dataset.themeOption, { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 })
     })
   }
+
+  document.addEventListener('themechange', sync)
+  sync()
 </script>

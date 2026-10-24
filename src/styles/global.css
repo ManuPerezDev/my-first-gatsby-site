@@ -117,6 +117,33 @@
 }
 
 @layer components {
+  /* Theme switch: everything changes at once, then a circle reveals the new theme from the clicked option */
+  .theme-switching *,
+  .theme-switching *::before,
+  .theme-switching *::after {
+    transition: none !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-new(root) {
+    animation: theme-reveal 500ms ease-out;
+  }
+
+  @keyframes theme-reveal {
+    from {
+      clip-path: circle(0 at var(--reveal-x) var(--reveal-y));
+    }
+
+    to {
+      clip-path: circle(var(--reveal-r) at var(--reveal-x) var(--reveal-y));
+    }
+  }
+
   /* Blue glow for the name; pulses only when motion is allowed */
   .glow {
     text-shadow: 0 0 18px var(--glow);
@@ -294,5 +321,16 @@
   .post-body .token.attr-name,
   .post-body .token.deleted {
     color: #ff9db0;
+  }
+}
+
+@layer utilities {
+  /* Active option of the theme selector, known before any script runs (see BaseLayout).
+     Utilities layer so it wins over the button's text-ink-faint */
+  :root[data-theme-preference='system'] [data-theme-option='system'],
+  :root[data-theme-preference='light'] [data-theme-option='light'],
+  :root[data-theme-preference='dark'] [data-theme-option='dark'] {
+    background: var(--accent-soft);
+    color: var(--accent-ink);
   }
 }

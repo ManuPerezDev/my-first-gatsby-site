@@ -62,16 +62,16 @@ Scale in use: name `text-3xl sm:text-4xl`, post title `text-2xl sm:text-3xl`, it
 
 ## Components
 
-| Component        | File                                  | Notes                                                                                     |
-| ---------------- | ------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `BaseLayout`     | `src/layouts/BaseLayout.astro`        | `<html lang="es">`, SEO, fonts, theme script. Every page uses it.                         |
-| `Sidebar`        | `src/components/Sidebar.astro`        | Takes `sections` (`{ id, title }[]`); highlights the section in view with `aria-current`. |
-| `Section`        | `src/components/Section.astro`        | `id` + `title`. Title is visible on mobile, `sr-only` on desktop.                         |
-| `ExperienceList` | `src/components/ExperienceList.astro` | Reads `src/data/experience.js`.                                                           |
-| `ArticleList`    | `src/components/ArticleList.astro`    | Takes the `blog` collection entries.                                                      |
-| `Stack`          | `src/components/Stack.astro`          | Reads `src/data/stack.js`; chips with a monochrome icon.                                  |
-| `Icon`           | `src/components/Icon.astro`           | Inline SVG at build time. See Icons.                                                      |
-| `ThemeToggle`    | `src/components/ThemeToggle.astro`    | Stores the choice in `localStorage.theme`; default follows the OS.                        |
+| Component        | File                                  | Notes                                                                                                                                                                                                                                            |
+| ---------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `BaseLayout`     | `src/layouts/BaseLayout.astro`        | `<html lang="es">`, SEO, fonts, theme script. Every page uses it.                                                                                                                                                                                |
+| `Sidebar`        | `src/components/Sidebar.astro`        | Takes `sections` (`{ id, title }[]`); highlights the section in view with `aria-current`.                                                                                                                                                        |
+| `Section`        | `src/components/Section.astro`        | `id` + `title`. Title is visible on mobile, `sr-only` on desktop.                                                                                                                                                                                |
+| `ExperienceList` | `src/components/ExperienceList.astro` | Reads `src/data/experience.js`.                                                                                                                                                                                                                  |
+| `ArticleList`    | `src/components/ArticleList.astro`    | Takes the `blog` collection entries.                                                                                                                                                                                                             |
+| `Stack`          | `src/components/Stack.astro`          | Reads `src/data/stack.js`; chips with a monochrome icon.                                                                                                                                                                                         |
+| `Icon`           | `src/components/Icon.astro`           | Inline SVG at build time. See Icons.                                                                                                                                                                                                             |
+| `ThemeToggle`    | `src/components/ThemeToggle.astro`    | Three options: system, light, dark. Logic lives in the `BaseLayout` head script (`window.siteTheme`): follows OS changes live, syncs tabs, updates `theme-color` and reveals the new theme with a View Transition (skipped with reduced motion). |
 
 ### Patterns
 
