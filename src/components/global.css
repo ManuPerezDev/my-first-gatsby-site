@@ -236,3 +236,40 @@ blockquote::before {
 blockquote p {
   display: inline;
 }
+
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+ul {
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+li {
+  padding: 0.2rem 0;
+  list-style-type: "-";
+  padding-inline-start: 1ch;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+header {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+footer {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

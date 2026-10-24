@@ -1,0 +1,47 @@
+---
+import styles from './article-preview.module.css'
+import { Image } from 'astro:assets'
+
+const { posts } = Astro.props
+
+function formatDate(date) {
+  const month = date.toLocaleString('en-EN', { month: 'short', timeZone: 'UTC' }).toUpperCase()
+  return `${month}, ${date.getUTCDate()}, ${date.getUTCFullYear()}`
+}
+
+function cutDescription(description) {
+  const maxLength = 170
+  const trimmedString = description.substr(0, maxLength)
+
+  return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))).concat('...')
+}
+---
+
+<section id='articles' class={styles.articlePreviewContainer}>
+  <h2>Artículos</h2>
+  {posts.map((post) => (
+    <a href={`/blog/${post.data.slug}`}>
+      <div class={styles.postInfoContainer}>
+        <div class={styles.postInfo}>
+          <Image
+            src={post.data.hero_image}
+            alt={post.data.hero_image_alt}
+            width={376}
+            height={160}
+            densities={[1, 2]}
+            class={styles.image}
+          />
+          <div class={styles.titleDescriptionContainer}>
+            <div class={styles.title}>{post.data.title}</div>
+            <div class={styles.description}>
+              {cutDescription(post.data.description)}
+              <br/>
+              {formatDate(post.data.date)}
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </a>
+  ))}
+</section>

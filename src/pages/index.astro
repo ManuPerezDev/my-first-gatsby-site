@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import ArticlePreview from '../components/article-preview/ArticlePreview.astro'
+import Hero from '../components/Hero/Hero.astro'
+import { Experience } from '../components/Experience/Experience'
+import { Stack } from '../components/Stack/Stack'
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date - a.data.date)
+  .slice(0, 6)
+---
+
+<Layout seo={{ url: Astro.url.href }}>
+  <Hero/>
+  <hr/>
+  <Experience/>
+  <hr/>
+  <Stack/>
+  <hr/>
+  <ArticlePreview posts={posts}/>
+</Layout>

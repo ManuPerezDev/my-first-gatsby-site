@@ -6,3 +6,15 @@
 .switchButton:hover {
   color: var(--secondary-color);
 }
+
+.sun {
+  display: none;
+}
+
+:global([data-theme="dark"]) .moon {
+  display: none;
+}
+
+:global([data-theme="dark"]) .sun {
+  display: inline;
+}

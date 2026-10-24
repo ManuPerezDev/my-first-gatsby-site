@@ -1,0 +1,31 @@
+---
+import styles from './Navigation.module.css'
+import Switch from './switch-dark-mode/Switch.astro'
+import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
+---
+
+<nav class={styles.navigation}>
+  <div class={styles.container}>
+    <div class={`${styles.navLinksItem} ${styles.logo}`}>
+      <a aria-label='Go to page site home' href='/'>
+        🙊 <span class={styles.manuelperez}>manuelperez</span><span class={styles.dev}>.DEV</span>
+      </a>
+    </div>
+    <div class={styles.buttons}>
+      <div class={styles.navLinksItem}>
+        <a aria-label='Go to page site home' href='/'>🏠</a>
+      </div>
+      <div class={styles.navLinksItem}>
+        <a aria-label='Go to manuel perez linkedin profile' href='https://www.linkedin.com/in/manuel-perez-regalado/'>
+          <FaLinkedin fontSize='2rem'/>
+        </a>
+      </div>
+      <div class={styles.navLinksItem}>
+        <a aria-label='Go to manuel perez github profile' href='https://github.com/ManuPerezDev'>
+          <FaGithubSquare fontSize='2rem'/>
+        </a>
+      </div>
+      <Switch/>
+    </div>
+  </div>
+</nav>

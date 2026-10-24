@@ -1,0 +1,19 @@
+---
+import styles from './switch-dark-mode.module.css'
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
+---
+
+<button type='button' class={styles.switchButton} aria-label='Switch dark mode' data-theme-switch>
+  <span class={styles.moon}><BsFillMoonFill size={30}/></span>
+  <span class={styles.sun}><BsFillSunFill size={30}/></span>
+</button>
+
+<script>
+  document.querySelector('[data-theme-switch]')?.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+    document.documentElement.setAttribute('data-theme', theme)
+    try {
+      window.localStorage.setItem('theme', JSON.stringify(theme))
+    } catch (e) {}
+  })
+</script>

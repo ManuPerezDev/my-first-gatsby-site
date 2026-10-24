@@ -1,0 +1,39 @@
+---
+import styles from './Hero.module.css'
+import { Image } from 'astro:assets'
+import { Button } from 'flowbite-react'
+import { FaLinkedin, FaGithubSquare, FaBusinessTime } from 'react-icons/fa'
+import avatar from '../../assets/avatar.png'
+---
+
+<section class={styles.heroContainer}>
+  <div class={styles.hero}>
+    <div class={styles.info}>
+      <h2 class={styles.subtitle}>Software Developer</h2>
+      <h1 class={styles.title}>Manuel Pérez Dev</h1>
+      <div class={styles.buttons}>
+        <a target='_blank' href='https://www.linkedin.com/in/manuel-perez-regalado/'>
+          <Button outline gradientDuoTone='purpleToBlue'>
+            <FaLinkedin fontSize='1.5em'/>
+            <span class={styles.text}>Linkedin</span>
+          </Button>
+        </a>
+        <a target='_blank' href='https://github.com/ManuPerezDev/'>
+          <Button outline gradientDuoTone='greenToBlue'>
+            <FaGithubSquare fontSize='1.5em'/>
+            <span class={styles.text}>Github</span>
+          </Button>
+        </a>
+        <a href='#experience'>
+          <Button gradientDuoTone='tealToLime'>
+            <FaBusinessTime fontSize='1.5em'/>
+            <span class={styles.text}>+{new Date().getFullYear() - 2021} años de experiencia</span>
+          </Button>
+        </a>
+      </div>
+    </div>
+    <div class={styles.image}>
+      <Image src={avatar} alt='Avatar image' width={200} densities={[1, 2]}/>
+    </div>
+  </div>
+</section>
