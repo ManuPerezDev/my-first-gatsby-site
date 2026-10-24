@@ -1,15 +1,19 @@
 ---
 // Head metadata for every page: title, canonical URL, icons, Open Graph and Twitter cards.
 // image must be an absolute URL; pages without their own image share public/og-image.png.
+// alternates ({ lang, href }[]) lists the same page in every language for hreflang links.
+import { useTranslations } from '../i18n'
 import { siteMetadata } from '../site'
 
 const {
+  lang = 'es',
   title,
-  description = siteMetadata.description,
+  description = useTranslations(lang).description,
   image = new URL('/og-image.png', Astro.site).href,
   type = 'website',
   publishedTime,
-  noindex = false
+  noindex = false,
+  alternates = []
 } = Astro.props
 
 const pageTitle = title ? `${title} | ${siteMetadata.title}` : siteMetadata.title
@@ -23,6 +27,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href
 <meta name='author' content={siteMetadata.author} />
 <link rel='canonical' href={canonical} />
 {noindex && <meta name='robots' content='noindex' />}
+{alternates.map(alt => <link rel='alternate' hreflang={alt.lang} href={new URL(alt.href, Astro.site).href} />)}
+{alternates.length > 0 && <link rel='alternate' hreflang='x-default' href={new URL(alternates[0].href, Astro.site).href} />}
 
 <link rel='icon' href='/favicon.ico' sizes='32x32' />
 <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
@@ -30,7 +36,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href
 
 <meta property='og:type' content={type} />
 <meta property='og:site_name' content={siteMetadata.title} />
-<meta property='og:locale' content='es_ES' />
+<meta property='og:locale' content={useTranslations(lang).ogLocale} />
 <meta property='og:url' content={canonical} />
 <meta property='og:title' content={title ?? siteMetadata.title} />
 <meta property='og:description' content={description} />

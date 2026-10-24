@@ -3,12 +3,12 @@ import { Font } from 'astro:assets'
 import Seo from '../components/Seo.astro'
 import '../styles/global.css'
 
-const { seo = {} } = Astro.props
+const { lang = 'es', seo = {} } = Astro.props
 ---
 
-<html lang='es'>
+<html lang={lang}>
   <head>
-    <Seo {...seo} />
+    <Seo lang={lang} {...seo} />
     <meta name='theme-color' content='#05070f' />
     <Font cssVariable='--font-michroma' preload />
     <Font cssVariable='--font-exo' preload />

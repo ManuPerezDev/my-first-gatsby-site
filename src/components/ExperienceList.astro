@@ -2,13 +2,15 @@
 import { experience } from '../data/experience'
 import Icon from './Icon.astro'
 import ListItem from './ListItem.astro'
+
+const { lang } = Astro.props
 ---
 
 <ol class='group/list flex flex-col gap-12'>
   {
     experience.map(item => (
       <ListItem class='gap-2'>
-        <p class='z-10 mt-1 mb-2 font-mono text-sm tracking-wide text-ink-faint uppercase sm:col-span-2'>{item.time}</p>
+        <p class='z-10 mt-1 mb-2 font-mono text-sm tracking-wide text-ink-faint uppercase sm:col-span-2'>{item.time[lang]}</p>
         <div class='z-10 sm:col-span-6'>
           <h3 class='leading-snug font-semibold text-ink'>
             {item.learnMoreLink ? (
@@ -20,17 +22,17 @@ import ListItem from './ListItem.astro'
               >
                 <span class='absolute -inset-x-4 -inset-y-2.5 hidden rounded-sm md:-inset-x-6 md:-inset-y-4 lg:block' />
                 <span>
-                  {item.title} · {item.organization}
+                  {item.title[lang]} · {item.organization}
                   <Icon name='tabler:arrow-up-right' size='1em' class='ml-1 inline-block align-[-0.1em] transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 motion-reduce:transition-none' />
                 </span>
               </a>
             ) : (
               <span>
-                {item.title} · {item.organization}
+                {item.title[lang]} · {item.organization}
               </span>
             )}
           </h3>
-          {item.body.map(paragraph => (
+          {item.body[lang].map(paragraph => (
             <p class='mt-2 text-sm leading-relaxed'>{paragraph}</p>
           ))}
         </div>

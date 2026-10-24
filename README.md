@@ -13,6 +13,10 @@ npm run build    # outputs to dist/
 npm run preview
 ```
 
+## Languages
+
+Spanish lives at `/` and English at `/en/`. Interface strings are in `src/i18n.js`; content in `src/data/` has a Spanish and an English version. Blog posts are written in Spanish only.
+
 ## Blog posts
 
 Each post lives in `blog/<folder>/index.md` with its images next to it. The URL is `/blog/<slug>`, taken from the `slug` frontmatter field. Frontmatter is validated in `src/content.config.js`.

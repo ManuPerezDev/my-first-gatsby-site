@@ -1,21 +1,22 @@
+// Group titles are { es, en } pairs; item names are the same in both languages unless given as a pair.
 // Icons: "si:" are Simple Icons brand slugs, "tabler:" are Tabler Icons names. See docs/STYLEGUIDE.md.
 export const stack = [
   {
-    title: 'Backend y datos',
+    title: { es: 'Backend y datos', en: 'Backend and data' },
     items: [
       { name: 'Node.js', icon: 'si:nodedotjs' },
       { name: 'TypeScript', icon: 'si:typescript' },
       { name: 'Express', icon: 'si:express' },
       { name: 'MongoDB', icon: 'si:mongodb' },
       { name: 'MySQL', icon: 'si:mysql' },
-      { name: 'AWS S3 y SQS', icon: 'si:amazonwebservices' },
+      { name: { es: 'AWS S3 y SQS', en: 'AWS S3 and SQS' }, icon: 'si:amazonwebservices' },
       { name: 'Google Cloud Storage', icon: 'si:googlecloudstorage' },
       { name: 'Zod', icon: 'si:zod' },
       { name: 'OpenTelemetry', icon: 'si:opentelemetry' }
     ]
   },
   {
-    title: 'Frontend',
+    title: { es: 'Frontend', en: 'Frontend' },
     items: [
       { name: 'React', icon: 'si:react' },
       { name: 'TanStack', icon: 'si:tanstack' },
@@ -26,7 +27,7 @@ export const stack = [
     ]
   },
   {
-    title: 'Inteligencia artificial',
+    title: { es: 'Inteligencia artificial', en: 'Artificial intelligence' },
     items: [
       { name: 'OpenAI API', icon: 'si:openai' },
       { name: 'Claude', icon: 'si:claude' },
@@ -35,7 +36,7 @@ export const stack = [
     ]
   },
   {
-    title: 'Testing',
+    title: { es: 'Testing', en: 'Testing' },
     items: [
       { name: 'Vitest', icon: 'si:vitest' },
       { name: 'Testing Library', icon: 'si:testinglibrary' },
@@ -44,7 +45,7 @@ export const stack = [
     ]
   },
   {
-    title: 'Herramientas',
+    title: { es: 'Herramientas', en: 'Tools' },
     items: [
       { name: 'Git', icon: 'si:git' },
       { name: 'GitHub Actions', icon: 'si:githubactions' },
@@ -57,7 +58,7 @@ export const stack = [
     ]
   },
   {
-    title: 'Metodologías',
+    title: { es: 'Metodologías', en: 'Methodologies' },
     items: [
       { name: 'Agile', icon: 'tabler:refresh' },
       { name: 'Scrum', icon: 'tabler:layout-board' },

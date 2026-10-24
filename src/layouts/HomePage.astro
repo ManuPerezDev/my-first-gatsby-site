@@ -1,0 +1,60 @@
+---
+// Home page for one language; src/pages/index.astro (es) and src/pages/en/index.astro (en) render it.
+import { getCollection } from 'astro:content'
+import About from '../components/About.astro'
+import ArticleList from '../components/ArticleList.astro'
+import ExperienceList from '../components/ExperienceList.astro'
+import Section from '../components/Section.astro'
+import Sidebar from '../components/Sidebar.astro'
+import Stack from '../components/Stack.astro'
+import { homePath, languages, useTranslations } from '../i18n'
+import BaseLayout from './BaseLayout.astro'
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+
+const sections = ['about', 'experience', 'stack', 'articles'].map(key => ({
+  id: t.sectionIds[key],
+  title: t.sections[key]
+}))
+const [about, experience, stack, articles] = sections
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date - a.data.date)
+const alternates = Object.keys(languages).map(code => ({ lang: code, href: homePath(code) }))
+---
+
+<BaseLayout lang={lang} seo={{ alternates }}>
+  <a
+    href='#contenido'
+    class='absolute top-0 left-0 z-50 -translate-y-full bg-accent px-4 py-3 font-mono text-sm text-canvas uppercase focus-visible:translate-y-0'
+  >
+    {t.skipToContent}
+  </a>
+  <div class='mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-0'>
+    <div class='lg:flex lg:justify-between lg:gap-4'>
+      <Sidebar lang={lang} sections={sections} />
+
+      <main id='contenido' class='pt-24 lg:w-[54%] lg:py-24'>
+        <Section id={about.id} title={about.title}>
+          <About lang={lang} />
+        </Section>
+
+        <Section id={experience.id} title={experience.title}>
+          <ExperienceList lang={lang} />
+        </Section>
+
+        <Section id={stack.id} title={stack.title}>
+          <Stack lang={lang} />
+        </Section>
+
+        <Section id={articles.id} title={articles.title}>
+          <ArticleList lang={lang} posts={posts} />
+        </Section>
+
+        <footer class='pb-16 font-mono text-sm text-ink-faint sm:pb-0'>
+          © {new Date().getFullYear()} Manuel Pérez Regalado · {t.footer}
+        </footer>
+      </main>
+    </div>
+  </div>
+</BaseLayout>

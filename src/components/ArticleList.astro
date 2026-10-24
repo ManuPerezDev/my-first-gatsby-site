@@ -1,9 +1,13 @@
 ---
 import { Image } from 'astro:assets'
+import { useTranslations } from '../i18n'
 import { formatShortDate } from '../utils/dates'
 import ListItem from './ListItem.astro'
 
-const { posts } = Astro.props
+const { lang, posts } = Astro.props
+const t = useTranslations(lang)
+// Posts are written in Spanish; on other languages they keep lang="es" and carry a badge
+const postLang = lang === 'es' ? undefined : 'es'
 ---
 
 <ol class='group/list flex flex-col gap-12'>
@@ -11,16 +15,19 @@ const { posts } = Astro.props
     posts.map(post => (
       <ListItem class='gap-4'>
         <div class='z-10 sm:order-2 sm:col-span-6'>
-          <h3 class='leading-snug font-semibold text-ink'>
-            <a href={`/blog/${post.data.slug}`} class='group/link hover:text-accent focus-visible:text-accent'>
+          <h3 class='leading-snug font-semibold text-ink' lang={postLang}>
+            <a href={`/blog/${post.data.slug}`} hreflang='es' class='group/link hover:text-accent focus-visible:text-accent'>
               <span class='absolute -inset-x-4 -inset-y-2.5 hidden rounded-sm md:-inset-x-6 md:-inset-y-4 lg:block' />
               {post.data.title}
             </a>
           </h3>
-          <p class='mt-1 font-mono text-sm tracking-wide text-ink-faint uppercase'>
-            <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatShortDate(post.data.date)}</time>
+          <p class='mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-sm tracking-wide text-ink-faint uppercase'>
+            <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatShortDate(post.data.date, t.dateLocale)}</time>
+            {t.inSpanish && (
+              <span class='rounded-full bg-accent-soft px-2 text-xs tracking-widest text-accent-ink'>{t.inSpanish}</span>
+            )}
           </p>
-          <p class='mt-2 line-clamp-3 text-sm leading-relaxed'>{post.data.description}</p>
+          <p class='mt-2 line-clamp-3 text-sm leading-relaxed' lang={postLang}>{post.data.description}</p>
         </div>
         <Image
           src={post.data.hero_image}

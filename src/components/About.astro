@@ -1,0 +1,41 @@
+---
+// "About" text in each language. Written by the author; translations stay faithful to the Spanish original.
+const { lang } = Astro.props
+const link = 'font-medium text-ink hover:text-accent'
+---
+
+<div class='flex flex-col gap-4'>
+  {
+    lang === 'en' ? (
+      <>
+        <p>Hi! My name is Manuel. Thanks for visiting this page and taking an interest in me.</p>
+        <p>
+          I have been a software developer since 2021. I started out at{' '}
+          <a href='https://www.leanmind.es/en/' target='_blank' rel='noopener noreferrer' class={link}>Lean Mind</a>, a fantastic company based in Tenerife, where I learned a lot about good development practices, technologies
+          and, above all, patience.
+        </p>
+        <p>
+          Later I had the chance to join{' '}
+          <a href='https://www.audiense.com' target='_blank' rel='noopener noreferrer' class={link}>Audiense</a>{' '}
+          as a product developer. Since then I have been building product with an incredible team of professionals. Our
+          biggest challenge is adapting to a new world built on AI without losing sight of what our customers need.
+        </p>
+      </>
+    ) : (
+      <>
+        <p>¡Hola! Mi nombre es Manuel. Gracias por entrar a esta página e interesarte por mí.</p>
+        <p>
+          Soy desarrollador de software desde 2021. Empecé a trabajar en la fantástica empresa{' '}
+          <a href='https://www.leanmind.es/es/' target='_blank' rel='noopener noreferrer' class={link}>Lean Mind</a>, afincada en Tenerife. Allí aprendí mucho de buenas prácticas de desarrollo, tecnologías y, sobre todo, paciencia.
+        </p>
+        <p>
+          Más tarde tuve la oportunidad de unirme a{' '}
+          <a href='https://www.audiense.com' target='_blank' rel='noopener noreferrer' class={link}>Audiense</a>{' '}
+          como desarrollador de producto. Desde entonces desarrollo producto junto con un equipo de profesionales increíble.
+          Nuestro mayor reto es adaptarnos a un nuevo mundo basado en IA sin perder de vista las necesidades de nuestros
+          clientes.
+        </p>
+      </>
+    )
+  }
+</div>

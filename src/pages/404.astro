@@ -1,13 +1,20 @@
 ---
+// Netlify serves this page for every unknown URL, in both languages, so it carries both.
 import Icon from '../components/Icon.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+
+const back = 'inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase hover:text-ink'
 ---
 
-<BaseLayout seo={{ title: 'Página no encontrada', noindex: true }}>
+<BaseLayout seo={{ title: 'Página no encontrada · Page not found', noindex: true }}>
   <main class='mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-6 px-6'>
     <p class='font-mono text-sm tracking-widest text-accent uppercase'>Error 404</p>
     <h1 class='glow font-display text-3xl leading-tight text-ink'>Pantalla no encontrada</h1>
     <p>La página que buscas no existe o ha cambiado de dirección.</p>
-    <a href='/' class='inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase hover:text-ink'><Icon name='tabler:arrow-left' />Volver al inicio</a>
+    <p lang='en'>The page you are looking for does not exist or has moved.</p>
+    <div class='flex flex-wrap gap-x-8 gap-y-3'>
+      <a href='/' class={back}><Icon name='tabler:arrow-left' />Volver al inicio</a>
+      <a href='/en/' lang='en' class={back}><Icon name='tabler:arrow-left' />Back to home</a>
+    </div>
   </main>
 </BaseLayout>

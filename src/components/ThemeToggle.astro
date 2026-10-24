@@ -1,16 +1,19 @@
 ---
 // Three-way theme selector. The active option is styled from data-theme-preference on <html>
 // (set before paint, see global.css), and aria-pressed is kept in sync for screen readers.
+import { useTranslations } from '../i18n'
 import Icon from './Icon.astro'
 
+const { lang = 'es' } = Astro.props
+const t = useTranslations(lang)
 const options = [
-  { value: 'system', label: 'Usar el tema del sistema', icon: 'tabler:device-desktop' },
-  { value: 'light', label: 'Tema claro', icon: 'tabler:sun' },
-  { value: 'dark', label: 'Tema oscuro', icon: 'tabler:moon' }
+  { value: 'system', label: t.themeSystem, icon: 'tabler:device-desktop' },
+  { value: 'light', label: t.themeLight, icon: 'tabler:sun' },
+  { value: 'dark', label: t.themeDark, icon: 'tabler:moon' }
 ]
 ---
 
-<div role='group' aria-label='Tema' class='inline-flex items-center gap-0.5 rounded-full border border-line p-0.5'>
+<div role='group' aria-label={t.themeLabel} class='inline-flex items-center gap-0.5 rounded-full border border-line p-0.5'>
   {
     options.map(option => (
       <button
