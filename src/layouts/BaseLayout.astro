@@ -14,14 +14,24 @@ const { seo = {} } = Astro.props
     <Font cssVariable='--font-share-tech-mono' />
     <script is:inline>
       ;(() => {
-        let theme
-        try {
-          theme = JSON.parse(window.localStorage.getItem('theme'))
-        } catch (e) {}
-        if (theme !== 'light' && theme !== 'dark') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        const storedTheme = () => {
+          try {
+            const theme = JSON.parse(window.localStorage.getItem('theme'))
+            return theme === 'light' || theme === 'dark' ? theme : null
+          } catch (e) {
+            return null
+          }
         }
-        document.documentElement.setAttribute('data-theme', theme)
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
+        const apply = () => {
+          const theme = storedTheme() ?? (systemDark.matches ? 'dark' : 'light')
+          document.documentElement.setAttribute('data-theme', theme)
+        }
+        apply()
+        // Follow OS changes live (e.g. automatic dark mode at sunset) until the visitor picks a theme
+        systemDark.addEventListener('change', () => {
+          if (!storedTheme()) apply()
+        })
       })()
     </script>
   </head>
