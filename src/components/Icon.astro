@@ -1,0 +1,25 @@
+---
+import { getIconData, iconToSVG } from '@iconify/utils'
+// Inline SVG icon rendered at build time. Names are "<set>:<icon>":
+// "si:<slug>" for brands (Simple Icons) and "tabler:<name>" for everything else (Tabler Icons).
+import simpleIcons from '@iconify-json/simple-icons/icons.json'
+import tabler from '@iconify-json/tabler/icons.json'
+
+const sets = { si: simpleIcons, tabler }
+
+const { name, label, size = '1em', class: className, ...rest } = Astro.props
+const [prefix, iconName] = name.split(':')
+const data = sets[prefix] && getIconData(sets[prefix], iconName)
+if (!data) throw new Error(`Unknown icon "${name}"`)
+const { attributes, body } = iconToSVG(data, { height: size })
+---
+
+<svg
+  {...attributes}
+  {...rest}
+  class={className}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  set:html={body}
+/>

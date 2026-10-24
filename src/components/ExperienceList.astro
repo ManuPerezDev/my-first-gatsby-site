@@ -1,5 +1,6 @@
 ---
 import { experience } from '../data/experience'
+import Icon from './Icon.astro'
 ---
 
 <ol class='group/list flex flex-col gap-12'>
@@ -20,9 +21,7 @@ import { experience } from '../data/experience'
                 <span class='absolute -inset-x-4 -inset-y-2.5 hidden rounded-sm md:-inset-x-6 md:-inset-y-4 lg:block' />
                 <span>
                   {item.title} · {item.organization}
-                  <span aria-hidden='true' class='ml-1 inline-block transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 motion-reduce:transition-none'>
-                    ↗
-                  </span>
+                  <Icon name='tabler:arrow-up-right' size='1em' class='ml-1 inline-block align-[-0.1em] transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 motion-reduce:transition-none' />
                 </span>
               </a>
             ) : (

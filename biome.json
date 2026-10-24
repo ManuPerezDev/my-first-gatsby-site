@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/*.css", "!.flowbite-react"]
+    "includes": ["**", "!**/*.css"]
   },
   "formatter": {
     "enabled": true,

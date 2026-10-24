@@ -1,6 +1,6 @@
 # manuelperez.dev
 
-Personal site and blog. Astro 7 (static), Tailwind CSS 4, React only for build-time rendered stack icons.
+Personal site and blog. Astro 7 (static, no UI framework), Tailwind CSS 4, icons from Simple Icons and Tabler via `src/components/Icon.astro`.
 - UI rules, tokens and components: **read `docs/STYLEGUIDE.md` before touching any UI.**
   Colors and fonts come only from the tokens in `src/styles/global.css`; check light and dark.
 - Blog posts: `blog/<folder>/index.md`, URL `/blog/<slug>` from frontmatter, schema in `src/content.config.js`.

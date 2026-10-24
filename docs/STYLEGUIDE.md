@@ -17,8 +17,8 @@ agents: follow it when adding or changing UI.
 4. **The atmosphere lives in the background and the name.** Particles, halo and glow are
    global. Content stays calm: no extra gradients, shadows or animations on cards.
 5. **Static by default.** Pages are `.astro` components with no client JavaScript. A small
-   `<script>` is fine for progressive enhancement (theme toggle, nav highlight). React is only
-   used to render the stack icons at build time; do not add `client:*` islands without a reason.
+   `<script>` is fine for progressive enhancement (theme toggle, nav highlight). There is no UI
+   framework; do not add one without a reason.
 
 ## Color tokens
 
@@ -33,7 +33,6 @@ agents: follow it when adding or changing UI.
 | `accent-ink` (`text-accent-ink`)      | Text on `accent-soft`              | `#2340b4`  | `#a9c3ff`   |
 | `hover` (`bg-hover`)                  | Hover surface of list items        | blue at 6% | blue at 7%  |
 | `line` (`border-line`)                | Borders and dividers               | `#d3d9ea`  | blue at 16% |
-| `plate` (`bg-plate`)                  | White badge behind brand icons     | `#fff`     | `#fff`      |
 
 Effect-only variables (used in `global.css`, not as classes): `--glow`, `--halo`, `--particles`, `--code-bg`.
 
@@ -70,7 +69,8 @@ Scale in use: name `text-3xl sm:text-4xl`, post title `text-2xl sm:text-3xl`, it
 | `Section`        | `src/components/Section.astro`        | `id` + `title`. Title is visible on mobile, `sr-only` on desktop.                         |
 | `ExperienceList` | `src/components/ExperienceList.astro` | Reads `src/data/experience.js`.                                                           |
 | `ArticleList`    | `src/components/ArticleList.astro`    | Takes the `blog` collection entries.                                                      |
-| `Stack`          | `src/components/Stack/Stack.jsx`      | Chips with brand icon on a `plate` badge.                                                 |
+| `Stack`          | `src/components/Stack.astro`          | Reads `src/data/stack.js`; chips with a monochrome icon.                                  |
+| `Icon`           | `src/components/Icon.astro`           | Inline SVG at build time. See Icons.                                                      |
 | `ThemeToggle`    | `src/components/ThemeToggle.astro`    | Stores the choice in `localStorage.theme`; default follows the OS.                        |
 
 ### Patterns
@@ -81,6 +81,21 @@ Scale in use: name `text-3xl sm:text-4xl`, post title `text-2xl sm:text-3xl`, it
 - **Chip:** `rounded-full bg-accent-soft text-accent-ink text-sm font-medium px-3 py-1.5`.
 - **Link inside text:** `text-ink` + `hover:text-accent`; in Markdown, `accent` underlined.
 - **External link:** `target="_blank" rel="noopener noreferrer"` and an `↗` that moves on hover.
+
+## Icons
+
+Monochrome only: icons take `currentColor`, so they follow the text token of their container.
+`<Icon name="set:icon" size="1em" label="…" />` renders an inline SVG at build time (no JS).
+
+| Set                                     | Prefix    | Use                                                                                       | Find names              |
+| --------------------------------------- | --------- | ----------------------------------------------------------------------------------------- | ----------------------- |
+| [Simple Icons](https://simpleicons.org) | `si:`     | Brands and technologies (`si:nodedotjs`, `si:docker`)                                     | Slug on simpleicons.org |
+| [Tabler Icons](https://tabler.io/icons) | `tabler:` | Concepts, methodologies and UI (`tabler:sun`, `tabler:arrow-left`, `tabler:brand-github`) | Name on tabler.io/icons |
+- Never use full-color logos, PNGs or another icon set; that breaks the palette.
+- Size with `size` in `em` next to text (`1em`, `1.1em`) or in px for standalone buttons (`22`, `24`).
+- Decorative icons need nothing: they get `aria-hidden`. An icon that is the only content of a
+  link or button needs `label` on the icon or `aria-label` on the control.
+- An unknown name fails the build, so typos never ship.
 
 ## Motion and accessibility
 

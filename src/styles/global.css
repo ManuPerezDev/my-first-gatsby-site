@@ -22,7 +22,6 @@
   --code-bg: #0b1024;
   --particles: transparent;
   --halo: rgb(39, 71, 201, 0.1);
-  --plate: #fff;
 
   color-scheme: light;
 }
@@ -76,7 +75,6 @@
   --color-accent-ink: var(--accent-ink);
   --color-hover: var(--hover);
   --color-line: var(--line);
-  --color-plate: var(--plate);
   --font-display: var(--font-michroma), 'Exo 2', sans-serif;
   --font-sans: var(--font-exo), system-ui, sans-serif;
   --font-mono: var(--font-share-tech-mono), ui-monospace, monospace;

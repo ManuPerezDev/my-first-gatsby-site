@@ -1,5 +1,5 @@
 ---
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import Icon from './Icon.astro'
 import ThemeToggle from './ThemeToggle.astro'
 
 const { sections } = Astro.props
@@ -39,7 +39,7 @@ const { sections } = Astro.props
       aria-label='GitHub'
       class='text-ink-faint transition-colors hover:text-accent'
     >
-      <FaGithub size={22} />
+      <Icon name='tabler:brand-github' size='24' />
     </a>
     <a
       href='https://www.linkedin.com/in/manuel-perez-regalado/'
@@ -48,7 +48,7 @@ const { sections } = Astro.props
       aria-label='LinkedIn'
       class='text-ink-faint transition-colors hover:text-accent'
     >
-      <FaLinkedin size={22} />
+      <Icon name='tabler:brand-linkedin' size='24' />
     </a>
     <ThemeToggle />
   </div>

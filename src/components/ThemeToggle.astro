@@ -1,5 +1,5 @@
 ---
-import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
+import Icon from './Icon.astro'
 ---
 
 <button
@@ -8,8 +8,8 @@ import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
   aria-label='Cambiar entre modo claro y oscuro'
   class='cursor-pointer rounded-full p-1.5 text-ink-faint transition-colors hover:text-accent'
 >
-  <span class='block dark:hidden'><BsFillMoonFill size={18} /></span>
-  <span class='hidden dark:block'><BsFillSunFill size={18} /></span>
+  <span class='block dark:hidden'><Icon name='tabler:moon' size='22' /></span>
+  <span class='hidden dark:block'><Icon name='tabler:sun' size='22' /></span>
 </button>
 
 <script>
