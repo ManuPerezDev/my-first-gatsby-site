@@ -3,7 +3,7 @@
 title: "3 years of Principles and Practices"
 date: "2024-01-05"
 hero_image: "./main.jpg"
-hero_image_alt: "Personal computer."
+hero_image_alt: "Backlit keyboard in front of two monitors showing code."
 description: "After a few years of experience in software development, I would like to share a set of principles and practices that matter to me in my day to day, some more essential than others."
 slug: "principles-and-practices"
 ---

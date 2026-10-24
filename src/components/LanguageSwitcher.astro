@@ -16,6 +16,7 @@ const t = useTranslations(lang)
           hreflang={code}
           lang={code}
           title={languages[code]}
+        aria-label={languages[code]}
           aria-current={code === lang ? 'page' : undefined}
           class='rounded-full px-2 py-1 text-ink-faint transition-colors hover:text-accent aria-[current=page]:bg-accent-soft aria-[current=page]:text-accent-ink'
         >

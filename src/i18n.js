@@ -22,7 +22,8 @@ const ui = {
     themeDark: 'Tema oscuro',
     inSpanish: null,
     backToArticles: 'Volver a los artículos',
-    downloadCv: 'Descargar CV',
+    downloadCv: 'Descargar CV (PDF)',
+    newTab: '(se abre en una pestaña nueva)',
     cv: {
       summary: 'Perfil',
       experience: 'Experiencia profesional',
@@ -50,7 +51,8 @@ const ui = {
     themeDark: 'Dark theme',
     inSpanish: 'In Spanish',
     backToArticles: 'Back to articles',
-    downloadCv: 'Download CV',
+    downloadCv: 'Download CV (PDF)',
+    newTab: '(opens in a new tab)',
     cv: {
       summary: 'Summary',
       experience: 'Professional experience',

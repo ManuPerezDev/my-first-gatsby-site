@@ -3,7 +3,7 @@
 title: "Una guía para la elección de dependencias"
 date: "2024-02-08"
 hero_image: "./connections.jpg"
-hero_image_alt: "Lights."
+hero_image_alt: "Trazos de luz enredados sobre una azotea al atardecer."
 description: "Esta es una pequeña guía para tratar de simplificar el proceso de elección de estas dependencias que invite a la reflexión y el debate dentro de los equipos de desarrollo con el objetivo de que los pilares de nuestra aplicación sean lo más sólidos posibles."
 slug: "choose-dependencies"
 ---

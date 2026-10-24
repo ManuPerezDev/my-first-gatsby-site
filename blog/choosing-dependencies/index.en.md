@@ -3,7 +3,7 @@
 title: "A guide to choosing dependencies"
 date: "2024-02-08"
 hero_image: "./connections.jpg"
-hero_image_alt: "Lights."
+hero_image_alt: "Tangled light trails over a rooftop at dusk."
 description: "A short guide to simplify the process of choosing dependencies and to encourage reflection and debate within development teams, so that the pillars of our application are as solid as possible."
 slug: "choose-dependencies"
 ---

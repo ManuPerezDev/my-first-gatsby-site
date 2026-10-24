@@ -3,7 +3,7 @@
 title: "3 años de Principios y Prácticas"
 date: "2024-01-05"
 hero_image: "./main.jpg"
-hero_image_alt: "Personal computer."
+hero_image_alt: "Teclado iluminado delante de dos monitores con código."
 description: "Después de un par de años de experiencia de en el desarrollo de software me gustaría compartir lo que son para mí una serie de principios y prácticas, algunos más imprescindible que otros, en mi día a día."
 slug: "principles-and-practices"
 ---

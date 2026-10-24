@@ -82,8 +82,13 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scrollbar-color: var(--ink-faint) transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

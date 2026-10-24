@@ -3,7 +3,7 @@
 title: "Extreme Programming: Valores, Principios y Prácticas"
 date: "2022-12-17"
 hero_image: "./razvan-dumitrasconiu-GUBuFwOHFl8-unsplash.jpg"
-hero_image_alt: "Lake and mountains."
+hero_image_alt: "Lago de montaña que refleja cumbres nevadas."
 hero_image_owner_url: "https://unsplash.com/@dumitrasconiudesign?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 description: "XP es mi intento de reconciliar humanidad y productividad en mi práctica de desarrollo software y compartir esa reconciliación."
 slug: "extreme-programming"

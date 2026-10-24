@@ -48,7 +48,7 @@ const t = useTranslations(lang)
       href={profile.links.github}
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='GitHub'
+      aria-label={`GitHub ${t.newTab}`}
       class='text-ink-faint transition-colors hover:text-accent'
     >
       <Icon name='tabler:brand-github' size='24' />
@@ -57,7 +57,7 @@ const t = useTranslations(lang)
       href={profile.links.linkedin}
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='LinkedIn'
+      aria-label={`LinkedIn ${t.newTab}`}
       class='text-ink-faint transition-colors hover:text-accent'
     >
       <Icon name='tabler:brand-linkedin' size='24' />

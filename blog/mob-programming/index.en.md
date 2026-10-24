@@ -3,7 +3,7 @@
 title: "Mob Programming"
 date: "2020-12-27"
 hero_image: "./main.jpg"
-hero_image_alt: "People programming together."
+hero_image_alt: "A team programming together in front of large screens in an office; one person types while the others watch and discuss."
 description: "Mob Programming is a way of developing software in which a group of professionals work on the same problem, at the same time and in the same environment."
 slug: "mob-programming"
 ---

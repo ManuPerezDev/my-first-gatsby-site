@@ -3,7 +3,7 @@
 title: "Architecture Decision Records"
 date: "2022-02-02"
 hero_image: "./main.jpg"
-hero_image_alt: "Big building."
+hero_image_alt: "Fachada de un edificio moderno con balcones en zigzag."
 description: "Un ADR es una decisión de arquitectura de software consensuada por el equipo cuyo objetivo es mantener la consistencia e integridad de la aplicación registrada en un archivo compartido."
 slug: "architecture-decision-records"
 ---

@@ -3,7 +3,7 @@
 title: "Mob Programming"
 date: "2020-12-27"
 hero_image: "./main.jpg"
-hero_image_alt: "People programming together."
+hero_image_alt: "Un equipo programa junto delante de pantallas grandes en una oficina; una persona escribe y el resto observa y comenta."
 description: "El Mob Programming o programación en grupo es una forma de desarrollo en el que un grupo de profesionales trabajan en un mismo problema, al mismo tiempo y en un mismo entorno de trabajo."
 slug: "mob-programming"
 ---

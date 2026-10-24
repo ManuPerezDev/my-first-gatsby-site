@@ -1,9 +1,11 @@
 ---
 import { experience } from '../data/experience'
+import { useTranslations } from '../i18n'
 import Icon from './Icon.astro'
 import ListItem from './ListItem.astro'
 
 const { lang } = Astro.props
+const t = useTranslations(lang)
 ---
 
 <ol class='group/list flex flex-col gap-12'>
@@ -24,6 +26,7 @@ const { lang } = Astro.props
                 <span>
                   {item.title[lang]} · {item.organization}
                   <Icon name='tabler:arrow-up-right' size='1em' class='ml-1 inline-block align-[-0.1em] transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 motion-reduce:transition-none' />
+                  <span class='sr-only'> {t.newTab}</span>
                 </span>
               </a>
             ) : (

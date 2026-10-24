@@ -3,7 +3,7 @@
 title: "CQRS"
 date: "2022-02-12"
 hero_image: "./main.jpg"
-hero_image_alt: "Big building."
+hero_image_alt: "Escritorio de madera con un portátil, una tableta, una taza de café, gafas, libros y alguien escribiendo en una libreta."
 description: "Command Query Responsibility Segregation es un patrón de diseño de software que separa los modelos de escritura y lectura de datos con el objetivo principal de mejorar el rendimiento de un sistema con alta tasa de concurrencia garantizando la escalabilidad del mismo."
 slug: "cqrs"
 ---
