@@ -1,0 +1,94 @@
+---
+// A blog post in one language. Rendered by src/pages/blog/[slug].astro (es) and src/pages/en/blog/[slug].astro (en).
+import { getImage, Image } from 'astro:assets'
+import { render } from 'astro:content'
+import Icon from '../components/Icon.astro'
+import LanguageSwitcher from '../components/LanguageSwitcher.astro'
+import ThemeToggle from '../components/ThemeToggle.astro'
+import { hasTranslation } from '../data/posts'
+import { homePath, languages, postPath, useTranslations } from '../i18n'
+import { formatLongDate } from '../utils/dates'
+import BaseLayout from './BaseLayout.astro'
+
+const { post, lang } = Astro.props
+const t = useTranslations(lang)
+const { Content } = await render(post)
+const {
+  title,
+  description,
+  date,
+  slug,
+  hero_image: heroImage,
+  hero_image_alt: heroImageAlt,
+  hero_image_owner_url: heroImageOwnerUrl
+} = post.data
+const ogImage = await getImage({ src: heroImage, format: 'jpg', width: 1200 })
+
+const paths = {}
+for (const code of Object.keys(languages)) {
+  if (await hasTranslation(code, slug)) paths[code] = postPath(code, slug)
+}
+const alternates = Object.entries(paths).map(([code, href]) => ({ lang: code, href }))
+const articlesLink = `${homePath(lang)}#${t.sectionIds.articles}`
+---
+
+<BaseLayout
+  lang={lang}
+  seo={{
+    title,
+    description,
+    image: new URL(ogImage.src, Astro.site).href,
+    type: 'article',
+    publishedTime: date.toISOString(),
+    alternates: alternates.length > 1 ? alternates : []
+  }}
+>
+  <div class='mx-auto min-h-screen max-w-3xl px-6 py-10 md:px-12 md:py-16'>
+    <header class='flex flex-wrap items-center justify-between gap-4'>
+      <a href={articlesLink} class='group inline-flex items-center gap-2 font-mono text-sm tracking-widest text-accent uppercase'>
+        <Icon name='tabler:arrow-left' size='1.1em' class='transition-transform group-hover:-translate-x-1 motion-reduce:transition-none' />
+        Manuel Pérez
+      </a>
+      <div class='flex items-center gap-4'>
+        <ThemeToggle lang={lang} />
+        {Object.keys(paths).length > 1 && <LanguageSwitcher lang={lang} paths={paths} />}
+      </div>
+    </header>
+
+    <main class='mt-10'>
+      <article>
+        <p class='font-mono text-sm tracking-wide text-ink-faint uppercase'>
+          <time datetime={date.toISOString().slice(0, 10)}>{formatLongDate(date, t.dateLocale)}</time>
+        </p>
+        <h1 class='mt-3 font-display text-2xl leading-snug text-balance text-ink sm:text-3xl'>{title}</h1>
+
+        <figure class='mt-8'>
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            width={1200}
+            widths={[400, 800, 1200]}
+            sizes='(max-width: 768px) 100vw, 720px'
+            loading='eager'
+            class='aspect-video w-full rounded-lg border border-line object-cover'
+          />
+          {
+            heroImageOwnerUrl && (
+              <figcaption class='mt-2 font-mono text-xs text-ink-faint'>
+                {t.photo}: <a href={heroImageOwnerUrl} class='underline hover:text-accent'>Unsplash</a>
+              </figcaption>
+            )
+          }
+        </figure>
+
+        <div class='post-body mt-10'>
+          <Content />
+        </div>
+      </article>
+    </main>
+
+    <footer class='mt-16 border-t border-line pt-6 font-mono text-sm text-ink-faint'>
+      <a href={articlesLink} class='inline-flex items-center gap-2 hover:text-accent'><Icon name='tabler:arrow-left' />{t.backToArticles}</a>
+    </footer>
+  </div>
+</BaseLayout>

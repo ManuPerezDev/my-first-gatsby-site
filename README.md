@@ -15,7 +15,7 @@ npm run preview
 
 ## Languages
 
-Spanish lives at `/` and English at `/en/`. Interface strings are in `src/i18n.js`; content in `src/data/` has a Spanish and an English version. Blog posts are written in Spanish only.
+Spanish lives at `/` and English at `/en/`. Interface strings are in `src/i18n.js`; content in `src/data/` has a Spanish and an English version. Each post can have an English translation (`index.en.md`, served at `/en/blog/<slug>`).
 
 ## Blog posts
 

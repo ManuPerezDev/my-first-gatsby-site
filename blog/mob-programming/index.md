@@ -56,4 +56,4 @@ Trabajar en Mob debería ser una opción. Si el equipo o una persona no quiere t
 
 Descubrir el Mob Programming a sido para mí una grata e inesperada sorpresa. En mi formación siempre había trabajado solo y tengo que confesar que aún me cuesta trabajar en equipo, pero pongo mi mejor esfuerzo en mejorar. Siempre me he sentido más cómodo trabajando solo, pero era por no ser consciente realmente de las grandes ventajas del trabajo en equipo y el círculo virtuoso que es capaz de generarse. Por lo tanto, mi intención es seguir trabajando en Mob Programming y aprovechar sus grandes virtudes.
 
-Recomiendo visitar la web [https://www.remotemobprogramming.org/](Link) para más obtener más información.
+Recomiendo visitar la web [https://www.remotemobprogramming.org/](https://www.remotemobprogramming.org/) para más obtener más información.

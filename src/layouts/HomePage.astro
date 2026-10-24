@@ -1,12 +1,12 @@
 ---
 // Home page for one language; src/pages/index.astro (es) and src/pages/en/index.astro (en) render it.
-import { getCollection } from 'astro:content'
 import About from '../components/About.astro'
 import ArticleList from '../components/ArticleList.astro'
 import ExperienceList from '../components/ExperienceList.astro'
 import Section from '../components/Section.astro'
 import Sidebar from '../components/Sidebar.astro'
 import Stack from '../components/Stack.astro'
+import { getPosts } from '../data/posts'
 import { homePath, languages, useTranslations } from '../i18n'
 import BaseLayout from './BaseLayout.astro'
 
@@ -19,7 +19,7 @@ const sections = ['about', 'experience', 'stack', 'articles'].map(key => ({
 }))
 const [about, experience, stack, articles] = sections
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.date - a.data.date)
+const posts = await getPosts(lang)
 const alternates = Object.keys(languages).map(code => ({ lang: code, href: homePath(code) }))
 ---
 

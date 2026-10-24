@@ -1,9 +1,10 @@
-// Spanish lives at / and English at /en/. Blog posts exist only in Spanish.
+// Spanish lives at / and English at /en/. Posts are written in Spanish; English translations are optional.
 // Interface strings live here; page content with a language lives in src/data/ as { es, en } pairs.
 export const languages = { es: 'Español', en: 'English' }
 export const defaultLang = 'es'
 
 export const homePath = lang => (lang === defaultLang ? '/' : `/${lang}/`)
+export const postPath = (lang, slug) => `${lang === defaultLang ? '' : `/${lang}`}/blog/${slug}/`
 
 const ui = {
   es: {
@@ -19,6 +20,8 @@ const ui = {
     themeLight: 'Tema claro',
     themeDark: 'Tema oscuro',
     inSpanish: null,
+    backToArticles: 'Volver a los artículos',
+    photo: 'Foto',
     dateLocale: 'es-ES',
     ogLocale: 'es_ES',
     description: 'Blog sobre desarrollo de software y buenas prácticas.'
@@ -36,6 +39,8 @@ const ui = {
     themeLight: 'Light theme',
     themeDark: 'Dark theme',
     inSpanish: 'In Spanish',
+    backToArticles: 'Back to articles',
+    photo: 'Photo',
     dateLocale: 'en-GB',
     ogLocale: 'en_GB',
     description: 'Blog about software development and good practices.'
