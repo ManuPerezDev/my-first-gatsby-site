@@ -7,9 +7,13 @@ export const experience = [
     kind: 'work',
     body: {
       es: [
-        'Desarrollo producto en aplicación de análisis de datos. Participo en el desarrollo de front end, back end, ETL y plataforma.'
+        'Desarrollo producto en una aplicación de análisis de datos agregados de redes sociales. Participo en el desarrollo de front end, back end, ETL y plataforma.',
+        'Desarrollé una herramienta interna que ahorra 30.000 € al año.'
       ],
-      en: ['I develop product for a data analytics application. I work on the front end, back end, ETL and platform.']
+      en: [
+        'I develop product for an application that analyses aggregated social media data. I work on the front end, back end, ETL and platform.',
+        'I built an internal tool that saves €30,000 a year.'
+      ]
     },
     learnMoreLink: 'https://www.audiense.com'
   },
@@ -21,35 +25,40 @@ export const experience = [
     body: {
       es: [
         'En 2021 tuve el honor de ser contratado en el equipo de Carlos Blé, una empresa de desarrollo de software y consultoría afincada en Tenerife. En Lean Mind tuve la oportunidad de trabajar y aprender en equipos de alto rendimiento enfocados en metodologías Agile.',
+        'Optimicé y desarrollé procesos ETL y construí un blog comercial.',
         'Allí aprendí mucho de buenas prácticas de desarrollo, mantenimiento de código y testing con TDD.'
       ],
       en: [
         "In 2021 I had the honour of joining Carlos Blé's team, a software development and consulting company based in Tenerife. At Lean Mind I had the chance to work and learn in high-performing teams focused on Agile methodologies.",
+        'I optimised and built ETL processes and developed a commercial blog.',
         'There I learned a lot about good development practices, code maintenance and testing with TDD.'
       ]
     },
     learnMoreLink: 'https://www.leanmind.es/es/'
   },
   {
-    title: { es: 'Estudiante Bootcamp Fullstack', en: 'Full Stack Bootcamp Student' },
-    time: { es: 'Septiembre 2020', en: 'September 2020' },
+    title: { es: 'Bootcamp Fullstack', en: 'Full Stack Bootcamp' },
+    time: { es: 'Septiembre 2020 — Febrero 2021', en: 'September 2020 — February 2021' },
     organization: 'Escuela de Organización Industrial',
     kind: 'education',
     body: {
-      es: ['Inscripción en la 5ª edición del Curso de Programación Fullstack de la EOI dirigido por ManzDev.'],
-      en: ["Enrolled in the 5th edition of EOI's Full Stack Programming Course, led by ManzDev."]
+      es: ['Completé la 5ª edición del Curso de Programación Fullstack de la EOI dirigido por ManzDev.'],
+      en: ["Completed the 5th edition of EOI's Full Stack Programming Course, led by ManzDev."]
     },
     learnMoreLink:
       'https://www.eoi.es/es/cursos/90441/curso-de-programacion-fullstack-presencia-virtual-online-tenerife-5a-edicion'
   },
   {
-    title: { es: 'Estudiante Ciclo Superior', en: 'Higher Vocational Training Student' },
-    time: { es: 'Septiembre 2018', en: 'September 2018' },
+    title: {
+      es: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)',
+      en: 'Higher Technician in Multiplatform Application Development (DAM)'
+    },
+    time: { es: '2018 — 2020', en: '2018 — 2020' },
     organization: 'CIFP César Manrique',
     kind: 'education',
     body: {
-      es: ['Estudio de DAM en el CIFP César Manrique, Santa Cruz de Tenerife.'],
-      en: ['Studied Multiplatform Application Development (DAM) at CIFP César Manrique, Santa Cruz de Tenerife.']
+      es: ['Ciclo formativo de grado superior en el CIFP César Manrique, Santa Cruz de Tenerife.'],
+      en: ['Higher vocational training at CIFP César Manrique, Santa Cruz de Tenerife.']
     },
     learnMoreLink: 'https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/'
   }

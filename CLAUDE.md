@@ -54,4 +54,6 @@ Personal site and blog (manuelperez.dev). Astro 7, fully static, no UI framework
 - Biome cannot see what an `.astro` template uses, so unused-import rules are off for `.astro` in `biome.json`.
   Never run Biome unsafe fixes with `--only` on `.astro` files: `--only` ignores that override and deletes imports
   the template needs.
+- pdfmake mutates the document it receives. `src/cv/cv.js` passes it a `structuredClone`; without it the shared
+  `src/data/` arrays turn into objects and the pages built after the CV show `[object Object]`.
 - Biome also lints `.svg` files (e.g. `public/favicon.svg` needs a `<title>`).

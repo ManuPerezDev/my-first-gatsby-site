@@ -115,5 +115,6 @@ export const renderCv = async ({ lang, contact = {} }) => {
     ]
   }
 
-  return pdfmake.createPdf(docDefinition).getBuffer()
+  // pdfmake rewrites the arrays it receives (strings become objects); a copy keeps the shared site data intact
+  return pdfmake.createPdf(structuredClone(docDefinition)).getBuffer()
 }
